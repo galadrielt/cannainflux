@@ -1,7 +1,5 @@
 import { Component, OnInit, AfterContentInit, ViewEncapsulation } from '@angular/core';
 
-import { BracketEntryComponent } from './bracket-entry.component';
-
 @Component({
   selector: 'pm-brackets',
   templateUrl: './brackets.component.html',
@@ -40,7 +38,7 @@ export class BracketsComponent implements OnInit {
     this.match = {
       logo: '(o)',
       seed: 32,
-      name: 'Y. Diakomaholis', 
+      name: 'Y. Diakomaholis',
       affiliate: 'stan',
       score: 2
     };
@@ -76,13 +74,13 @@ export class BracketsComponent implements OnInit {
     this.roundnum = Math.log(this.entries)/Math.log(2);
     return [].constructor(Math.log(this.entries)/Math.log(2));
   }
-  
+
   getVertical(vn, vm){
     console.log("Vertical Height:", vn, vm, vm*25+15);
     //if vr.length == 8 or 7 or 6 or 5 or 4 or 3 or 2 or 1
     if (vn+1==7){
       return vm*960+487.5
-    }else{  
+    }else{
       if (vn+1==6){
           return vm*480+247.5
       }else{
@@ -115,13 +113,13 @@ export class BracketsComponent implements OnInit {
     console.log("Matches:", this.entries/Math.pow(2,roundIndex));
     return [].constructor(this.entries/Math.pow(2,roundIndex));
   }
- 
+
   getRoundHtml (indexR){
     this.roundHtmlStr = '';
     console.log("INDEXR:", indexR);
     for (let i = 0; i < this.entries/Math.pow(2,indexR); i++){
     this.roundHtmlStr = this.roundHtmlStr + `
-         <li class="spacer">&nbsp;</li>\n 
+         <li class="spacer">&nbsp;</li>\n
          <li class="game game-top winner">Creighton <span>50</span></li>\n
          <li class="game game-spacer">&nbsp;</li>\n
          <li class="game game-bottom">Harvard <span>40</span></li>\n
@@ -132,6 +130,6 @@ export class BracketsComponent implements OnInit {
     return(this.roundHtmlStr);
   }
   ngAfterContentInit() {
-    
+
   }
 }

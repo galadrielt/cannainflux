@@ -1,41 +1,36 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, ViewChild, ElementRef } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit, AfterViewInit, OnDestroy, ViewChildren, ViewChild, ElementRef} from '@angular/core';
+import {FormBuilder, FormGroup, FormControl, FormArray, Validators, FormControlName} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
-import { Observable, Subscription, fromEvent, merge } from 'rxjs';
-//import { debounceTime } from 'rxjs/operators';
+import {Observable, Subscription, fromEvent, merge} from 'rxjs';
 
-import { Event } from './event';
-import { EventService } from './event.service';
-import { SportService } from '../sports/sport.service';
+import {Event} from './event';
+import {EventService} from './event.service';
+import {SportService} from '../sports/sport.service';
 
-import { GenericValidator } from '../shared/generic-validator';
+import {GenericValidator} from '../shared/generic-validator';
 
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
+import {MatChipInputEvent, MatChipList} from '@angular/material/chips';
 
 
 export interface Levels {
   name: string;
 }
 
-
-
-
 @Component({
   templateUrl: './event-edit.component.html',
   styleUrls: ['./event-edit.component.scss']
-         
 })
 
 
 export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChildren(FormControlName, { read: ElementRef }) formInputElements: ElementRef[];
+  @ViewChildren(FormControlName, {read: ElementRef}) formInputElements: ElementRef[];
   @ViewChild('chipList') chipList: MatChipList;
-  
+
 
   pageTitle = 'Create an Event';
-  //HTML Only variables - stored as an array but for error checking on the users 
+  //HTML Only variables - stored as an array but for error checking on the users
 
   errorMessage: string;
   eventForm: FormGroup;
@@ -54,7 +49,6 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   private validationMessages: { [key: string]: { [key: string]: string } };
   private genericValidator: GenericValidator;
 
-  visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
@@ -79,7 +73,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   // data
   data = {
     divisions: [this.initName('Divisions')]
-  }
+  };
 
 
   constructor(private fb: FormBuilder,
@@ -107,17 +101,15 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-
-
-/*************************
- * ngOnInit SECTION
- *************************/
+  /*************************
+   * ngOnInit SECTION
+   *************************/
 
   ngOnInit(): void {
 
     this.sportNames.getSportNames().subscribe({
       next: sports => {
-        this.sts = sports; 
+        this.sts = sports;
         console.log(this.sts);
       },
       error: err => this.errorMessage = err
@@ -126,8 +118,8 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.eventForm = this.fb.group({
       eventName: ['', [Validators.required,
-                         Validators.minLength(3),
-                         Validators.maxLength(50)]],
+        Validators.minLength(3),
+        Validators.maxLength(50)]],
       eventLocationName: '',
       eventLocationAddress: '',
       eventLocationCity: '',
@@ -138,7 +130,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       eventEndTime: '',
       eventUrl: '',
       eventImageUrl: '',
-      //ADDED names for example... Get it working first.
+      // ADDED names for example... Get it working first.
       eventSport: 'Wrestling',
       eventDivisions: this.fb.array([' ']),
       eventLevels: this.fb.array([' ']),
@@ -163,7 +155,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     );
 
-    this.eventForm.get('names_F').statusChanges.subscribe(
+    this.eventForm.get('divisions_F').statusChanges.subscribe(
       status => this.chipList.errorState = status === 'INVALID'
     );
 
@@ -183,12 +175,12 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     // Merge the blur event observable with the valueChanges observable
     // so we only need to subscribe once.
     merge(this.eventForm.valueChanges, ...controlBlurs)
-    // .pipe(
-    //   debounceTime(1000)
-    // )
-    .subscribe(value => {
-      this.displayMessage = this.genericValidator.processMessages(this.eventForm);
-    });
+      // .pipe(
+      //   debounceTime(1000)
+      // )
+      .subscribe(value => {
+        this.displayMessage = this.genericValidator.processMessages(this.eventForm);
+      });
 
   }
 
@@ -200,7 +192,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   validateArrayNotEmpty(c: FormControl) {
     if (c.value && c.value.length === 0) {
       return {
-        validateArrayNotEmpty: { valid: false }
+        validateArrayNotEmpty: {valid: false}
       };
     }
     return null;
@@ -217,10 +209,10 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       const control = ctrl;
       control.value.val.push(value.trim());
       console.log("Control:", control);
-      if (control.value.name == "Divisions"){
-      let ncl = this.addNewChipList(value.trim());
-      console.log(control.value);
-    }
+      if (control.value.name == "Divisions") {
+        let ncl = this.addNewChipList(value.trim());
+        console.log(control.value);
+      }
     }
 
     // Reset the input value
@@ -232,11 +224,11 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   removeChip(ctrl, val) {
     const idx = ctrl.value.val.findIndex(item => item === val);
     console.log("ctrl:", ctrl, "Val:", val, "IDE:", idx);
-    
-    if (ctrl.value.name=="Divisions"){
+
+    if (ctrl.value.name == "Divisions") {
       //console.log("PARENT:", ctrl, ctrl._parent.value[0], ctrl.value.name);
       const control = <FormArray>this.eventForm.get('names_F');
-      control.removeAt(idx+1);
+      control.removeAt(idx + 1);
     }
 
     ctrl.value.val.splice(idx, 1);
@@ -249,12 +241,12 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     items.push(this.initName(new_chip_name));
   }
 
-  registerOnChange( fn : any ) : void {
+  registerOnChange(fn: any): void {
     this.onChange = fn;
   }
 
-  change( $event ) {
-    // Angular does not know that the value has changed 
+  change($event) {
+    // Angular does not know that the value has changed
     // from our component, so we need to update her with the new value.
     this.onChange($event.target.textContent);
   }
@@ -272,9 +264,9 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
   getEvent(id: number): void {
     this.eventService.getEvent(id).subscribe({
-        next: (event: Event) => this.displayEvent(event),
-        error: err => this.errorMessage = err
-      });
+      next: (event: Event) => this.displayEvent(event),
+      error: err => this.errorMessage = err
+    });
   }
 
   displayEvent(event: Event): void {
@@ -287,7 +279,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.event.id != 0) {
       this.pageTitle = `Edit a event: ${this.event.eventName}`;
     }
-    
+
     /*
     for(let lv of event.eventLevels){
       this.levels.push({name: lv.trim()});
@@ -296,7 +288,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     this.eventForm.setControl('eventDivisions', this.fb.array(this.event.eventDivisions || []));
     //this.eventForm.setControl('eventLevels', this.fb.array(this.event.eventLevels || []));
     this.eventForm.setControl('eventBreakdowns', this.fb.array(this.event.eventBreakdowns || []));
-    this.eventForm.setControl('divisions_F', this.fb.array(this.event.divisions || []));
+    this.eventForm.setControl('divisions_F', this.fb.array(this.event.eventDivisions || []));
 
 
     // Update the data on the form
@@ -319,7 +311,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       eventOrganizerFullName: this.event.eventOrganizerFullName,
       eventOrganizerPhone: this.event.eventOrganizerPhone,
       eventBracketType: this.event.eventBracketType,
-      eventBracketNumOfParticipantsPerClass: this.event.eventBracketNumOfParticipantsPerClass,     
+      eventBracketNumOfParticipantsPerClass: this.event.eventBracketNumOfParticipantsPerClass,
       eventPlaceWinners: this.event.eventPlaceWinners,
       eventExtraInstructions: this.event.eventExtraInstructions
     });
@@ -343,7 +335,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   saveEvent(): void {
     if (this.eventForm.valid) {
       if (this.eventForm.dirty) {
-        const p = { ...this.event, ...this.eventForm.value };
+        const p = {...this.event, ...this.eventForm.value};
 
         if (p.id === 0) {
           this.eventService.createEvent(p)

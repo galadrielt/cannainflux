@@ -50,7 +50,7 @@
           </span>
         </div>
       </div>
-    
+
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="eventLocationNameId">Location Name:</label>
@@ -97,7 +97,7 @@
           </span>
         </div>
       </div>
- 
+
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="eventLocationStateId">State:</label>
@@ -254,7 +254,7 @@
           <mat-chip *ngFor="let division of divisions; let i=index;"
                   [formGroupName]="i"
                   [selectable]="selectable"
-                  [removable]="removable" 
+                  [removable]="removable"
                   (removed)="removeChip(division)">
             {{level.name}}
             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
@@ -276,9 +276,8 @@
       </div>
 
     -->
-
     <div formArrayName="divisions_F"
-      *ngFor="let item of eventForm.get('names')['controls']; let i = index;">
+      *ngFor="let item of eventForm.get('divisions_F')['controls']; let i = index;">
       <mat-form-field class="example-chip-list" [formGroupName]="i">
         <mat-chip-list #chipList >
           <mat-chip *ngFor="let val of item.value.val"
@@ -332,7 +331,7 @@
           <mat-chip *ngFor="let level of levels; let i=index;"
                   [formGroupName]="i"
                   [selectable]="selectable"
-                  [removable]="removable" 
+                  [removable]="removable"
                   (removed)="removeChip(level)">
             {{level.name}}
             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
@@ -409,7 +408,7 @@
           </span>
         </div>
       </div>
-      
+
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="eventNumOfSeedingId">Number of Seeds:</label>
@@ -500,7 +499,7 @@
             {{displayMessage.eventPlaceWinners}}
           </span>
         </div>
-      </div>      
+      </div>
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="eventExtraInstructionsId">Extra Instructions:</label>
