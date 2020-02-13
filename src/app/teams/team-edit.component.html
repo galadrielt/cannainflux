@@ -1,0 +1,164 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveTeam()"
+          [formGroup]="teamForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamNameId">College Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamNameId"
+                 type="text"
+                 placeholder="College Name (required)"
+                 formControlName="teamName"
+                 [ngClass]="{'is-invalid': displayMessage.teamName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamName}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamMascotNameId">College Mascot:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamMascotNameId"
+                 type="text"
+                 placeholder="Mascot Name (required)"
+                 formControlName="teamMascotName"
+                 [ngClass]="{'is-invalid': displayMessage.teamMascotName}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamMascotName}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamAbbreviationId">College Abbreviation:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamAbbreviationId"
+                 type="text"
+                 placeholder="College Abbreviation (required)"
+                 formControlName="teamAbbreviation"
+                 [ngClass]="{'is-invalid': displayMessage.teamAbbreviation}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamAbbreviation}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamConferenceId">College Abbreviation:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamConferenceId"
+                 type="text"
+                 placeholder="College Conference (required)"
+                 formControlName="teamConference"
+                 [ngClass]="{'is-invalid': displayMessage.teamConference}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamConference}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamCityId">College City:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamCityId"
+                 type="text"
+                 placeholder="College City (required)"
+                 formControlName="teamCity"
+                 [ngClass]="{'is-invalid': displayMessage.teamCity}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamCity}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamStateId">College State:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamStateId"
+                 type="text"
+                 placeholder="College State (required)"
+                 formControlName="teamState"
+                 [ngClass]="{'is-invalid': displayMessage.teamState}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamState}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamMascotUrlId">College Mascot Image Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamMascotUrlId"
+                 type="text"
+                 placeholder="College Mascot Url (required)"
+                 formControlName="teamMascotUrl"
+                 [ngClass]="{'is-invalid': displayMessage.teamMascotUrl}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamMascotUrl}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="teamSealUrlId">College Seal Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="teamSealUrlId"
+                 type="text"
+                 placeholder="College Seal Url (required)"
+                 formControlName="teamSealUrl"
+                 [ngClass]="{'is-invalid': displayMessage.teamSealUrl}" />
+          <span class="invalid-feedback">
+            {{displayMessage.teamSealUrl}}
+          </span>
+        </div>
+      </div>      
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="teamForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!teamForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/teams']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this team"
+                  (click)="deleteTeam()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

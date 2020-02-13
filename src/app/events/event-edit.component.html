@@ -1,0 +1,552 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveEvent()"
+          [formGroup]="eventForm" autofocus>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventSportId">Sport:</label>
+        <div class="col-md-8">
+            <select formControlName="eventSport">
+                <option *ngFor="let stc of sts" [attr.selected]="eventSport==stc ? true :  null" [value]="stc">{{stc}}</option>
+              </select>
+          <span class="invalid-feedback">
+            {{displayMessage.eventSport}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventTypeId">Event Type:</label>
+        <div class="col-md-8">
+          <select formControlName="eventType">
+            <option [attr.selected]="eventType=='Tournament' ? true :  null" value="Tournament">Tournament</option>
+            <option [attr.selected]="eventType=='Dual' ? true :  null" value="Tournament">Dual</option>
+          </select>
+          <span class="invalid-feedback">
+            {{displayMessage.eventType}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-4">
+        <label class="col-md-2 col-form-label"
+               for="eventNameId">Event Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventNameId"
+                 type="text"
+                 placeholder="2020 NCAA Division I Wrestling Championships (required)"
+                 formControlName="eventName"
+                 [ngClass]="{'is-invalid': displayMessage.eventName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventName}}
+          </span>
+        </div>
+      </div>
+    
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventLocationNameId">Location Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventLocationNameId"
+                 type="text"
+                 placeholder="US Bank Stadium"
+                 formControlName="eventLocationName"
+                 [ngClass]="{'is-invalid': displayMessage.eventLocationName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventLocationName}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventLocationAddressId">Address:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventLocationAddressId"
+                 type="text"
+                 placeholder="401 Chicago Avenue (required)"
+                 formControlName="eventLocationAddress"
+                 [ngClass]="{'is-invalid': displayMessage.eventLocationAddress }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventLocationAddress}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventLocationCityId">City:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventLocationCityId"
+                 type="text"
+                 placeholder="Minneapolis (required)"
+                 formControlName="eventLocationCity"
+                 [ngClass]="{'is-invalid': displayMessage.eventLocationCity }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventLocationCity}}
+          </span>
+        </div>
+      </div>
+ 
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventLocationStateId">State:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventLocationStateId"
+                 type="text"
+                 placeholder="MN (required)"
+                 formControlName="eventLocationState"
+                 [ngClass]="{'is-invalid': displayMessage.eventLocationState }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventLocationState}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventStartDateId">Start Date:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventStartDateId"
+                 type="text"
+                 placeholder="Start Date"
+                 formControlName="eventStartDate"
+                 [ngClass]="{'is-invalid': displayMessage.eventStartDate }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventStartDate}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventEndDateId">End Date:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventEndDateId"
+                 type="text"
+                 placeholder="End Date"
+                 formControlName="eventEndDate"
+                 [ngClass]="{'is-invalid': displayMessage.eventEndDate }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventEndDate}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventStartTimeId">Start Time:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventStartTimeId"
+                 type="text"
+                 placeholder="Start Time"
+                 formControlName="eventStartTime"
+                 [ngClass]="{'is-invalid': displayMessage.eventStartTime }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventStartTime}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventEndTimeId">End Time:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventEndTimeId"
+                 type="text"
+                 placeholder="End Time"
+                 formControlName="eventEndTime"
+                 [ngClass]="{'is-invalid': displayMessage.eventEndTime }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventEndTime}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventUrlId">Event Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventUrlId"
+                 type="text"
+                 placeholder="Url (required)"
+                 formControlName="eventUrl"
+                 [ngClass]="{'is-invalid': displayMessage.eventUrl }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventUrl}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventImageUrlId">Event Image Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventImageUrlId"
+                 type="text"
+                 placeholder="Image Url"
+                 formControlName="eventImageUrl"
+                 [ngClass]="{'is-invalid': displayMessage.eventImageUrl }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventImageUrl}}
+          </span>
+        </div>
+      </div>
+  <!--
+      <div class="form-group row mb-2" *ngIf="event">
+        <label class="col-md-2 col-form-label"
+               for="eventDivisionsId">Event Divisions:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventDivisionsId"
+                 type="text"
+                 value="{{event.eventDivisions}}"
+                 formArrayName="eventDivisions"
+                 [ngClass]="{'is-invalid': displayMessage.eventDivisions }" />
+                 <p id="levels-id-hint" class="input-hint">
+                  Divisions mean age levels (8 year olds, peewee), College, High School....
+                 </p>
+          <span class="invalid-feedback">
+            {{displayMessage.eventDivisions}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2" *ngIf="event || pageTitle=='Create an Event'">
+        <label class="col-md-2 col-form-label" for="eventLevelsId">
+          Event Levels:
+        </label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventLevelsId"
+                 type="text"
+                 value="{{event.eventLevels}}"
+                 formArrayName="eventLevels"
+                 [ngClass]="{'is-invalid': displayMessage.eventLevels }" />
+                 <p id="levels-id-hint" class="input-hint">
+                  Levels mean experience levels (novice, JV, Varsity), Rank (martial arts belts)....
+                 </p>
+          <span class="invalid-feedback">
+            {{displayMessage.eventLevels}}
+          </span>
+        </div>
+      </div>
+    -->
+
+    <!--
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="eventDivisionsId">Event Divisions:</label>
+      <div class="col-md-8">
+      <mat-form-field class="example-chip-list" style="width: 100%;">
+        <mat-chip-list formArrayName="eventDivisions" #chipList aria-label="Divisions selection">
+          <mat-chip *ngFor="let division of divisions; let i=index;"
+                  [formGroupName]="i"
+                  [selectable]="selectable"
+                  [removable]="removable" 
+                  (removed)="removeChip(division)">
+            {{level.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New Division..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="addChip($event, division)">
+        </mat-chip-list>
+      </mat-form-field>
+        <p id="divisions-id-hint" class="input-hint">
+          Divisions mean age levels (8 year olds, peewee), College, High School....
+        </p>
+      <span class="invalid-feedback">
+        {{displayMessage.eventDivisions}}
+      </span>
+      </div>
+      </div>
+
+    -->
+
+    <div formArrayName="divisions_F"
+      *ngFor="let item of eventForm.get('names')['controls']; let i = index;">
+      <mat-form-field class="example-chip-list" [formGroupName]="i">
+        <mat-chip-list #chipList >
+          <mat-chip *ngFor="let val of item.value.val"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="removeChip(item, val)">
+            {{val}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input [placeholder]="item.value.name"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="addChip($event, item)">
+        </mat-chip-list>
+        <mat-error>Atleast 1 name need to be added</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!--
+      <div class="form-group" formArrayName="eventDivisions"
+      *ngFor="let item of eventForm.get('eventDivisions')['controls']; let i = index;">
+      <mat-form-field class="example-chip-list" [formGroupName]="i">
+        <mat-chip-list #chipList >
+          <mat-chip *ngFor="let val of item.value.val"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="removeChip(item, val)">
+            {{val}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input [placeholder]="item.value.name"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="addChip($event, item)">
+        </mat-chip-list>
+        <mat-error>Atleast 1 name need to be added</mat-error>
+      </mat-form-field>
+    </div>
+
+  -->
+<!--
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="eventLevelsId">Event Levels:</label>
+      <div class="col-md-8">
+      <mat-form-field class="example-chip-list" style="width: 100%;">
+        <mat-chip-list formArrayName="eventLevels" #chipList aria-label="Levels selection">
+          <mat-chip *ngFor="let level of levels; let i=index;"
+                  [formGroupName]="i"
+                  [selectable]="selectable"
+                  [removable]="removable" 
+                  (removed)="removeChip(level)">
+            {{level.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New Level..."
+                 [matChipInputFor]="chipList"
+                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                 [matChipInputAddOnBlur]="addOnBlur"
+                 (matChipInputTokenEnd)="addChip($event, level)">
+        </mat-chip-list>
+      </mat-form-field>
+        <p id="levels-id-hint" class="input-hint">
+          Levels mean experience levels (novice, JV, Varsity), Rank (martial arts belts)....
+        </p>
+      <span class="invalid-feedback">
+        {{displayMessage.eventLevels}}
+      </span>
+      </div>
+      </div>
+
+-->
+
+      <div formArrayName="eventBreakdowns">
+        <div class="form-group row mb-4">
+
+          <label class="col-md-4 col-form-label">
+            Weight Classes: <b *ngIf="event">{{event.eventBreakdowns.length}} Total</b>
+          </label>
+        </div>
+
+        <div class="form-group row mb-2"
+             *ngFor="let breakdown of eventBreakdowns.controls; let i=index">
+          <label class="col-md-2 col-form-label"
+                 [attr.for]="i">{{i+1}}:
+          </label>
+
+          <div class="col-md-8">
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="Weight Class #{{i+1}}"
+                   [formControlName]="i" />
+          </div>
+          <button class="col-md-1 btn btn-outline-warning btn-sm"
+                  type="button"
+                  title="Delete this weight class"
+                  (click)="deleteEventBreakdown(i)">Delete
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2 mb-2">
+          <button class="btn btn-outline-secondary btn-sm"
+                  type="button"
+                  title="Add a weight class"
+                  (click)="addEventBreakdown()">Add
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventSeedingId">Event Seeding:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventSeedingId"
+                 type="text"
+                 placeholder="Seeding (required)"
+                 formControlName="eventSeeding"
+                 [ngClass]="{'is-invalid': displayMessage.eventSeeding }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventSeeding}}
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventNumOfSeedingId">Number of Seeds:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventNumOfSeedingId"
+                 type="text"
+                 placeholder="NumOfSeeding (required)"
+                 formControlName="eventNumOfSeeding"
+                 [ngClass]="{'is-invalid': displayMessage.eventNumOfSeeding }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventNumOfSeeding}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventOrganizerFullNameId">Organizer:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventOrganizerFullNameId"
+                 type="text"
+                 placeholder="Organizer Full Name (required)"
+                 formControlName="eventOrganizerFullName"
+                 [ngClass]="{'is-invalid': displayMessage.eventOrganizerFullName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventOrganizerFullName}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventOrganizerPhoneId">Organizer Phone#:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventOrganizerPhoneId"
+                 type="text"
+                 placeholder="Organizer Phone (required)"
+                 formControlName="eventOrganizerPhone"
+                 [ngClass]="{'is-invalid': displayMessage.eventOrganizerPhone }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventOrganizerPhone}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventBracketTypeId">Bracket Type:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventBracketTypeId"
+                 type="text"
+                 placeholder="BracketType (required)"
+                 formControlName="eventBracketType"
+                 [ngClass]="{'is-invalid': displayMessage.eventBracketType }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventBracketType}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2" *ngIf="event">
+        <label class="col-md-2 col-form-label"
+               for="eventBracketNumOfParticipantsPerClassId">Number of Participants:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventBracketNumOfParticipantsPerClassId"
+                 type="text"
+                 placeholder="Num of Participants (required)"
+                 value="{{event.eventBracketNumOfParticipantsPerClass}}"
+                 formArrayName="eventBracketNumOfParticipantsPerClass"
+                 [ngClass]="{'is-invalid': displayMessage.eventBracketNumOfParticipantsPerClass }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventBracketNumOfParticipantsPerClass}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventPlaceWinnersId">Number of Placers:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="eventPlaceWinnersId"
+                 type="text"
+                 placeholder="PlaceWinners (required)"
+                 formControlName="eventPlaceWinners"
+                 [ngClass]="{'is-invalid': displayMessage.eventPlaceWinners }" />
+          <span class="invalid-feedback">
+            {{displayMessage.eventPlaceWinners}}
+          </span>
+        </div>
+      </div>      
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="eventExtraInstructionsId">Extra Instructions:</label>
+
+        <div class="col-md-8">
+          <textarea class="form-control"
+                    id="eventExtraInstructionsId"
+                    placeholder="Any additional information here"
+                    rows=3
+                    formControlName="eventExtraInstructions"
+                    [ngClass]="{'is-invalid': displayMessage.eventExtraInstructions}"></textarea>
+          <span class="invalid-feedback">
+            {{ displayMessage.eventExtraInstructions}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="eventForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!eventForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/events']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this event"
+                  (click)="deleteEvent()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}} ({{pools.length}} total)
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filter by:</div>
+        <div class="col-md-4">
+          <input type="text"
+                 [(ngModel)]="listFilter" />
+        </div>
+        <div class="nav-ml-auto">
+            <button class="btn btn-outline-success btn-sm"
+            routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/pools/0/edit']">
+             +Add New
+            </button>
+        </div>
+      </div>
+      <div class="row"
+           *ngIf="listFilter">
+        <div class="col-md-6">
+          <h4>Filtered by: {{listFilter}}</h4>
+        </div>
+      </div>
+  
+      <div class="table-responsive">
+        <table class="table mb-0"
+               *ngIf="pools && pools.length">
+          <thead>
+            <tr>
+              <th>
+                <button class="btn btn-outline-primary btn-sm"
+                        (click)="toggleImage()">
+                  {{showImage ? "Hide" : "Show"}} Image
+                </button>
+              </th>
+              <th>Pool Name</th>
+              <th>Organizer</th>
+              <th>Type</th>
+              <th>Deadline</th>
+              <th>Total Entries</th>
+              <th>Pool Entry Amount</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pool of filteredPools">
+              <td>
+                <img *ngIf="showImage && pool.poolImageUrlMain"
+                     [src]="pool.poolImageUrlMain"
+                     [title]="pool.poolName"
+                     [style.height.px]="imageHeight"
+                     [style.margin.px]="imageMargin">
+              </td>
+              <td>
+                <a [routerLink]="['/pools', pool.id]">
+                  {{ pool.poolName }}
+                </a>
+              </td>
+              <td>{{ pool.poolOrganizer }}</td>
+              <td>{{ pool.poolType }}</td>
+              <td>{{ pool.poolDeadlineDate }} {{ pool.poolDeadlineTime}}</td>
+              <td>{{ pool.poolTotalEntriesAllowed}}</td>
+              <td>{{ pool.poolEntryAmount | currency }}</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/pools', pool.id, 'edit']">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div *ngIf="errorMessage"
+       class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>

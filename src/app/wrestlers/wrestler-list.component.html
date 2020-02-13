@@ -1,0 +1,88 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}} ({{wrestlers.length}} total)
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filter by:</div>
+        <div class="col-md-4">
+          <input type="text"
+                 [(ngModel)]="listFilter" />
+        </div>
+        <div class="nav-ml-auto">
+            <button class="btn btn-outline-success btn-sm"
+            routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/wrestlers/0/edit']">
+             +Add New
+            </button>
+        </div>
+      </div>
+      <div class="row"
+           *ngIf="listFilter">
+        <div class="col-md-6">
+          <h4>Filtered by: {{listFilter}}</h4>
+        </div>
+      </div>
+
+  
+      <div class="table-responsive">
+        <table class="table mb-0"
+               *ngIf="wrestlers && wrestlers.length">
+          <thead>
+            <tr>
+              <th>
+                <button class="btn btn-outline-primary btn-sm"
+                        (click)="toggleImage()">
+                  {{showImage ? "Hide" : "Show"}} Image
+                </button>
+              </th>
+              <th>Last Name</th>
+              <th>First Name</th>
+              <th>College</th>
+              <th>Weight</th>
+              <th>Record</th>
+              <th>Home Town</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let wrestler of filteredWrestlers">
+              <td>
+                <img *ngIf="showImage && wrestler.wrestlerImageUrl"
+                     [src]="wrestler.wrestlerImageUrl"
+                     [title]="wrestler.wrestlerLastName"
+                     [style.width.px]="imageWidth"
+                     [style.margin.px]="imageMargin">
+              </td>
+              <td>
+                <a [routerLink]="['/wrestlers', wrestler.id]">
+                  {{ wrestler.wrestlerLastName }}
+                </a>
+              </td>
+              <td>
+                <a [routerLink]="['/wrestlers', wrestler.id]">
+                {{ wrestler.wrestlerFirstName }}
+              </a>
+              </td>
+              <td>{{ wrestler.wrestlerCollege }}</td>
+              <td>{{ wrestler.wrestlerWeight }}</td>
+              <td><span *ngIf="wrestler.wrestlerWins && wrestler.wrestlerLoses">{{ wrestler.wrestlerWins }} - {{ wrestler.wrestlerLoses }}</span></td>
+              <td><span *ngIf="wrestler.wrestlerHometownCity && wrestler.wrestlerHometownState">{{ wrestler.wrestlerHometownCity }}, {{ wrestler.wrestlerHometownState }}</span></td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/wrestlers', wrestler.id, 'edit']">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div *ngIf="errorMessage"
+       class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>

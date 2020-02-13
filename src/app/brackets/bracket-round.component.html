@@ -1,0 +1,13 @@
+
+<div [ngClass]="getRoundClasses(i)" *ngFor="let rd of getRounds(); let i = index">
+      <div class="matchGroup" *ngFor="let rm of getMatches(i); let y = index">
+            <ul class="matchup">
+                  <li class="team team-top">Duke<span class="score">76</span></li>
+                  <li class="team team-bottom">Virginia<span class="score">82</span></li>
+             </ul>
+      </div>
+</div> 
+ 
+      <!--<div class="round" [ngStyle]="roundStyles" *ngFor="let rd of getRounds(); let i = index">
+            <pm-bracket-match [matchHeight]='50' [matchVertical]='getVertical(i,y)' *ngFor="let rm of getMatches(i); let y = index"></pm-bracket-match>
+      </div>-->

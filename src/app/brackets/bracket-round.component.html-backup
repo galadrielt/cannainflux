@@ -1,0 +1,14 @@
+
+      <div class="round" style="width: 200px; margin-right: 40px">
+            <pm-bracket-match [matchHeight]='50' [matchVertical]='15'></pm-bracket-match>
+            <pm-bracket-match [matchHeight]='50' [matchVertical]=40></pm-bracket-match>
+            <pm-bracket-match [matchHeight]='50' [matchVertical]='65'></pm-bracket-match>
+            <pm-bracket-match [matchHeight]='50' [matchVertical]='90'></pm-bracket-match>
+      </div>
+      <div class="round" style="width: 200px; margin-right: 40px">
+            <pm-bracket-match [matchHeight]='100' [matchVertical]='27.5'></pm-bracket-match>
+            <pm-bracket-match [matchHeight]='100' [matchVertical]='77.5'></pm-bracket-match>
+      </div>
+      <div class="round" style="width: 200px; margin-right: 40px">
+            <pm-bracket-match [matchHeight]='200' [matchVertical]='52.5'></pm-bracket-match>
+      </div>

@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-header"
+         *ngIf="sport">
+      {{pageTitle + ": Sport id:" + sport.id}}
+    </div>
+  
+    <div class="card-body"
+         *ngIf="sport">
+  
+      <div class="row">
+  
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-6">{{sport.sportName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Type:</div>
+            <div class="col-md-6">{{sport.sportType}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Participants:</div>
+            <div class="col-md-6">{{sport.sportParticipants}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Divisions:</div>
+            <div class="col-md-6">{{sport.sportDivisions}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Levels:</div>
+            <div class="col-md-6">{{sport.sportLevels}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Breakdowns:</div>
+            <div class="col-md-6">{{sport.sportBreakdowns}}</div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px"
+                  (click)="onBack()">
+            <i class="fa fa-chevron-left"></i> Back
+          </button>
+          <button class="btn btn-outline-primary"
+                  style="width:80px"
+                  [routerLink]="['/sports', sport.id, 'edit']">
+            Edit
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

@@ -1,0 +1,69 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}} ({{sports.length}} total)
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filter by:</div>
+        <div class="col-md-4">
+          <input type="text"
+                 [(ngModel)]="listFilter" />
+        </div>
+        <div class="nav-ml-auto">
+            <button class="btn btn-outline-success btn-sm"
+            routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/sports/0/edit']">
+             +Add New
+            </button>
+        </div>
+      </div>
+      <div class="row"
+           *ngIf="listFilter">
+        <div class="col-md-6">
+          <h4>Filtered by: {{listFilter}}</h4>
+        </div>
+      </div>
+  
+      <div class="table-responsive">
+        <table class="table mb-0"
+               *ngIf="sports && sports.length">
+          <thead>
+            <tr>
+              <th>Sport Name</th>
+              <th>Sport Type</th>
+              <th>Divisions</th>
+              <th>Levels</th>
+              <th>Breakdowns</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let sport of filteredSports">
+              <td>
+                <a [routerLink]="['/sports', sport.id]">
+                  {{ sport.sportName }}
+                </a>
+              </td>
+              <td>{{ sport.sportType }}</td>
+              <td>{{ sport.sportDivisions }}</td>
+              <td>{{ sport.sportLevels }}</td>
+              <td>{{ sport.sportBreakdowns }}</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/sports', sport.id, 'edit']">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+  <div *ngIf="errorMessage"
+       class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>

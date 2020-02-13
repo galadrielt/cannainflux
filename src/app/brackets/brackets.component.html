@@ -1,0 +1,55 @@
+<header class="hero">
+     <div class="hero-wrap">
+      <p class="year"><i class="fa fa-star"></i> 2020 <i class="fa fa-star"></i></p>
+      <p class="intro" id="intro">NCAA Division I</p>
+      <p id="headline">Wrestling Tournament</p>
+      <p>Minneapolis, MN</p>
+    </div>
+</header>
+<nav>
+  <div class="filter">
+    <select name="bracket-view">
+      <option value="">Both</option>
+      <option value="">Championship Only</option>
+      <option value="">Consolation Only</option>
+      <option value="">Placer Only</option>
+    </select>
+    <select name="bracket-view">
+      <option value="">All</option>
+      <option value="">125</option>
+      <option value="">133</option>
+      <option value="">141</option>
+      <option value="">149</option>
+      <option value="">157</option>
+      <option value="">165</option>
+      <option value="">174</option>
+      <option value="">184</option>
+      <option value="">197</option>
+      <option value="">285</option>
+    </select>    
+  </div>
+</nav>
+<main class="event" id="tournament">
+  <section id="bracket" *ngFor="let class of classes.weights">
+   <div class="container">
+    <div [ngClass]="getRoundClasses(i)" *ngFor="let rd of getRounds(); let i = index">
+          <div class="weight-class">{{class}}lbs</div>
+          <div class="round-details" [ngSwitch]="getRounds().length - i">
+            <ng-container *ngSwitchCase="'3'">Quarter-Finals<br/><span class="date">Round {{i+1}}</span></ng-container>
+            <ng-container *ngSwitchCase="'2'">Semi-Finals<br/><span class="date">Round {{i+1}}</span></ng-container>
+            <ng-container *ngSwitchCase="'1'">Finals<br/><span class="date">Round {{i+1}}</span></ng-container>
+            <ng-container *ngSwitchDefault>Round of {{math.pow(2,getRounds().length - i)}}<br/><span class="date">Round {{i+1}}</span></ng-container>
+          </div>
+          <div class="matchGroup" *ngFor="let rm of getMatches(i); let y = index">
+                <ul class="matchup">
+                      <li class="team team-top">
+                        {{match.logo}} {{match.seed}} {{match.name}} {{match.affiliate}} {{match.score}}*
+                      </li>
+                      <li class="team team-bottom">(o) 1 B. Chapman STAN<span class="score">6</span></li>
+                 </ul>
+
+          </div>
+     </div>
+   </div>
+  </section> 
+</main>

@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-header"
+         *ngIf="wrestler">
+      {{pageTitle + ": Wrestler id:" + wrestler.id}}
+    </div>
+  
+    <div class="card-body"
+         *ngIf="wrestler">
+  
+      <div class="row">
+  
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-6">First: {{wrestler.wrestlerFirstName}}<br>Middle: {{wrestler.wrestlerMiddleName}}<br>Last: {{wrestler.wrestlerLastName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">College:</div>
+            <div class="col-md-6">{{wrestler.wrestlerCollege}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">College Major:</div>
+              <div class="col-md-6">{{wrestler.wrestlerMajor}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">College Year:</div>
+              <div class="col-md-6">{{wrestler.wrestlerYearCollege}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Weight Class:</div>
+            <div class="col-md-6">{{wrestler.wrestlerWeight}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Height:</div>
+            <div class="col-md-6">{{wrestler.wrestlerHeight}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Home Town:</div>
+            <div class="col-md-6">{{wrestler.wrestlerHometownCity}}, {{wrestler.wrestlerHometownState}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Record:</div>
+            <div class="col-md-6">{{wrestler.wrestlerWins}} - {{wrestler.wrestlerLoses}}</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img *ngIf="wrestler.wrestlerImageUrl" class="center-block img-responsive"
+               [style.height.px]="150"
+               [style.margin.px]="2"
+               [src]="wrestler.wrestlerImageUrl"
+               [title]="wrestler.wrestlerLastName"><br>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px"
+                  (click)="onBack()">
+            <i class="fa fa-chevron-left"></i> Back
+          </button>
+          <button class="btn btn-outline-primary"
+                  style="width:80px"
+                  [routerLink]="['/wrestlers', wrestler.id, 'edit']">
+            Edit
+          </button>
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

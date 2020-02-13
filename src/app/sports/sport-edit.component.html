@@ -1,0 +1,134 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveSport()"
+          [formGroup]="sportForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportNameId">Sport Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportNameId"
+                 type="text"
+                 placeholder="Sport Name (required)"
+                 formControlName="sportName"
+                 [ngClass]="{'is-invalid': displayMessage.sportName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportName}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportTypeId">Sport Type:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportTypeId"
+                 type="text"
+                 placeholder="Sport Type (required)"
+                 formControlName="sportType"
+                 [ngClass]="{'is-invalid': displayMessage.sportType}" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportType}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportParticipantsId">Participants:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportParticipantsId"
+                 type="text"
+                 placeholder="Sport Participants (required)"
+                 formControlName="sportParticipants"
+                 [ngClass]="{'is-invalid': displayMessage.sportParticipants}" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportParticipants}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportDivisionsId">Sport Divisions:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportDivisionsId"
+                 type="text"
+                 placeholder="Sport Divisions (required)"
+                 formControlName="sportDivisions"
+                 [ngClass]="{'is-invalid': displayMessage.sportDivisions}" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportDivisions}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportLevelsId">Sport Levels:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportLevelsId"
+                 type="text"
+                 placeholder="Sport Levels (required)"
+                 formControlName="sportLevels"
+                 [ngClass]="{'is-invalid': displayMessage.sportLevels}" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportLevels}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="sportBreakdownsId">Sport Breakdowns:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="sportBreakdownsId"
+                 type="text"
+                 placeholder="Sport Breakdowns (required)"
+                 formControlName="sportBreakdowns"
+                 [ngClass]="{'is-invalid': displayMessage.sportBreakdowns}" />
+          <span class="invalid-feedback">
+            {{displayMessage.sportBreakdowns}}
+          </span>
+        </div>
+      </div>    
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="sportForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!sportForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/sports']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this sport"
+                  (click)="deleteSport()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

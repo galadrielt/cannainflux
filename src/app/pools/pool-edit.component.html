@@ -1,0 +1,213 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="savePool()"
+          [formGroup]="poolForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolNameId">Pool Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolNameId"
+                 type="text"
+                 placeholder="Pool Name (required)"
+                 formControlName="poolName"
+                 [ngClass]="{'is-invalid': displayMessage.poolName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolName}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolDeadlineDateId">Pool Deadline Date:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolDeadlineDateId"
+                 type="text" 
+                 bsDatepicker
+                 placeholder="Deadline Date (required)"
+                 formControlName="poolDeadlineDate"
+                 [ngClass]="{'is-invalid': displayMessage.poolDeadlineDate }" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolDeadlineDate}}
+          </span>
+        </div>
+      </div>
+      
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolDeadlineTimeId">Pool Deadline Time:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolDeadlineTimeId"
+                 type="text"
+                 placeholder="DeadlineTime (required)"
+                 formControlName="poolDeadlineTime"
+                 [ngClass]="{'is-invalid': displayMessage.poolDeadlineTime }" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolDeadlineTime}}
+          </span>
+        </div>
+      </div>
+     
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolImageUrlBackgroundId">Pool Background Image Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolImageUrlBackgroundId"
+                 type="text"
+                 placeholder="Image Url Background (required)"
+                 formControlName="poolImageUrlBackground"
+                 [ngClass]="{'is-invalid': displayMessage.poolImageUrlBackground}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolImageUrlBackground}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolImageUrlBackgroundId">Pool Main Image Url:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolImageUrlBackgroundId"
+                 type="text"
+                 placeholder="Image Url Background (required)"
+                 formControlName="poolImageUrlBackground"
+                 [ngClass]="{'is-invalid': displayMessage.poolImageUrlBackground}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolImageUrlBackground}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolTypeId">Pool Type:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolTypeId"
+                 type="text"
+                 placeholder="Pool Type (required)"
+                 formControlName="poolType"
+                 [ngClass]="{'is-invalid': displayMessage.poolType}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolType}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolPaymentBreakdownId">Pool Payment Breakdown:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolPaymentBreakdownId"
+                 type="text"
+                 placeholder="Payment Breakdown (required)"
+                 formControlName="poolPaymentBreakdown"
+                 [ngClass]="{'is-invalid': displayMessage.poolPaymentBreakdown}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolPaymentBreakdown}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolAmountId">Pool Entry Amount:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolEntryAmountId"
+                 type="text"
+                 placeholder="Pool Entry Amount (required)"
+                 formControlName="poolEntryAmount"
+                 [ngClass]="{'is-invalid': displayMessage.poolEntryAmount}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolEntryAmount}}
+          </span>
+        </div>
+      </div>      
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolTotalEntriesAllowedId">Total Entries Allowed:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolTotalEntriesAllowedId"
+                 type="text"
+                 placeholder="Pool Total Entries Allowed (required)"
+                 formControlName="poolTotalEntriesAllowed"
+                 [ngClass]="{'is-invalid': displayMessage.poolTotalEntriesAllowed }" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolTotalEntriesAllowed}}
+          </span>
+        </div>
+      </div> 
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolOrganizerId">Pool Organizer Full Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolOrganizerId"
+                 type="text"
+                 placeholder="Organizer Full Name (required)"
+                 formControlName="poolOrganizer"
+                 [ngClass]="{'is-invalid': displayMessage.poolOrganizer }" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolOrganizer}}
+          </span>
+        </div>
+      </div> 
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="poolOrganizerPhoneId">Organizer Phone:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="poolOrganizerPhoneId"
+                 type="text"
+                 placeholder="Organizer Phone (required)"
+                 formControlName="poolOrganizerPhone"
+                 [ngClass]="{'is-invalid': displayMessage.poolOrganizerPhone}" />
+          <span class="invalid-feedback">
+            {{displayMessage.poolOrganizerPhone}}
+          </span>
+        </div>
+      </div> 
+
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="poolForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!poolForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/pools']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this pool"
+                  (click)="deletePool()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>
+<!--<pre>{{pool|json}}</pre>-->

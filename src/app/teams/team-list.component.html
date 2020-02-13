@@ -1,0 +1,87 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}} ({{teams.length}} total)
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2">Filter by:</div>
+        <div class="col-md-4">
+          <input type="text"
+                 [(ngModel)]="listFilter" />
+        </div>
+        <div class="nav-ml-auto">
+            <button class="btn btn-outline-success btn-sm"
+            routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/teams/0/edit']">
+             +Add New
+            </button>
+        </div>
+      </div>
+      <div class="row"
+           *ngIf="listFilter">
+        <div class="col-md-6">
+          <h4>Filtered by: {{listFilter}}</h4>
+        </div>
+      </div>
+  
+      <div class="table-responsive">
+        <table class="table mb-0"
+               *ngIf="teams && teams.length">
+          <thead>
+            <tr>
+              <th>
+                <button class="btn btn-outline-primary btn-sm"
+                        (click)="toggleImage()">
+                  {{showImage ? "Hide" : "Show"}} Image
+                </button>
+              </th>
+              <th>Team Name</th>
+              <th>Team Abbr</th>
+              <th>Mascot</th>
+              <th>Conference</th>
+              <th>City</th>
+              <th>State</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let team of filteredTeams">
+              <td>
+                <img *ngIf="showImage && team.teamMascotUrl"
+                     [src]="mascotBaseUrl + team.teamMascotUrl"
+                     [title]="team.teamName"
+                     [style.height.px]="imageHeight"
+                     [style.margin.px]="imageMargin">
+              </td>
+              <td>
+                <a [routerLink]="['/teams', team.id]">
+                  {{ team.teamName }}
+                </a>
+              </td>
+              <td>{{ team.teamAbbreviation }}</td>
+              <td>{{ team.teamMascotName }}</td>
+              <td>{{ team.teamConference }}</td>
+              <td>{{ team.teamCity }}</td>
+              <td>{{ team.teamState }}</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/teams', team.id, 'edit']">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  </div>
+  <div *ngFor="let tm of filteredTeams">
+    <p>{{tm.teamName}}</p>
+  </div>
+  
+  
+  <div *ngIf="errorMessage"
+       class="alert alert-danger">
+    Error: {{ errorMessage }}
+  </div>
