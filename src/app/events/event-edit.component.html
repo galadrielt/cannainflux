@@ -9,10 +9,10 @@
           [formGroup]="eventForm" autofocus>
 
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventSportId">Sport:</label>
+
         <div class="col-md-8">
-            <select formControlName="eventSport">
+          <label class="col-md-2 col-form-label" for="eventSportId">Sport:</label>
+          <select id="eventSportId"  formControlName="eventSport">
                 <option *ngFor="let stc of sts" [attr.selected]="eventSport==stc ? true :  null" [value]="stc">{{stc}}</option>
               </select>
           <span class="invalid-feedback">
@@ -25,7 +25,7 @@
         <label class="col-md-2 col-form-label"
                for="eventTypeId">Event Type:</label>
         <div class="col-md-8">
-          <select formControlName="eventType">
+          <select id="eventTypeId" formControlName="eventType">
             <option [attr.selected]="eventType=='Tournament' ? true :  null" value="Tournament">Tournament</option>
             <option [attr.selected]="eventType=='Dual' ? true :  null" value="Tournament">Dual</option>
           </select>
@@ -247,7 +247,7 @@
     <!--
     <div class="form-group row mb-2">
       <label class="col-md-2 col-form-label"
-             for="eventDivisionsId">Event Divisions:</label>
+        for="eventDivisionsId">Event Divisions:</label>
       <div class="col-md-8">
       <mat-form-field class="example-chip-list" style="width: 100%;">
         <mat-chip-list formArrayName="eventDivisions" #chipList aria-label="Divisions selection">
@@ -260,10 +260,10 @@
             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
           </mat-chip>
           <input placeholder="New Division..."
-                 [matChipInputFor]="chipList"
-                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                 [matChipInputAddOnBlur]="addOnBlur"
-                 (matChipInputTokenEnd)="addChip($event, division)">
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="addChip($event, division)">
         </mat-chip-list>
       </mat-form-field>
         <p id="divisions-id-hint" class="input-hint">
@@ -287,7 +287,8 @@
             {{val}}
             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
           </mat-chip>
-          <input [placeholder]="item.value.name"
+          <label for="div">Event Division</label>
+          <input id="div" [placeholder]="item.value.name"
             [matChipInputFor]="chipList"
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
             [matChipInputAddOnBlur]="addOnBlur"

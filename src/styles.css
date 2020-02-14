@@ -381,3 +381,6 @@ div.jQBracket.rl .highlightWinner .bubble:after {
 div.jQBracket.rl .highlightLoser .bubble:after {
   border-left-color: #ccc
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

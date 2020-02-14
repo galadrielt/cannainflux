@@ -15,6 +15,7 @@ import { EventEditGuard } from './event-edit.guard';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon'
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { CommonModule } from '@angular/common';
         canDeactivate: [EventEditGuard],
         component: EventEditComponent
       }
-    ])
+    ]),
+    MatFormFieldModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

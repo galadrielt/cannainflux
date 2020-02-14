@@ -1,7 +1,8 @@
 //Core
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 //Components
@@ -22,6 +23,7 @@ import { SportModule } from './sports/sport.module';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon'
 import { DemoMaterialModule } from './material-module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -51,7 +53,8 @@ import { DemoMaterialModule } from './material-module';
     MatchesModule,
     MatChipsModule,
     MatIconModule,
-    DemoMaterialModule
+    DemoMaterialModule,
+    BrowserAnimationsModule
 
 
   ],
