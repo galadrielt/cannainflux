@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "oderwat.indent-rainbow",
+    "johnpapa.vscode-peacock",
+    "mhutchie.git-graph",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "formulahendry.auto-rename-tag",
+    "rbbit.typescript-hero",
+    "DavidAnson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "editorconfig.editorconfig"
+  ]
+}
