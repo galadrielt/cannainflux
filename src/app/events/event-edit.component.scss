@@ -5,7 +5,12 @@
 $md-chip-height: 32px;
 $md-chip-color: #e0e0e0;
 
-.example-chip-list {
+.divisions {
+  width: 100%;
+}
+
+
+table {
   width: 100%;
 }
 
@@ -36,7 +41,8 @@ $md-chip-color: #e0e0e0;
   width: $md-chip-height;
   border-radius: 50%;
   text-align: center;
-  color: white;
+  //color: white;
+  color: blue;
   margin: 0 8px 0 -12px;
 }
 

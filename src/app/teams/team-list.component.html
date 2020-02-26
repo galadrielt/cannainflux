@@ -76,11 +76,7 @@
   
     </div>
   </div>
-  <div *ngFor="let tm of filteredTeams">
-    <p>{{tm.teamName}}</p>
-  </div>
-  
-  
+
   <div *ngIf="errorMessage"
        class="alert alert-danger">
     Error: {{ errorMessage }}

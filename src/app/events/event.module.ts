@@ -16,6 +16,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon'
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+
 
 @NgModule({
   imports: [
@@ -24,6 +26,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CommonModule,
     MatChipsModule,
     MatIconModule,
+    MatTableModule,
     InMemoryWebApiModule.forRoot(EventData),
     RouterModule.forChild([
       { path: 'events', component: EventListComponent },

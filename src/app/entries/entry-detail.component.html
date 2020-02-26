@@ -1,0 +1,56 @@
+<div class="card">
+    <div class="card-header"
+         *ngIf="entry">
+      {{pageTitle + ": Entry id:" + entry.id}}
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        &nbsp;&nbsp;<button class="btn btn-outline-secondary mr-3"
+                style="width:80px"
+                (click)="onBack()">
+          <i class="fa fa-chevron-left"></i> Back
+        </button>
+      </div>
+    </div>
+  
+    <div class="card-body"
+         *ngIf="entry">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-6">{{entry.entryName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Username:</div>
+            <div class="col-md-6">{{entry.entryUsername}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Picks:</div>
+            <div class="col-md-6">
+              #1 Seed: {{entry.entryPick1}}<br>
+              #2 Seed: {{entry.entryPick2}}<br>
+              #3 Seed: {{entry.entryPick3}}<br>
+              #4 Seed: {{entry.entryPick4}}<br>
+              #5 Seed: {{entry.entryPick5}}<br>
+              #6 Seed: {{entry.entryPick6}}<br>
+              #7 Seed: {{entry.entryPick7}}<br>
+              #8 Seed: {{entry.entryPick8}}<br>
+              #9 Seed: {{entry.entryPick9}}<br>
+              #10 Seed: {{entry.entryPick10}}<br>
+              #11 Seed: {{entry.entryPick11}}<br>
+              #12 Seed: {{entry.entryPick12}}<br>
+              #13 Seed: {{entry.entryPick13}}<br>
+              #14 Seed: {{entry.entryPick14}}<br>
+              #15 Seed: {{entry.entryPick15}}<br>
+              #16 Seed: {{entry.entryPick16}}<br>
+            </div>
+          </div>
+        </div>    
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

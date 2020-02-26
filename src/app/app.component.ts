@@ -29,6 +29,9 @@ import { Component } from '@angular/core';
         <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
         [routerLink]="['/pools']">Pools</a>
         </li>
+        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+        [routerLink]="['/entries']">Entries</a>
+        </li>
       </ul>
       
       <ul class='navbar-nav ml-auto'>
@@ -39,7 +42,7 @@ import { Component } from '@angular/core';
               [routerLink]="['/events/0/edit']">Create</a>
         </li>-->
         <li class='nav-item topnav-right'><button class="btn btn-outline-success" type="button" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/signup']">Get Started</button>
+        [routerLink]="['/entries/0/edit']">Get Started</button>
         </li>
       </ul>
     </nav>

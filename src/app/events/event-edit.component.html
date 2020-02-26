@@ -7,11 +7,9 @@
     <form novalidate
           (ngSubmit)="saveEvent()"
           [formGroup]="eventForm" autofocus>
-
       <div class="form-group row mb-2">
-
+        <label class="col-md-2 col-form-label" for="eventSportId">Sport:</label>
         <div class="col-md-8">
-          <label class="col-md-2 col-form-label" for="eventSportId">Sport:</label>
           <select id="eventSportId"  formControlName="eventSport">
                 <option *ngFor="let stc of sts" [attr.selected]="eventSport==stc ? true :  null" [value]="stc">{{stc}}</option>
               </select>
@@ -188,6 +186,7 @@
           </span>
         </div>
       </div>
+      
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="eventImageUrlId">Event Image Url:</label>
@@ -202,162 +201,207 @@
             {{displayMessage.eventImageUrl}}
           </span>
         </div>
-      </div>
-  <!--
-      <div class="form-group row mb-2" *ngIf="event">
-        <label class="col-md-2 col-form-label"
-               for="eventDivisionsId">Event Divisions:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventDivisionsId"
-                 type="text"
-                 value="{{event.eventDivisions}}"
-                 formArrayName="eventDivisions"
-                 [ngClass]="{'is-invalid': displayMessage.eventDivisions }" />
-                 <p id="levels-id-hint" class="input-hint">
-                  Divisions mean age levels (8 year olds, peewee), College, High School....
-                 </p>
-          <span class="invalid-feedback">
-            {{displayMessage.eventDivisions}}
-          </span>
-        </div>
-      </div>
-
-      <div class="form-group row mb-2" *ngIf="event || pageTitle=='Create an Event'">
-        <label class="col-md-2 col-form-label" for="eventLevelsId">
-          Event Levels:
-        </label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventLevelsId"
-                 type="text"
-                 value="{{event.eventLevels}}"
-                 formArrayName="eventLevels"
-                 [ngClass]="{'is-invalid': displayMessage.eventLevels }" />
-                 <p id="levels-id-hint" class="input-hint">
-                  Levels mean experience levels (novice, JV, Varsity), Rank (martial arts belts)....
-                 </p>
-          <span class="invalid-feedback">
-            {{displayMessage.eventLevels}}
-          </span>
-        </div>
-      </div>
-    -->
-
-    <!--
+    </div>
     <div class="form-group row mb-2">
       <label class="col-md-2 col-form-label"
-        for="eventDivisionsId">Event Divisions:</label>
+             for="eventOrganizerFullNameId">Organizer:</label>
       <div class="col-md-8">
-      <mat-form-field class="example-chip-list" style="width: 100%;">
-        <mat-chip-list formArrayName="eventDivisions" #chipList aria-label="Divisions selection">
-          <mat-chip *ngFor="let division of divisions; let i=index;"
-                  [formGroupName]="i"
-                  [selectable]="selectable"
-                  [removable]="removable"
-                  (removed)="removeChip(division)">
-            {{level.name}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input placeholder="New Division..."
-                [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                [matChipInputAddOnBlur]="addOnBlur"
-                (matChipInputTokenEnd)="addChip($event, division)">
-        </mat-chip-list>
-      </mat-form-field>
-        <p id="divisions-id-hint" class="input-hint">
-          Divisions mean age levels (8 year olds, peewee), College, High School....
-        </p>
-      <span class="invalid-feedback">
-        {{displayMessage.eventDivisions}}
-      </span>
+        <input class="form-control"
+               id="eventOrganizerFullNameId"
+               type="text"
+               placeholder="Organizer Full Name (required)"
+               formControlName="eventOrganizerFullName"
+               [ngClass]="{'is-invalid': displayMessage.eventOrganizerFullName }" />
+        <span class="invalid-feedback">
+          {{displayMessage.eventOrganizerFullName}}
+        </span>
       </div>
-      </div>
-
-    -->
-    <div formArrayName="divisions_F"
-      *ngFor="let item of eventForm.get('divisions_F')['controls']; let i = index;">
-      <mat-form-field class="example-chip-list" [formGroupName]="i">
-        <mat-chip-list #chipList >
-          <mat-chip *ngFor="let val of item.value.val"
-            [selectable]="selectable"
-            [removable]="removable"
-            (removed)="removeChip(item, val)">
-            {{val}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <label for="div">Event Division</label>
-          <input id="div" [placeholder]="item.value.name"
-            [matChipInputFor]="chipList"
-            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-            [matChipInputAddOnBlur]="addOnBlur"
-            (matChipInputTokenEnd)="addChip($event, item)">
-        </mat-chip-list>
-        <mat-error>Atleast 1 name need to be added</mat-error>
-      </mat-form-field>
     </div>
-
-    <!--
-      <div class="form-group" formArrayName="eventDivisions"
-      *ngFor="let item of eventForm.get('eventDivisions')['controls']; let i = index;">
-      <mat-form-field class="example-chip-list" [formGroupName]="i">
-        <mat-chip-list #chipList >
-          <mat-chip *ngFor="let val of item.value.val"
-            [selectable]="selectable"
-            [removable]="removable"
-            (removed)="removeChip(item, val)">
-            {{val}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input [placeholder]="item.value.name"
-            [matChipInputFor]="chipList"
-            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-            [matChipInputAddOnBlur]="addOnBlur"
-            (matChipInputTokenEnd)="addChip($event, item)">
-        </mat-chip-list>
-        <mat-error>Atleast 1 name need to be added</mat-error>
-      </mat-form-field>
-    </div>
-
-  -->
-<!--
-
     <div class="form-group row mb-2">
       <label class="col-md-2 col-form-label"
-             for="eventLevelsId">Event Levels:</label>
+             for="eventOrganizerPhoneId">Organizer Phone#:</label>
       <div class="col-md-8">
-      <mat-form-field class="example-chip-list" style="width: 100%;">
-        <mat-chip-list formArrayName="eventLevels" #chipList aria-label="Levels selection">
-          <mat-chip *ngFor="let level of levels; let i=index;"
-                  [formGroupName]="i"
-                  [selectable]="selectable"
-                  [removable]="removable"
-                  (removed)="removeChip(level)">
-            {{level.name}}
-            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input placeholder="New Level..."
+        <input class="form-control"
+               id="eventOrganizerPhoneId"
+               type="text"
+               placeholder="Organizer Phone (required)"
+               formControlName="eventOrganizerPhone"
+               [ngClass]="{'is-invalid': displayMessage.eventOrganizerPhone }" />
+        <span class="invalid-feedback">
+          {{displayMessage.eventOrganizerPhone}}
+        </span>
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="eventExtraInstructionsId">Extra Instructions:</label>
+
+      <div class="col-md-8">
+        <textarea class="form-control"
+                  id="eventExtraInstructionsId"
+                  placeholder="Any additional information here"
+                  rows=3
+                  formControlName="eventExtraInstructions"
+                  [ngClass]="{'is-invalid': displayMessage.eventExtraInstructions}"></textarea>
+        <span class="invalid-feedback">
+          {{ displayMessage.eventExtraInstructions}}
+        </span>
+      </div>
+    </div>
+<!-- Divide out the Information (static creation) from the setup (dynamic - user generated) -->
+<div><HR WIDTH="100%" COLOR="#6699FF"><br>Build Event Details<br><br></div>
+
+  <div class="form-group row mb-2">
+    <label class="col-md-2 col-form-label"
+    for="eventDivisionId">Divisions:</label>
+    <div class="col-md-8">
+      <mat-form-field class="divisions" formArrayName="eventDivisions">
+        <mat-chip-list #chipList aria-label="Divisions selection">
+          <input placeholder="Enter Divisions eg. Youth, High School, College"
                  [matChipInputFor]="chipList"
                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                  [matChipInputAddOnBlur]="addOnBlur"
-                 (matChipInputTokenEnd)="addChip($event, level)">
+                 (matChipInputTokenEnd)="add($event)"
+                 >
         </mat-chip-list>
+        <mat-error>At least 1 division need to be added</mat-error>
+        <mat-chip *ngFor="let division of divisions" [selectable]="selectable"
+        [removable]="removable" color="primary" selected="true" (removed)="remove(division)">
+          {{division.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
       </mat-form-field>
-        <p id="levels-id-hint" class="input-hint">
-          Levels mean experience levels (novice, JV, Varsity), Rank (martial arts belts)....
-        </p>
-      <span class="invalid-feedback">
-        {{displayMessage.eventLevels}}
+          <span class="invalid-feedback">
+        {{displayMessage.eventUrl}}
       </span>
-      </div>
-      </div>
+    </div>
+  </div>
 
--->
+  <div class="form-group row mb-2">
+    <label class="col-md-2 col-form-label"
+           for="eventBracketTypeId">Bracket Type:</label>
+    <div class="col-md-8">
+      <input class="form-control"
+             id="eventBracketTypeId"
+             type="text"
+             placeholder="BracketType (required)"
+             formControlName="eventBracketType"
+             [ngClass]="{'is-invalid': displayMessage.eventBracketType }" />
+      <span class="invalid-feedback">
+        {{displayMessage.eventBracketType}}
+      </span>
+    </div>
+  </div>
+    
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="eventPlaceWinnersId">Number of Placers:</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="eventPlaceWinnersId"
+               type="text"
+               placeholder="PlaceWinners (required)"
+               formControlName="eventPlaceWinners"
+               [ngClass]="{'is-invalid': displayMessage.eventPlaceWinners }" />
+        <span class="invalid-feedback">
+          {{displayMessage.eventPlaceWinners}}
+        </span>
+      </div>
+    </div>
 
-      <div formArrayName="eventBreakdowns">
+
+    <div class="form-group row mb-2" *ngFor="let divis of divisions; let m=index" >
+      <label class="col-md-2 col-form-label"
+             for="eventBreakdownsId">{{m+1}}. {{divis.name}}:</label>
+      <div class="col-md-8">    
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weights">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let weight of event.eventBreakdowns[m]; let y=index;" [formGroupName]="y">
+          <mat-form-field>
+            {{weight}}
+            <!-- <input class="form-control"
+            id="eventBreakdowns"
+            type="text"
+            placeholder="Number of Weights"
+            formControlName="weights"
+            [ngClass]="{'is-invalid': displayMessage.eventBracketNumOfParticipantsPerClass }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.eventBracketNumOfParticipantsPerClass}}
+            </span>
+          </mat-form-field>  
+        </td>
+      </ng-container>
+      
+      <!-- Participants Column --> 
+      <ng-container matColumnDef="participants">
+        <th mat-header-cell *matHeaderCellDef> # of Participants </th>
+        <td mat-cell *matCellDef="let participant of event.eventBracketNumOfParticipantsPerClass[m]; let y = index">
+          <mat-form-field>
+            {{participant}}
+            <!-- <input class="form-control"
+            id="eventBracketNumOfParticipantsPerClassId"
+            type="text"
+            placeholder="Number of Participants"
+            formControlName="participants"
+            [ngClass]="{'is-invalid': displayMessage.eventBracketNumOfParticipantsPerClass }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.eventBracketNumOfParticipantsPerClass}}
+            </span>
+          </mat-form-field>  
+        </td>
+      </ng-container>
+         
+      <!-- Seeding Column -->
+      <ng-container matColumnDef="seeds">
+        <th mat-header-cell *matHeaderCellDef> # of Seeds </th>
+        <td mat-cell *matCellDef="let seed of event.eventNumOfSeeding[m]; let z = index">
+          <mat-form-field>
+            {{seed}}
+            <!-- <input class="form-control"
+            id="eventNumOfSeedingId"
+            type="text"
+            placeholder="Number of seeds"
+            formControlName="seeds"
+            [ngClass]="{'is-invalid': displayMessage.eventNumOfSeeding }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.eventNumOfSeeding}}
+            </span>
+          </mat-form-field>  
+        </td>
+      </ng-container>
+    
+      <!-- Delete Column -->
+      <ng-container matColumnDef="deleting">
+        <th mat-header-cell *matHeaderCellDef> # of Seeds </th>
+        <td mat-cell *matCellDef="let level; let z = index">
+          <mat-form-field>
+            <button class="col-md-1 btn btn-outline-warning btn-sm"
+            type="button"
+            title="Delete this weight class"
+            (click)="deleteEventBreakdown(z)">Delete
+            </button>
+          </mat-form-field>  
+        </td>
+      </ng-container> 
+
+      <!-- Delete Button -->
+      <ng-container matColumnDef="delete">
+
+      </ng-container>      
+      
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+<!--
+    <div formArrayName="eventBreakdowns">
         <div class="form-group row mb-4">
-
           <label class="col-md-4 col-form-label">
             Weight Classes: <b *ngIf="event">{{event.eventBreakdowns.length}} Total</b>
           </label>
@@ -375,14 +419,25 @@
                    type="text"
                    placeholder="Weight Class #{{i+1}}"
                    [formControlName]="i" />
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="# of Participants #{{i+1}}"
+                   [formControlName]="i" />
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="# of Seeds #{{i+1}}"
+                   [formControlName]="i" />
           </div>
+          
           <button class="col-md-1 btn btn-outline-warning btn-sm"
                   type="button"
                   title="Delete this weight class"
                   (click)="deleteEventBreakdown(i)">Delete
           </button>
         </div>
-      </div>
+    </div>
 
       <div class="row">
         <div class="col-md-2 mb-2">
@@ -394,82 +449,6 @@
         </div>
       </div>
 
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventSeedingId">Event Seeding:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventSeedingId"
-                 type="text"
-                 placeholder="Seeding (required)"
-                 formControlName="eventSeeding"
-                 [ngClass]="{'is-invalid': displayMessage.eventSeeding }" />
-          <span class="invalid-feedback">
-            {{displayMessage.eventSeeding}}
-          </span>
-        </div>
-      </div>
-
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventNumOfSeedingId">Number of Seeds:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventNumOfSeedingId"
-                 type="text"
-                 placeholder="NumOfSeeding (required)"
-                 formControlName="eventNumOfSeeding"
-                 [ngClass]="{'is-invalid': displayMessage.eventNumOfSeeding }" />
-          <span class="invalid-feedback">
-            {{displayMessage.eventNumOfSeeding}}
-          </span>
-        </div>
-      </div>
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventOrganizerFullNameId">Organizer:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventOrganizerFullNameId"
-                 type="text"
-                 placeholder="Organizer Full Name (required)"
-                 formControlName="eventOrganizerFullName"
-                 [ngClass]="{'is-invalid': displayMessage.eventOrganizerFullName }" />
-          <span class="invalid-feedback">
-            {{displayMessage.eventOrganizerFullName}}
-          </span>
-        </div>
-      </div>
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventOrganizerPhoneId">Organizer Phone#:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventOrganizerPhoneId"
-                 type="text"
-                 placeholder="Organizer Phone (required)"
-                 formControlName="eventOrganizerPhone"
-                 [ngClass]="{'is-invalid': displayMessage.eventOrganizerPhone }" />
-          <span class="invalid-feedback">
-            {{displayMessage.eventOrganizerPhone}}
-          </span>
-        </div>
-      </div>
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventBracketTypeId">Bracket Type:</label>
-        <div class="col-md-8">
-          <input class="form-control"
-                 id="eventBracketTypeId"
-                 type="text"
-                 placeholder="BracketType (required)"
-                 formControlName="eventBracketType"
-                 [ngClass]="{'is-invalid': displayMessage.eventBracketType }" />
-          <span class="invalid-feedback">
-            {{displayMessage.eventBracketType}}
-          </span>
-        </div>
-      </div>
       <div class="form-group row mb-2" *ngIf="event">
         <label class="col-md-2 col-form-label"
                for="eventBracketNumOfParticipantsPerClassId">Number of Participants:</label>
@@ -488,36 +467,20 @@
       </div>
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
-               for="eventPlaceWinnersId">Number of Placers:</label>
+               for="eventNumOfSeedingId">Number of Seeds:</label>
         <div class="col-md-8">
           <input class="form-control"
-                 id="eventPlaceWinnersId"
+                 id="eventNumOfSeedingId"
                  type="text"
-                 placeholder="PlaceWinners (required)"
-                 formControlName="eventPlaceWinners"
-                 [ngClass]="{'is-invalid': displayMessage.eventPlaceWinners }" />
+                 placeholder="NumOfSeeding (required)"
+                 formControlName="eventNumOfSeeding"
+                 [ngClass]="{'is-invalid': displayMessage.eventNumOfSeeding }" />
           <span class="invalid-feedback">
-            {{displayMessage.eventPlaceWinners}}
+            {{displayMessage.eventNumOfSeeding}}
           </span>
         </div>
       </div>
-      <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="eventExtraInstructionsId">Extra Instructions:</label>
-
-        <div class="col-md-8">
-          <textarea class="form-control"
-                    id="eventExtraInstructionsId"
-                    placeholder="Any additional information here"
-                    rows=3
-                    formControlName="eventExtraInstructions"
-                    [ngClass]="{'is-invalid': displayMessage.eventExtraInstructions}"></textarea>
-          <span class="invalid-feedback">
-            {{ displayMessage.eventExtraInstructions}}
-          </span>
-        </div>
-      </div>
-
+    -->
       <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
           <button class="btn btn-primary mr-3"

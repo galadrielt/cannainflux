@@ -20,10 +20,12 @@ import { WrestlerModule } from './wrestlers/wrestler.module';
 import { PoolModule } from './pools/pool.module';
 import { MatchesModule } from './matches/matches.module';
 import { SportModule } from './sports/sport.module';
+import { EntryModule } from './entries/entry.module';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon'
 import { DemoMaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -38,6 +40,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatTableModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -49,6 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamModule,
     SportModule,
     UserModule,
+    EntryModule,
     EventModule,
     MatchesModule,
     MatChipsModule,

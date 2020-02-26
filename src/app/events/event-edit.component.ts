@@ -11,10 +11,17 @@ import {SportService} from '../sports/sport.service';
 import {GenericValidator} from '../shared/generic-validator';
 
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent, MatChipList} from '@angular/material/chips';
+import {MatChipInputEvent, MatChipList, } from '@angular/material/chips';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 export interface Levels {
+  weight: String;
+  participants: number;
+  seeds: number;
+}
+
+export interface Divisions {
   name: string;
 }
 
@@ -30,7 +37,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   pageTitle = 'Create an Event';
-  //HTML Only variables - stored as an array but for error checking on the users
+  // HTML Only variables - stored as an array but for error checking on the users
 
   errorMessage: string;
   eventForm: FormGroup;
@@ -53,7 +60,38 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  levels: Levels[] = [];
+
+
+  levels_data = {
+                  name: '', levels: [{weight:'', participants:null, seeds: null}]
+                };
+
+  divisions: Divisions[] = [];
+  datasource: MatTableDataSource<any>;
+
+
+  // data to check the initial form
+//   data = {
+//     names: [this.initName('Divisions'),
+//     [
+//     {name:"High School", levels:[ 
+//                           {name:"Frosh-Soph", breakdowns:["50", "60", "70"]}, 
+//                           {name:"JV", breakdowns:["50", "60", "70"]},
+//                           {name:"Varsity", breakdowns:["98", "106", "113", "118"]}
+//                               ]
+//     },
+//     {name:"Youth", levels:[
+//                           {name:"Age4-5", breakdowns:["50", "60", "70"]}, {name:"Age6-7", breakdowns:["50", "60", "70"]}, {name:"Age8-9", breakdowns:["50", "60", "70"]}
+//                           ]
+//     }
+//    ]
+//   ]
+// };
+
+  // data
+  data = {
+    divisions: [this.initName('Divisions')]
+  };
 
   get eventDivisions(): FormArray {
     //console.log("DivisionsFOR: ",this.eventForm.get('eventDivisions') as FormArray);
@@ -69,12 +107,6 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     //console.log("BreakdownsFOR: ",this.eventForm.get('eventBreakdowns') as FormArray);
     return this.eventForm.get('eventBreakdowns') as FormArray;
   }
-
-  // data
-  data = {
-    divisions: [this.initName('Divisions')]
-  };
-
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
@@ -107,6 +139,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
 
+
     this.sportNames.getSportNames().subscribe({
       next: sports => {
         this.sts = sports;
@@ -136,15 +169,16 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       eventLevels: this.fb.array([' ']),
       eventBreakdowns: this.fb.array([' ']),
       eventType: 'Tournament',
-      eventSeeding: '',
-      eventNumOfSeeding: null,
+      eventBracketNumOfParticipantsPerClass: this.fb.array(['']),
+      eventNumOfSeeding: this.fb.array(['']),
       eventOrganizerFullName: '',
       eventOrganizerPhone: null,
       eventBracketType: '',
-      eventBracketNumOfParticipantsPerClass: null,
       eventPlaceWinners: null,
       eventExtraInstructions: '',
-      divisions_F: this.fb.array(this.data.divisions, this.validateArrayNotEmpty)
+      weights: this.fb.array([' ']),
+      participants: this.fb.array([' ']),
+      seeds: this.fb.array([' ']),
     });
 
     // Read the eventId from the route parameter
@@ -154,11 +188,6 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
         this.getEvent(eventId);
       }
     );
-
-    this.eventForm.get('divisions_F').statusChanges.subscribe(
-      status => this.chipList.errorState = status === 'INVALID'
-    );
-
 
   }
 
@@ -206,7 +235,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     // Add name
     if ((value || '').trim()) {
       console.log("Val:", value, ctrl);
-      const control = ctrl;
+      var control = ctrl;
       control.value.val.push(value.trim());
       console.log("Control:", control);
       if (control.value.name == "Divisions") {
@@ -227,7 +256,7 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if (ctrl.value.name == "Divisions") {
       //console.log("PARENT:", ctrl, ctrl._parent.value[0], ctrl.value.name);
-      const control = <FormArray>this.eventForm.get('names_F');
+      const control = <FormArray>this.eventForm.get('divisions_F');
       control.removeAt(idx + 1);
     }
 
@@ -235,30 +264,66 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
+
+  add(evt: MatChipInputEvent): void {
+    const input = evt.input;
+    const value = evt.value;
+
+    // Add our More Chips
+    if ((value || '').trim()) {
+      this.divisions.push({name: value.trim()});
+      // I'm modifying the array directly but will it get saved unless they push the data by clicking button??
+      this.event.eventDivisions.push(value.trim());
+      this.eventForm.setControl('eventDivisions', this.fb.array(this.event.eventDivisions || []));
+      this.eventForm.markAsDirty();
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+    console.log("Divisions:", this.divisions)
+  }
+
+  remove(division: Divisions): void {
+    const index = this.divisions.indexOf(division);
+
+    if (index >= 0) {
+      this.divisions.splice(index, 1);
+      this.event.eventDivisions.splice(index, 1);
+      this.eventForm.setControl('eventDivisions', this.fb.array(this.event.eventDivisions || []));  
+      this.eventForm.markAsDirty();
+    }
+  }
+
   addNewChipList(new_chip_name: string) {
     console.log("New Chip:", new_chip_name);
-    const items = this.eventForm.get('names_F') as FormArray;
+    const items = this.eventForm.get('divisions_F') as FormArray;
     items.push(this.initName(new_chip_name));
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-
-  change($event) {
-    // Angular does not know that the value has changed
-    // from our component, so we need to update her with the new value.
-    this.onChange($event.target.textContent);
   }
 
   addEventBreakdown(): void {
     //console.log("addEventBreakdown");
+    // this.datasource = new MatTableDataSource(this.levels_data);
+    // this.eventBreakdowns.push(this.fb.group({
+    // weight:'',
+    // participants:'',
+    // seeds:'',
+    // }));
+    // this.levels_data.push({weight: "",participants: 0, seeds: 0});
+    // this.datasource = new MatTableDataSource(this.levels_data);
+
     this.eventBreakdowns.push(new FormControl());
+    //this.eventNumOfSeeding.push(new FormControl());
+    //this.eventBracketNumOfParticipantsPerClass.push(new FormControl());
   }
 
   deleteEventBreakdown(index: number): void {
     //console.log("deleteEventBreakdown:", index);
     this.eventBreakdowns.removeAt(index);
+    this.event.eventBreakdowns.splice(index, 1);
+    this.event.eventNumOfSeeding.splice(index, 1);
+    this.event.eventBracketNumOfParticipantsPerClass.splice(index, 1);
     this.eventBreakdowns.markAsDirty();
   }
 
@@ -280,16 +345,31 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       this.pageTitle = `Edit a event: ${this.event.eventName}`;
     }
 
-    /*
-    for(let lv of event.eventLevels){
-      this.levels.push({name: lv.trim()});
-    }*/
 
+  for (let divs of event.eventDivisions){
+    this.divisions.push({name: divs});
+  }
+
+
+    // CAN I Do this with spread operator??  ...
+    // INITIALIZE data for dynamic form - levels_data Array
+    // console.log("LEVELS_DATA:", this.levels_data);
+
+    // for (let k = 0; k < event.eventDivisions.length; k++){
+    //       this.divisions.push({name: event.eventDivisions[k]});
+    //       //this.levels_data.push({name: event.eventDivisions[k], levels:[]})
+    //       for(let i=0; i < event.eventBreakdowns[k].length; i++){
+    //         console.log(k, " Push :" , event.eventBreakdowns[k][i], this.event.eventBracketNumOfParticipantsPerClass[k][i], this.event.eventNumOfSeeding[k][i]);
+    //         this.levels_data[k].levels[i].push({weight: event.eventBreakdowns[k][i], participants: this.event.eventBracketNumOfParticipantsPerClass[k][i], seeds: this.event.eventNumOfSeeding[k][i]});
+    //       };
+    // };
+      
     this.eventForm.setControl('eventDivisions', this.fb.array(this.event.eventDivisions || []));
     //this.eventForm.setControl('eventLevels', this.fb.array(this.event.eventLevels || []));
-    this.eventForm.setControl('eventBreakdowns', this.fb.array(this.event.eventBreakdowns || []));
-    this.eventForm.setControl('divisions_F', this.fb.array(this.event.eventDivisions || []));
-
+    this.eventForm.setControl('weights', this.fb.array(this.event.eventBreakdowns || []));
+    this.eventForm.setControl('participants', this.fb.array(this.event.eventBracketNumOfParticipantsPerClass || []));
+    this.eventForm.setControl('seeds', this.fb.array(this.event.eventNumOfSeeding || []));
+  
 
     // Update the data on the form
     this.eventForm.patchValue({
@@ -306,7 +386,6 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
       eventSport: this.event.eventSport,
       eventUrl: this.event.eventUrl,
       eventType: this.event.eventType,
-      eventSeeding: this.event.eventSeeding,
       eventNumOfSeeding: this.event.eventNumOfSeeding,
       eventOrganizerFullName: this.event.eventOrganizerFullName,
       eventOrganizerPhone: this.event.eventOrganizerPhone,
@@ -332,9 +411,17 @@ export class EventEditComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  displayedColumns: string[] = ['weights', 'participants', 'seeds'];
+  //displayedColumns: string[] = ['weight'];
+
+
+  // SAVE FORM DATA HERE BELOW
+  // ----------------------------------
+
   saveEvent(): void {
     if (this.eventForm.valid) {
       if (this.eventForm.dirty) {
+        console.log("FORM VALUES SUMBITTED:", JSON.stringify(this.eventForm.value));
         const p = {...this.event, ...this.eventForm.value};
 
         if (p.id === 0) {

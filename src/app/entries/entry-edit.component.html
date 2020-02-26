@@ -1,0 +1,308 @@
+<div class="card">
+  <div class="card-header" 
+    style="background-image: url('assets/images/pools/ensure-background.jpg'); ">
+    <img class="center-block img-responsive"
+    [style.height.px]="75"
+    [style.margin.px]="2"
+    src="assets/images/pools/ensure-cup.png"
+    title="2020 Ensure Cup">
+    <span style="font-size: 15pt; padding: 10px;">2020 Ensure Cup© NCAA Bracket Challenge</span>
+    <span style="font-size: 10pt;  background:#222;
+    color:#fff;
+    display:block;
+    float:right;
+    margin:10px 10px 0 0;
+    padding:5px 10px">brought to you by: WAM Productions</span>
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveEntry()"
+          [formGroup]="entryForm">
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   for="entryNameId">Rules:</label>
+            <div class="col-md-8 rounded-header" >
+            <ol>
+              <li>You will pick one wrestler of each seed, up to 16 seed. (That is a total of 16 wrestlers)</li>
+              <li>Each weight class must be represented at least once</li>
+              <li>The way the tournament is scored determines how your wrestler scores. (pin points, advancement, penalties, etc.)</li>
+              <li>The more a wrestler gets picked by the group, the less his points are worth in accordance with our patented Ensure Cup© algorithm. So, diversify.</li> 
+              <li>In the unfortunate event that the seeds change after you submit your entry (meaning the seed no longer applies to the wrestler you chose), you are stuck with the seed, not the wrestler. </li>
+              <li>You can enter as many brackets as you like, as long as you pay</li>
+          </ol>
+              The entry fee is $30 per bracket, paid through PayPal (wamcpherson@gmail.com) or Venmo (Warren-McPherson). 3rd place gets their money back. 2nd place gets one-third the pot. The champion gets the rest of the money, bragging rights for a year and THE ENSURE CUP©.
+              <br>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryUsernameId">Your Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="entryUsernameId"
+                 type="text"
+                 placeholder="Your Name (required)"
+                 formControlName="entryUsername"
+                 [ngClass]="{'is-invalid': displayMessage.entryUsername}" />
+          <span class="invalid-feedback">
+            {{displayMessage.entryUsername}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryNameId">Your Bracket Name (use different names if you enter more than one bracket):</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="entryNameId"
+                 type="text"
+                 placeholder="Bracket Name (required)"
+                 formControlName="entryName"
+                 [ngClass]="{'is-invalid': displayMessage.entryName }" />
+          <span class="invalid-feedback">
+            {{displayMessage.entryName}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick1Id">#1 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick1">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" [ngClass]="{'is-invalid': displayMessage.entryName }" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick1}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick2Id">#2 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick2">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick2}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick3Id">#3 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick3">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick3}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick4Id">#4 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick4">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick4}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick5Id">#5 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick5">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick5}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick6Id">#6 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick6">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick6}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick7Id">#7 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick7">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick7}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick8Id">#8 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick8">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick8}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick9Id">#9 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick9">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick9}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick10Id">#10 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick10">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick10}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick11Id">#11 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick11">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick11}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick12Id">#12 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick12">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick12}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick13Id">#13 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick13">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick13}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick14Id">#14 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick14">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick14}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick15Id">#15 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick15">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick15}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="entryPick16Id">#16 Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="entryPick16">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryPick16}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="entryForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!entryForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/entries']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this entry"
+                  (click)="deleteEntry()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

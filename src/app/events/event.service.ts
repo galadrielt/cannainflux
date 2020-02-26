@@ -104,17 +104,15 @@ export class EventService {
       eventSport: 'Wrestling',
       eventDivisions: [' '],
       eventLevels: [' '],
-      eventBreakdowns: [' '],
+      eventBreakdowns: [['']],
       eventType: 'Tournament',
-      eventSeeding: null,
       eventNumOfSeeding: null,        
       eventOrganizerFullName: null,
       eventOrganizerPhone: null,
       eventBracketType: null,
       eventBracketNumOfParticipantsPerClass: null,
       eventPlaceWinners: null,
-      eventExtraInstructions: null,
-      divisions: ['']
+      eventExtraInstructions: null
     };
   }
 }

@@ -13,23 +13,25 @@ export interface Event {
   eventStartTime?: string;  //More complicated time for multi-day like session breakdowns and times.
   eventEndDate?: string; 
   eventEndTime?: string;  //By day or session or something
-  eventOrganizerFullName: string;
-  eventOrganizerPhone: number;
   eventUrl?:string;  //actual website
   eventImageUrl?: string;  //url to event image logo or UPLOAD FILE url
+  eventOrganizerFullName: string;
+  eventOrganizerPhone: number;
   eventExtraInstructions: string;
-  //End Main Event Information
+  // End Main Event Information
 
+
+  // 
   eventDivisions?: string[]; /* college is the only level now.  High Schoool, international, youth ... */
   eventLevels?: string[]; /* none (college - only one level for everyone) or white belt (judo/jiu-hitsu/karate/etc) or novice, frosh-soph, JV, Varsity, or 1A, 2A, 3A, 4A etc.*/
-  eventBreakdowns?: string[]; /* by weight class --- 125, 133, 141, 149... */
   
-  divisions?: string[]; /* by weight class --- 125, 133, 141, 149... */
-
-  /*TOURNAMENT - extends Event needed I think*/
+  eventBreakdowns?: string[][]; /* by weight class --- 125, 133, 141, 149... */
+  eventBracketNumOfParticipantsPerClass?: number[][];  //Number per Breakdown???  Doesn't work for multi event types gymnastics [beam, uneven bars, etc.]
+  eventNumOfSeeding: number[][];  //Rest are random
+  
+  /* TOURNAMENT - extends Event needed I think*/
   eventTournamentType?: string;  //Team or Individual maybe just a boolean
   eventBracketType: string;  //Double, Single, Pool, Round Robin, Winner takes all(race, gymnastics), Reperage only need this when it is a tournament
-  eventBracketNumOfParticipantsPerClass?: number[];  //Number per Breakdown???  Doesn't work for multi event types gymnastics [beam, uneven bars, etc.]
   eventPlaceWinners: number;  //create extra brackets for them
   eventBracketNumOfPlacers?: number;  //REPLACES eventPlacerWinners
   eventBracketPlaceDeterminer?: string; //consolation - no comeback, consolation - true winner, consolation - no comback best of 3
@@ -37,8 +39,6 @@ export interface Event {
   
   /*SEEDNING*/
   //eventSeedingNumOfRegions?: number; //1 for wresling, 4 for basketball, etc...
-  eventSeeding: string; //Random, by record, Yes, by Last Name, No (for like a race)
-  eventNumOfSeeding: number;  //Rest are random
   //eventSeedingNumOfPerRegion?: number;  //REPLACE eventNumOfSeeding
   //eventSeedingPigtails?: number[];  //if none it is random for each breakdown or if NumOfParticipants == NumOfSeeds no need to do it!!!
 
