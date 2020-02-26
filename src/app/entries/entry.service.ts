@@ -127,7 +127,8 @@ export class EntryService {
         entryPick14: '',
         entryPick15: '',
         entryPick16: '',
-        entryPoints: 0
+        entryPoints: 0,
+        entryMPicks: []
 
     };
   }

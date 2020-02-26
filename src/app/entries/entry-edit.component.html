@@ -66,6 +66,21 @@
         </div>
       </div>
 
+      <div formArray="entryMPicks" class="form-group row mb-2" *ngFor="let seed of numberOfPicks">
+        <label class="col-md-2 col-form-label"
+               for="entryMPicksId">#{{seed}} Seed:</label>
+          <div class="col-md-8">
+          <select formControlName="seed">
+            <option value="" [disabled]="true">--Choose one weight--</option>
+            <option *ngFor="let pick of weightClasses" [ngClass]="{'is-invalid': displayMessage.entryMPicks }" value="{{pick}}">{{pick}}</option>
+          </select>          
+          <span class="invalid-feedback">
+            {{displayMessage.entryMPicks}}
+          </span>
+        </div>
+      </div>
+
+
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="entryPick1Id">#1 Seed:</label>

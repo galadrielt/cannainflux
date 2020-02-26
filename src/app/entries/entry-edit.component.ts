@@ -136,7 +136,8 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
       entryPick13: ['', Validators.required],
       entryPick14: ['', Validators.required],
       entryPick15: ['', Validators.required],
-      entryPick16: ['', Validators.required]
+      entryPick16: ['', Validators.required],
+      entryMPick: this.fb.array[''],
     });
 
     // Read the entryId from the route parameter
