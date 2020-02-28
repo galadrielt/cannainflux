@@ -137,7 +137,6 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
       entryPick14: ['', Validators.required],
       entryPick15: ['', Validators.required],
       entryPick16: ['', Validators.required],
-      entryMPick: this.fb.array[''],
     });
 
     // Read the entryId from the route parameter
@@ -208,8 +207,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
       entryPick13: this.entry.entryPick13,
       entryPick14: this.entry.entryPick14,
       entryPick15: this.entry.entryPick15,
-      entryPick16: this.entry.entryPick16,
-      
+      entryPick16: this.entry.entryPick16,  
     });
   }
 

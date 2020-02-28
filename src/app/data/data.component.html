@@ -4,7 +4,73 @@
     </div>
     <div class="card-body col-md-12">
       <div class="container-fluid">
-        This is the results page.
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Barnes">
+        </mat-form-field>
+        <div class="example-container mat-elevation-z8">
+
+            <table mat-table [dataSource]="dataSource" matSort>
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.weight}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="seed">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Seed </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.seed}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.name}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="adPoints">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Advancement Points </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.adPoints}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actPoints">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Activity Points </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.actPoints}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="plPoints">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Placement Points </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.plPoints}} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="points">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Gross Points </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.points}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="numPicks">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> #Picks </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.numPicks}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="percentDiscount">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount Percent </th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.percentDiscount*100}}% </td>
+              </ng-container>
+
+              <ng-container matColumnDef="discountedPoints">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Final Score</th>
+                <td mat-cell *matCellDef="let wrestler"> {{wrestler.discountedPoints}} </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
       </div>
     </div>
   </div>
+ <pre><span>{{wSeeds | json}}</span></pre>
+ <pre><span>{{wDeductions | json}}</span></pre>
+ <pre><span>{{wPoints | json}}</span></pre>
+ 

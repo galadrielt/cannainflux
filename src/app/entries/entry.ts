@@ -20,6 +20,5 @@ export interface Entry {
     entryPick15: string,
     entryPick16: string,
     entryPoints: number,
-    entryMPicks?: string []
    }
    

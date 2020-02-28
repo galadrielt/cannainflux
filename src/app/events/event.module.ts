@@ -12,11 +12,11 @@ import { EventListComponent } from './event-list.component';
 import { EventDetailComponent } from './event-detail.component';
 import { EventEditComponent } from './event-edit.component';
 import { EventEditGuard } from './event-edit.guard';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon'
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon'
 
 
 @NgModule({

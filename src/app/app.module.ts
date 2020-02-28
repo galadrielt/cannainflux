@@ -18,14 +18,18 @@ import { TeamModule } from './teams/team.module';
 import { BracketsModule } from './brackets/brackets.module';
 import { WrestlerModule } from './wrestlers/wrestler.module';
 import { PoolModule } from './pools/pool.module';
+import { DataModule } from './data/data.module';
 import { MatchesModule } from './matches/matches.module';
 import { SportModule } from './sports/sport.module';
 import { EntryModule } from './entries/entry.module';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon'
 import { DemoMaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon'
 
 
 
@@ -41,6 +45,11 @@ import { MatTableModule } from '@angular/material/table';
     HttpClientModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatSortModule,
+    MatChipsModule,
+    MatIconModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -52,11 +61,10 @@ import { MatTableModule } from '@angular/material/table';
     TeamModule,
     SportModule,
     UserModule,
+    DataModule,
     EntryModule,
     EventModule,
     MatchesModule,
-    MatChipsModule,
-    MatIconModule,
     DemoMaterialModule,
     BrowserAnimationsModule
 
