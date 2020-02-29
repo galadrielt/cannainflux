@@ -1,0 +1,1622 @@
+[
+    [
+        {
+            "name": "Sebastian Rivera",
+            "seed": "1",
+            "weight": 125
+        },
+        {
+            "name": "Nicholas Piccininni",
+            "seed": "2",
+            "weight": 125
+        },
+        {
+            "name": "Spencer Lee",
+            "seed": "3",
+            "weight": 125
+        },
+        {
+            "name": "Ronnie Bresser",
+            "seed": "4",
+            "weight": 125
+        },
+        {
+            "name": "Jack Mueller",
+            "seed": "5",
+            "weight": 125
+        },
+        {
+            "name": "Sean Russell",
+            "seed": "6",
+            "weight": 125
+        },
+        {
+            "name": "Pat Glory",
+            "seed": "7",
+            "weight": 125
+        },
+        {
+            "name": "Vitali Arujau",
+            "seed": "8",
+            "weight": 125
+        },
+        {
+            "name": "RayVon Foley",
+            "seed": "9",
+            "weight": 125
+        },
+        {
+            "name": "Brent Fleetwood",
+            "seed": "10",
+            "weight": 125
+        },
+        {
+            "name": "Travis Piotrowski",
+            "seed": "11",
+            "weight": 125
+        },
+        {
+            "name": "Michael McGee",
+            "seed": "12",
+            "weight": 125
+        },
+        {
+            "name": "Drew Hildebrandt",
+            "seed": "13",
+            "weight": 125
+        },
+        {
+            "name": "Sean Fausz",
+            "seed": "14",
+            "weight": 125
+        },
+        {
+            "name": "Elijah Oliver",
+            "seed": "15",
+            "weight": 125
+        },
+        {
+            "name": "Drew Mattin",
+            "seed": "16",
+            "weight": 125
+        },
+        {
+            "name": "Devin Schroder",
+            "seed": "17",
+            "weight": 125
+        },
+        {
+            "name": "Zeke Moisey",
+            "seed": "18",
+            "weight": 125
+        },
+        {
+            "name": "Alex Mackall",
+            "seed": "19",
+            "weight": 125
+        },
+        {
+            "name": "Gabe Townsell",
+            "seed": "20",
+            "weight": 125
+        },
+        {
+            "name": "Jay Schwarm",
+            "seed": "21",
+            "weight": 125
+        },
+        {
+            "name": "Cole Verner",
+            "seed": "22",
+            "weight": 125
+        },
+        {
+            "name": "Carmen Ferrante",
+            "seed": "23",
+            "weight": 125
+        },
+        {
+            "name": "Rico Montoya",
+            "seed": "24",
+            "weight": 125
+        },
+        {
+            "name": "Malik Heinselman",
+            "seed": "25",
+            "weight": 125
+        },
+        {
+            "name": "Alonzo Allen",
+            "seed": "26",
+            "weight": 125
+        },
+        {
+            "name": "Dack Punke",
+            "seed": "27",
+            "weight": 125
+        },
+        {
+            "name": "Gage Curry",
+            "seed": "28",
+            "weight": 125
+        },
+        {
+            "name": "Christian Moody",
+            "seed": "29",
+            "weight": 125
+        },
+        {
+            "name": "Bryce West",
+            "seed": "30",
+            "weight": 125
+        },
+        {
+            "name": "Korbin Meink",
+            "seed": "31",
+            "weight": 125
+        },
+        {
+            "name": "Trey Chalifoux",
+            "seed": "33",
+            "weight": 125
+        }
+    ],
+    [
+        {
+            "name": "Daton Fix",
+            "seed": "1",
+            "weight": 133
+        },
+        {
+            "name": "Stevan Micic",
+            "seed": "2",
+            "weight": 133
+        },
+        {
+            "name": "Nick Suriano",
+            "seed": "3",
+            "weight": 133
+        },
+        {
+            "name": "Micky Phillippi",
+            "seed": "4",
+            "weight": 133
+        },
+        {
+            "name": "Luke Pletcher",
+            "seed": "5",
+            "weight": 133
+        },
+        {
+            "name": "Ethan Lizak",
+            "seed": "6",
+            "weight": 133
+        },
+        {
+            "name": "Austin DeSanto",
+            "seed": "7",
+            "weight": 133
+        },
+        {
+            "name": "John Erneste",
+            "seed": "8",
+            "weight": 133
+        },
+        {
+            "name": "Charles Tucker",
+            "seed": "9",
+            "weight": 133
+        },
+        {
+            "name": "Roman Bravo-Young",
+            "seed": "10",
+            "weight": 133
+        },
+        {
+            "name": "Tariq Wilson",
+            "seed": "11",
+            "weight": 133
+        },
+        {
+            "name": "Montorie Bridges",
+            "seed": "12",
+            "weight": 133
+        },
+        {
+            "name": "Austin Gomez",
+            "seed": "13",
+            "weight": 133
+        },
+        {
+            "name": "Korbin Myers",
+            "seed": "14",
+            "weight": 133
+        },
+        {
+            "name": "Ben Thornton",
+            "seed": "15",
+            "weight": 133
+        },
+        {
+            "name": "Matthew Schmitt",
+            "seed": "16",
+            "weight": 133
+        },
+        {
+            "name": "Sean Nickell",
+            "seed": "17",
+            "weight": 133
+        },
+        {
+            "name": "Gary Wayne Harding",
+            "seed": "18",
+            "weight": 133
+        },
+        {
+            "name": "Josh Terao",
+            "seed": "19",
+            "weight": 133
+        },
+        {
+            "name": "Brandon Paetzell",
+            "seed": "20",
+            "weight": 133
+        },
+        {
+            "name": "Cam Sykora",
+            "seed": "21",
+            "weight": 133
+        },
+        {
+            "name": "Noah Gonser",
+            "seed": "22",
+            "weight": 133
+        },
+        {
+            "name": "Mario Guillen",
+            "seed": "23",
+            "weight": 133
+        },
+        {
+            "name": "DJ Fehlman",
+            "seed": "24",
+            "weight": 133
+        },
+        {
+            "name": "Derek Spann",
+            "seed": "25",
+            "weight": 133
+        },
+        {
+            "name": "Codi Russell",
+            "seed": "26",
+            "weight": 133
+        },
+        {
+            "name": "Anthony Cefolo",
+            "seed": "27",
+            "weight": 133
+        },
+        {
+            "name": "Tim Rooney",
+            "seed": "28",
+            "weight": 133
+        },
+        {
+            "name": "Gary Joint",
+            "seed": "29",
+            "weight": 133
+        },
+        {
+            "name": "Dylan Duncan",
+            "seed": "30",
+            "weight": 133
+        },
+        {
+            "name": "Mason Pengilly",
+            "seed": "31",
+            "weight": 133
+        },
+        {
+            "name": "Zack Trampe",
+            "seed": "33",
+            "weight": 133
+        }
+    ],
+    [
+        {
+            "name": "Yianni Diakomihalis",
+            "seed": "1",
+            "weight": 141
+        },
+        {
+            "name": "Joey McKenna",
+            "seed": "2",
+            "weight": 141
+        },
+        {
+            "name": "Nick Lee",
+            "seed": "3",
+            "weight": 141
+        },
+        {
+            "name": "Josh Alber",
+            "seed": "4",
+            "weight": 141
+        },
+        {
+            "name": "Jaydin Eierman",
+            "seed": "5",
+            "weight": 141
+        },
+        {
+            "name": "Michael Carr",
+            "seed": "6",
+            "weight": 141
+        },
+        {
+            "name": "Mitch McKee",
+            "seed": "7",
+            "weight": 141
+        },
+        {
+            "name": "Kanen Storr",
+            "seed": "8",
+            "weight": 141
+        },
+        {
+            "name": "Dom Demas",
+            "seed": "9",
+            "weight": 141
+        },
+        {
+            "name": "Nicholas Gil",
+            "seed": "10",
+            "weight": 141
+        },
+        {
+            "name": "Tristan Moran",
+            "seed": "11",
+            "weight": 141
+        },
+        {
+            "name": "Cameron Kelly",
+            "seed": "12",
+            "weight": 141
+        },
+        {
+            "name": "Kyle Shoop",
+            "seed": "13",
+            "weight": 141
+        },
+        {
+            "name": "Jamel Morris",
+            "seed": "14",
+            "weight": 141
+        },
+        {
+            "name": "Kaid Brock",
+            "seed": "15",
+            "weight": 141
+        },
+        {
+            "name": "Chad Red",
+            "seed": "16",
+            "weight": 141
+        },
+        {
+            "name": "Ian Parker",
+            "seed": "17",
+            "weight": 141
+        },
+        {
+            "name": "Bryan Lantry",
+            "seed": "18",
+            "weight": 141
+        },
+        {
+            "name": "Sa`Derian Perry",
+            "seed": "19",
+            "weight": 141
+        },
+        {
+            "name": "Matt Findlay",
+            "seed": "20",
+            "weight": 141
+        },
+        {
+            "name": "Austin Headlee",
+            "seed": "21",
+            "weight": 141
+        },
+        {
+            "name": "Max Murin",
+            "seed": "22",
+            "weight": 141
+        },
+        {
+            "name": "Sam Turner",
+            "seed": "23",
+            "weight": 141
+        },
+        {
+            "name": "Mitch Moore",
+            "seed": "24",
+            "weight": 141
+        },
+        {
+            "name": "Josh Finesilver",
+            "seed": "25",
+            "weight": 141
+        },
+        {
+            "name": "Sam Krivus",
+            "seed": "26",
+            "weight": 141
+        },
+        {
+            "name": "Anthony Sparacio",
+            "seed": "27",
+            "weight": 141
+        },
+        {
+            "name": "Chris Debien",
+            "seed": "28",
+            "weight": 141
+        },
+        {
+            "name": "Corey Shie",
+            "seed": "29",
+            "weight": 141
+        },
+        {
+            "name": "Nate Limmex",
+            "seed": "30",
+            "weight": 141
+        },
+        {
+            "name": "Grant Willits",
+            "seed": "31",
+            "weight": 141
+        },
+        {
+            "name": "Pete Lipari",
+            "seed": "33",
+            "weight": 141
+        }
+    ],
+    [
+        {
+            "name": "Anthony Ashnault",
+            "seed": "1",
+            "weight": 149
+        },
+        {
+            "name": "Micah Jordan",
+            "seed": "2",
+            "weight": 149
+        },
+        {
+            "name": "Mitch Finesilver",
+            "seed": "3",
+            "weight": 149
+        },
+        {
+            "name": "Brock Mauller",
+            "seed": "4",
+            "weight": 149
+        },
+        {
+            "name": "Matthew Kolodzik",
+            "seed": "5",
+            "weight": 149
+        },
+        {
+            "name": "Austin O`Connor",
+            "seed": "6",
+            "weight": 149
+        },
+        {
+            "name": "Kaden Gfeller",
+            "seed": "7",
+            "weight": 149
+        },
+        {
+            "name": "Jarrett Degen",
+            "seed": "8",
+            "weight": 149
+        },
+        {
+            "name": "Justin Oliver",
+            "seed": "9",
+            "weight": 149
+        },
+        {
+            "name": "Pat Lugo",
+            "seed": "10",
+            "weight": 149
+        },
+        {
+            "name": "Joshua Heil",
+            "seed": "11",
+            "weight": 149
+        },
+        {
+            "name": "Brady Berge",
+            "seed": "12",
+            "weight": 149
+        },
+        {
+            "name": "Anthony Artalona",
+            "seed": "13",
+            "weight": 149
+        },
+        {
+            "name": "Requir van der Merwe",
+            "seed": "14",
+            "weight": 149
+        },
+        {
+            "name": "Max Thomsen",
+            "seed": "15",
+            "weight": 149
+        },
+        {
+            "name": "Davion Jeffries",
+            "seed": "16",
+            "weight": 149
+        },
+        {
+            "name": "Christian Monserrat",
+            "seed": "17",
+            "weight": 149
+        },
+        {
+            "name": "Jared Prince",
+            "seed": "18",
+            "weight": 149
+        },
+        {
+            "name": "Cole Martin",
+            "seed": "19",
+            "weight": 149
+        },
+        {
+            "name": "Thomas Thorn",
+            "seed": "20",
+            "weight": 149
+        },
+        {
+            "name": "Khristian Olivas",
+            "seed": "21",
+            "weight": 149
+        },
+        {
+            "name": "Henry Pohlmeyer",
+            "seed": "22",
+            "weight": 149
+        },
+        {
+            "name": "Joshua Maruca",
+            "seed": "23",
+            "weight": 149
+        },
+        {
+            "name": "Cortlandt Schuyler",
+            "seed": "24",
+            "weight": 149
+        },
+        {
+            "name": "Russell Rohlfing",
+            "seed": "25",
+            "weight": 149
+        },
+        {
+            "name": "Ryan Blees",
+            "seed": "26",
+            "weight": 149
+        },
+        {
+            "name": "Tejon Anthony",
+            "seed": "27",
+            "weight": 149
+        },
+        {
+            "name": "Michael Sprague",
+            "seed": "28",
+            "weight": 149
+        },
+        {
+            "name": "Matthew Zovistoski",
+            "seed": "29",
+            "weight": 149
+        },
+        {
+            "name": "Parker Kropman",
+            "seed": "30",
+            "weight": 149
+        },
+        {
+            "name": "Shayne Oster",
+            "seed": "31",
+            "weight": 149
+        },
+        {
+            "name": "Malik Amine",
+            "seed": "33",
+            "weight": 149
+        }
+    ],
+    [
+        {
+            "name": "Jason Nolf",
+            "seed": "1",
+            "weight": 157
+        },
+        {
+            "name": "Tyler Berger",
+            "seed": "2",
+            "weight": 157
+        },
+        {
+            "name": "Ryan Deakin",
+            "seed": "3",
+            "weight": 157
+        },
+        {
+            "name": "Alec Pantaleo",
+            "seed": "4",
+            "weight": 157
+        },
+        {
+            "name": "Hayden Hidlay",
+            "seed": "5",
+            "weight": 157
+        },
+        {
+            "name": "Kaleb Young",
+            "seed": "6",
+            "weight": 157
+        },
+        {
+            "name": "Larry Early",
+            "seed": "7",
+            "weight": 157
+        },
+        {
+            "name": "Josh Humphreys",
+            "seed": "8",
+            "weight": 157
+        },
+        {
+            "name": "Christian Pagdilao",
+            "seed": "9",
+            "weight": 157
+        },
+        {
+            "name": "Steve Bleise",
+            "seed": "10",
+            "weight": 157
+        },
+        {
+            "name": "Ke-Shawn Hayes",
+            "seed": "11",
+            "weight": 157
+        },
+        {
+            "name": "Taleb Rahmani",
+            "seed": "12",
+            "weight": 157
+        },
+        {
+            "name": "Jarrett Jacques",
+            "seed": "13",
+            "weight": 157
+        },
+        {
+            "name": "Zach Hartman",
+            "seed": "14",
+            "weight": 157
+        },
+        {
+            "name": "Eric Barone",
+            "seed": "15",
+            "weight": 157
+        },
+        {
+            "name": "John Van Brill",
+            "seed": "16",
+            "weight": 157
+        },
+        {
+            "name": "BC LaPrade",
+            "seed": "17",
+            "weight": 157
+        },
+        {
+            "name": "Logan Parks",
+            "seed": "18",
+            "weight": 157
+        },
+        {
+            "name": "Griffin Parriott",
+            "seed": "19",
+            "weight": 157
+        },
+        {
+            "name": "Luke Weiland",
+            "seed": "20",
+            "weight": 157
+        },
+        {
+            "name": "Justin Thomas",
+            "seed": "21",
+            "weight": 157
+        },
+        {
+            "name": "Zac Carson",
+            "seed": "22",
+            "weight": 157
+        },
+        {
+            "name": "Chase Straw",
+            "seed": "23",
+            "weight": 157
+        },
+        {
+            "name": "Joshua McClure",
+            "seed": "24",
+            "weight": 157
+        },
+        {
+            "name": "Justin Ruffin",
+            "seed": "25",
+            "weight": 157
+        },
+        {
+            "name": "Quincy Monday",
+            "seed": "26",
+            "weight": 157
+        },
+        {
+            "name": "Dan Reed",
+            "seed": "27",
+            "weight": 157
+        },
+        {
+            "name": "Hunter Willits",
+            "seed": "28",
+            "weight": 157
+        },
+        {
+            "name": "Alex Smythe",
+            "seed": "29",
+            "weight": 157
+        },
+        {
+            "name": "Christian Labrie",
+            "seed": "30",
+            "weight": 157
+        },
+        {
+            "name": "Benjamin Barton",
+            "seed": "31",
+            "weight": 157
+        },
+        {
+            "name": "Ben Anderson",
+            "seed": "33",
+            "weight": 157
+        }
+    ],
+    [
+        {
+            "name": "Alex Marinelli",
+            "seed": "1",
+            "weight": 165
+        },
+        {
+            "name": "Vincenzo Joseph",
+            "seed": "2",
+            "weight": 165
+        },
+        {
+            "name": "Joshua Shields",
+            "seed": "3",
+            "weight": 165
+        },
+        {
+            "name": "Evan Wick",
+            "seed": "4",
+            "weight": 165
+        },
+        {
+            "name": "Chance Marsteller",
+            "seed": "5",
+            "weight": 165
+        },
+        {
+            "name": "Logan Massa",
+            "seed": "6",
+            "weight": 165
+        },
+        {
+            "name": "Isaiah White",
+            "seed": "7",
+            "weight": 165
+        },
+        {
+            "name": "Mekhi Lewis",
+            "seed": "8",
+            "weight": 165
+        },
+        {
+            "name": "Demetrius Romero",
+            "seed": "9",
+            "weight": 165
+        },
+        {
+            "name": "Branson Ashworth",
+            "seed": "10",
+            "weight": 165
+        },
+        {
+            "name": "Bryce Steiert",
+            "seed": "11",
+            "weight": 165
+        },
+        {
+            "name": "Ebed Jarrell",
+            "seed": "12",
+            "weight": 165
+        },
+        {
+            "name": "Andrew Fogarty",
+            "seed": "13",
+            "weight": 165
+        },
+        {
+            "name": "Jesse Dellavecchia",
+            "seed": "14",
+            "weight": 165
+        },
+        {
+            "name": "Connor Flynn",
+            "seed": "15",
+            "weight": 165
+        },
+        {
+            "name": "Thomas Bullard",
+            "seed": "16",
+            "weight": 165
+        },
+        {
+            "name": "Jonathan Viruet",
+            "seed": "17",
+            "weight": 165
+        },
+        {
+            "name": "Gordon Wolf",
+            "seed": "18",
+            "weight": 165
+        },
+        {
+            "name": "Tanner Skidgel",
+            "seed": "19",
+            "weight": 165
+        },
+        {
+            "name": "Tyler Marinelli",
+            "seed": "20",
+            "weight": 165
+        },
+        {
+            "name": "Te`shan Campbell",
+            "seed": "21",
+            "weight": 165
+        },
+        {
+            "name": "Bryce Martin",
+            "seed": "22",
+            "weight": 165
+        },
+        {
+            "name": "Zach Finesilver",
+            "seed": "23",
+            "weight": 165
+        },
+        {
+            "name": "Cael McCormick",
+            "seed": "24",
+            "weight": 165
+        },
+        {
+            "name": "Cam Coy",
+            "seed": "25",
+            "weight": 165
+        },
+        {
+            "name": "Joseph Gunther",
+            "seed": "26",
+            "weight": 165
+        },
+        {
+            "name": "Troy Keller",
+            "seed": "27",
+            "weight": 165
+        },
+        {
+            "name": "Carson Brolsma",
+            "seed": "28",
+            "weight": 165
+        },
+        {
+            "name": "Nick Kiussis",
+            "seed": "29",
+            "weight": 165
+        },
+        {
+            "name": "Colston DiBlasi",
+            "seed": "30",
+            "weight": 165
+        },
+        {
+            "name": "Evan Delong",
+            "seed": "31",
+            "weight": 165
+        },
+        {
+            "name": "Joseph Smith",
+            "seed": "33",
+            "weight": 165
+        }
+    ],
+    [
+        {
+            "name": "Mark Hall",
+            "seed": "1",
+            "weight": 174
+        },
+        {
+            "name": "Daniel Lewis",
+            "seed": "2",
+            "weight": 174
+        },
+        {
+            "name": "Zahid Valencia",
+            "seed": "3",
+            "weight": 174
+        },
+        {
+            "name": "Myles Amine",
+            "seed": "4",
+            "weight": 174
+        },
+        {
+            "name": "Jordan Kutler",
+            "seed": "5",
+            "weight": 174
+        },
+        {
+            "name": "David McFadden",
+            "seed": "6",
+            "weight": 174
+        },
+        {
+            "name": "Jacobe Smith",
+            "seed": "7",
+            "weight": 174
+        },
+        {
+            "name": "Taylor Lujan",
+            "seed": "8",
+            "weight": 174
+        },
+        {
+            "name": "Devin Skatzka",
+            "seed": "9",
+            "weight": 174
+        },
+        {
+            "name": "Mikey Labriola",
+            "seed": "10",
+            "weight": 174
+        },
+        {
+            "name": "Dylan Lydy",
+            "seed": "11",
+            "weight": 174
+        },
+        {
+            "name": "Matt Finesilver",
+            "seed": "12",
+            "weight": 174
+        },
+        {
+            "name": "Brit Wilson",
+            "seed": "13",
+            "weight": 174
+        },
+        {
+            "name": "Kimball Bastian",
+            "seed": "14",
+            "weight": 174
+        },
+        {
+            "name": "Ryan Christensen",
+            "seed": "15",
+            "weight": 174
+        },
+        {
+            "name": "Brandon Womack",
+            "seed": "16",
+            "weight": 174
+        },
+        {
+            "name": "Neal Richards",
+            "seed": "17",
+            "weight": 174
+        },
+        {
+            "name": "Andrew Morgan",
+            "seed": "18",
+            "weight": 174
+        },
+        {
+            "name": "Ethan Smith",
+            "seed": "19",
+            "weight": 174
+        },
+        {
+            "name": "Spencer Carey",
+            "seed": "20",
+            "weight": 174
+        },
+        {
+            "name": "Marcus Coleman",
+            "seed": "21",
+            "weight": 174
+        },
+        {
+            "name": "Ben Harvey",
+            "seed": "22",
+            "weight": 174
+        },
+        {
+            "name": "Daniel Bullard",
+            "seed": "23",
+            "weight": 174
+        },
+        {
+            "name": "Lorenzo De La Riva",
+            "seed": "24",
+            "weight": 174
+        },
+        {
+            "name": "Hayden Hastings",
+            "seed": "25",
+            "weight": 174
+        },
+        {
+            "name": "Drew Hughes",
+            "seed": "26",
+            "weight": 174
+        },
+        {
+            "name": "Vincent Deprez",
+            "seed": "27",
+            "weight": 174
+        },
+        {
+            "name": "Jacob Oliver",
+            "seed": "28",
+            "weight": 174
+        },
+        {
+            "name": "Joe Grello",
+            "seed": "29",
+            "weight": 174
+        },
+        {
+            "name": "Dean Sherry",
+            "seed": "30",
+            "weight": 174
+        },
+        {
+            "name": "Travis Stefanik",
+            "seed": "31",
+            "weight": 174
+        },
+        {
+            "name": "Devin Kane",
+            "seed": "33",
+            "weight": 174
+        }
+    ],
+    [
+        {
+            "name": "Myles Martin",
+            "seed": "1",
+            "weight": 184
+        },
+        {
+            "name": "Shakur Rasheed",
+            "seed": "2",
+            "weight": 184
+        },
+        {
+            "name": "Zachary Zavatsky",
+            "seed": "3",
+            "weight": 184
+        },
+        {
+            "name": "Emery Parker",
+            "seed": "4",
+            "weight": 184
+        },
+        {
+            "name": "Maxwell Dean",
+            "seed": "5",
+            "weight": 184
+        },
+        {
+            "name": "Drew Foster",
+            "seed": "6",
+            "weight": 184
+        },
+        {
+            "name": "Nick Reenan",
+            "seed": "7",
+            "weight": 184
+        },
+        {
+            "name": "Ryan Preisch",
+            "seed": "8",
+            "weight": 184
+        },
+        {
+            "name": "Taylor Venz",
+            "seed": "9",
+            "weight": 184
+        },
+        {
+            "name": "Samuel Colbray",
+            "seed": "10",
+            "weight": 184
+        },
+        {
+            "name": "Lou Deprez",
+            "seed": "11",
+            "weight": 184
+        },
+        {
+            "name": "Cash Wilcke",
+            "seed": "12",
+            "weight": 184
+        },
+        {
+            "name": "Nino Bonaccorsi",
+            "seed": "13",
+            "weight": 184
+        },
+        {
+            "name": "Dylan Wisman",
+            "seed": "14",
+            "weight": 184
+        },
+        {
+            "name": "Chip Ness",
+            "seed": "15",
+            "weight": 184
+        },
+        {
+            "name": "Corey Hazel",
+            "seed": "16",
+            "weight": 184
+        },
+        {
+            "name": "Andrew McNally",
+            "seed": "17",
+            "weight": 184
+        },
+        {
+            "name": "Tate Samuelson",
+            "seed": "18",
+            "weight": 184
+        },
+        {
+            "name": "Cameron Caffey",
+            "seed": "19",
+            "weight": 184
+        },
+        {
+            "name": "Will Sumner",
+            "seed": "20",
+            "weight": 184
+        },
+        {
+            "name": "Nick Gravina",
+            "seed": "21",
+            "weight": 184
+        },
+        {
+            "name": "Mason Reinhardt",
+            "seed": "22",
+            "weight": 184
+        },
+        {
+            "name": "Jackson Hemauer",
+            "seed": "23",
+            "weight": 184
+        },
+        {
+            "name": "Tanner Harvey",
+            "seed": "24",
+            "weight": 184
+        },
+        {
+            "name": "Max Lyon",
+            "seed": "25",
+            "weight": 184
+        },
+        {
+            "name": "Dakota Geer",
+            "seed": "26",
+            "weight": 184
+        },
+        {
+            "name": "Christian LaFragola",
+            "seed": "27",
+            "weight": 184
+        },
+        {
+            "name": "Noah Stewart",
+            "seed": "28",
+            "weight": 184
+        },
+        {
+            "name": "Will Schany",
+            "seed": "29",
+            "weight": 184
+        },
+        {
+            "name": "Dom Ducharme",
+            "seed": "30",
+            "weight": 184
+        },
+        {
+            "name": "Kevin Parker",
+            "seed": "31",
+            "weight": 184
+        },
+        {
+            "name": "Bob Coleman",
+            "seed": "32",
+            "weight": 184
+        }
+    ],
+    [
+        {
+            "name": "Bo Nickal",
+            "seed": "1",
+            "weight": 197
+        },
+        {
+            "name": "Kollin Moore",
+            "seed": "2",
+            "weight": 197
+        },
+        {
+            "name": "Preston Weigel",
+            "seed": "3",
+            "weight": 197
+        },
+        {
+            "name": "Patrick Brucki",
+            "seed": "4",
+            "weight": 197
+        },
+        {
+            "name": "Jacob Warner",
+            "seed": "5",
+            "weight": 197
+        },
+        {
+            "name": "William Miklus",
+            "seed": "6",
+            "weight": 197
+        },
+        {
+            "name": "Jay Aiello",
+            "seed": "7",
+            "weight": 197
+        },
+        {
+            "name": "Nathan Traxler",
+            "seed": "8",
+            "weight": 197
+        },
+        {
+            "name": "Benjamin Honis",
+            "seed": "9",
+            "weight": 197
+        },
+        {
+            "name": "Tom Sleigh",
+            "seed": "10",
+            "weight": 197
+        },
+        {
+            "name": "Christian Brunner",
+            "seed": "11",
+            "weight": 197
+        },
+        {
+            "name": "Rocco Caywood",
+            "seed": "12",
+            "weight": 197
+        },
+        {
+            "name": "Malik McDonald",
+            "seed": "13",
+            "weight": 197
+        },
+        {
+            "name": "Eric Schultz",
+            "seed": "14",
+            "weight": 197
+        },
+        {
+            "name": "Randall Diabe",
+            "seed": "15",
+            "weight": 197
+        },
+        {
+            "name": "Josh Hokit",
+            "seed": "16",
+            "weight": 197
+        },
+        {
+            "name": "Stephen Loiseau",
+            "seed": "17",
+            "weight": 197
+        },
+        {
+            "name": "Jake Woodley",
+            "seed": "18",
+            "weight": 197
+        },
+        {
+            "name": "Tanner Orndorff",
+            "seed": "19",
+            "weight": 197
+        },
+        {
+            "name": "Noah Adams",
+            "seed": "20",
+            "weight": 197
+        },
+        {
+            "name": "Thomas Lane",
+            "seed": "21",
+            "weight": 197
+        },
+        {
+            "name": "Sawyer Root",
+            "seed": "22",
+            "weight": 197
+        },
+        {
+            "name": "Kellan Stout",
+            "seed": "23",
+            "weight": 197
+        },
+        {
+            "name": "Jake Jakobsen",
+            "seed": "24",
+            "weight": 197
+        },
+        {
+            "name": "Greg Bulsak",
+            "seed": "25",
+            "weight": 197
+        },
+        {
+            "name": "Anthony McLaughlin",
+            "seed": "26",
+            "weight": 197
+        },
+        {
+            "name": "Joshua Roetman",
+            "seed": "27",
+            "weight": 197
+        },
+        {
+            "name": "Drew Phipps",
+            "seed": "28",
+            "weight": 197
+        },
+        {
+            "name": "Brandon Whitman",
+            "seed": "29",
+            "weight": 197
+        },
+        {
+            "name": "Jacob Seely",
+            "seed": "30",
+            "weight": 197
+        },
+        {
+            "name": "Brett Perry",
+            "seed": "31",
+            "weight": 197
+        },
+        {
+            "name": "Ethan Laird",
+            "seed": "32",
+            "weight": 197
+        }
+    ],
+    [
+        {
+            "name": "Derek White",
+            "seed": "1",
+            "weight": 285
+        },
+        {
+            "name": "Anthony Cassar",
+            "seed": "2",
+            "weight": 285
+        },
+        {
+            "name": "Gable Steveson",
+            "seed": "3",
+            "weight": 285
+        },
+        {
+            "name": "Jordan Wood",
+            "seed": "4",
+            "weight": 285
+        },
+        {
+            "name": "Mason Parris",
+            "seed": "5",
+            "weight": 285
+        },
+        {
+            "name": "Amar Dhesi",
+            "seed": "6",
+            "weight": 285
+        },
+        {
+            "name": "Trent Hillger",
+            "seed": "7",
+            "weight": 285
+        },
+        {
+            "name": "Demetrius Thomas",
+            "seed": "8",
+            "weight": 285
+        },
+        {
+            "name": "Matt Stencel",
+            "seed": "9",
+            "weight": 285
+        },
+        {
+            "name": "Youssif Hemida",
+            "seed": "10",
+            "weight": 285
+        },
+        {
+            "name": "Thomas Haines",
+            "seed": "11",
+            "weight": 285
+        },
+        {
+            "name": "Conan Jennings",
+            "seed": "12",
+            "weight": 285
+        },
+        {
+            "name": "Matt Voss",
+            "seed": "13",
+            "weight": 285
+        },
+        {
+            "name": "AJ Nevills",
+            "seed": "14",
+            "weight": 285
+        },
+        {
+            "name": "Tate Orndorff",
+            "seed": "15",
+            "weight": 285
+        },
+        {
+            "name": "Chase Singletary",
+            "seed": "16",
+            "weight": 285
+        },
+        {
+            "name": "David Jensen",
+            "seed": "17",
+            "weight": 285
+        },
+        {
+            "name": "Joseph Goodhart",
+            "seed": "18",
+            "weight": 285
+        },
+        {
+            "name": "Brian Andrews",
+            "seed": "19",
+            "weight": 285
+        },
+        {
+            "name": "Zach Elam",
+            "seed": "20",
+            "weight": 285
+        },
+        {
+            "name": "Cory Gilliland-Dani",
+            "seed": "21",
+            "weight": 285
+        },
+        {
+            "name": "Billy Miller",
+            "seed": "22",
+            "weight": 285
+        },
+        {
+            "name": "Jeramy Sweany",
+            "seed": "23",
+            "weight": 285
+        },
+        {
+            "name": "Haydn Maley",
+            "seed": "24",
+            "weight": 285
+        },
+        {
+            "name": "Gannon Gremmel",
+            "seed": "25",
+            "weight": 285
+        },
+        {
+            "name": "Ian Butterbrodt",
+            "seed": "26",
+            "weight": 285
+        },
+        {
+            "name": "Cary Miller",
+            "seed": "27",
+            "weight": 285
+        },
+        {
+            "name": "Sam Stoll",
+            "seed": "28",
+            "weight": 285
+        },
+        {
+            "name": "Colton McKiernan",
+            "seed": "29",
+            "weight": 285
+        },
+        {
+            "name": "Zack Parker",
+            "seed": "30",
+            "weight": 285
+        },
+        {
+            "name": "Antonio Pelusi",
+            "seed": "31",
+            "weight": 285
+        },
+        {
+            "name": "Brandon Ngati",
+            "seed": "32",
+            "weight": 285
+        }
+    ]
+]

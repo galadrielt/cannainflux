@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import * as seeds from '../../../../grabWrestlersBrackets/wrestlers-seeds.json';
-import points from '../../../../grabPoints/wrestlers-scores.json';
-import * as deductions from '../../../../grabPoints/wrestlers-deductions.json';
+import seeds from '../../assets/json/wrestlers-seeds.json';
+import points from '../../assets/json/wrestlers-scores.json';
+import deductions from '../../assets/json/wrestlers-deductions.json';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
  
@@ -38,16 +38,19 @@ export class DataComponent implements OnInit {
 
   constructor() {
     // Create 320 (32 wrestlers in 10 weight classes) from data
-    // const users = Array.from({length: 320}, (_, k) => createWrestler(k + 1));
-    // const users = {};
-    //console.log("wSeeds: ", this.wSeeds);
-    //  console.log("wPoints: ", this.wPoints);
-    const users = this.wPoints.reduce((current_dict, new_dict) => {
+
+    const wrestlerLookup = this.wPoints.reduce((current_dict, new_dict) => {
       current_dict[new_dict.name] = new_dict.wrestler;
       console.log("CD: ",current_dict);
       return current_dict;
     }, {}
     );
+
+    console.log("Spencer Lee: ", wrestlerLookup["Spencer Lee"])
+
+    const users = Array.from({length: 320}, (_, k) => createWrestler(k + 1));
+    
+
 
     // let users2 = {};
     // this.wPoints.forEach(x => {users2[x.name]=x.wrestler});

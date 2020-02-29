@@ -1,0 +1,3632 @@
+[
+    {
+        "name": "AJ Nevills",
+        "wrestler": {
+            "weight": "285",
+            "name": "AJ Nevills",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Alec Pantaleo",
+        "wrestler": {
+            "weight": "157",
+            "name": "Alec Pantaleo",
+            "ad_points": "3.5",
+            "act_points": "2.0",
+            "place_points": "10.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Alex Mackall",
+        "wrestler": {
+            "weight": "125",
+            "name": "Alex Mackall",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Alex Marinelli",
+        "wrestler": {
+            "weight": "165",
+            "name": "Alex Marinelli",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Alex Smythe",
+        "wrestler": {
+            "weight": "157",
+            "name": "Alex Smythe",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Alexander Klucker",
+        "wrestler": {
+            "weight": "157",
+            "name": "Alexander Klucker",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Alonzo Allen",
+        "wrestler": {
+            "weight": "125",
+            "name": "Alonzo Allen",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Amar Dhesi",
+        "wrestler": {
+            "weight": "285",
+            "name": "Amar Dhesi",
+            "ad_points": "3.0",
+            "act_points": "5.5",
+            "place_points": "7.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Andrew Fogarty",
+        "wrestler": {
+            "weight": "165",
+            "name": "Andrew Fogarty",
+            "ad_points": "1.5",
+            "act_points": "1.5",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Andrew McNally",
+        "wrestler": {
+            "weight": "184",
+            "name": "Andrew McNally",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Andrew Morgan",
+        "wrestler": {
+            "weight": "174",
+            "name": "Andrew Morgan",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Anthony Artalona",
+        "wrestler": {
+            "weight": "149",
+            "name": "Anthony Artalona",
+            "ad_points": "1.5",
+            "act_points": "1.5",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Anthony Ashnault",
+        "wrestler": {
+            "weight": "149",
+            "name": "Anthony Ashnault",
+            "ad_points": "4.0",
+            "act_points": "1.0",
+            "place_points": "16.0",
+            "total_points": "21.0"
+        }
+    },
+    {
+        "name": "Anthony Cassar",
+        "wrestler": {
+            "weight": "285",
+            "name": "Anthony Cassar",
+            "ad_points": "4.0",
+            "act_points": "4.0",
+            "place_points": "16.0",
+            "total_points": "24.0"
+        }
+    },
+    {
+        "name": "Anthony Cefolo",
+        "wrestler": {
+            "weight": "133",
+            "name": "Anthony Cefolo",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Anthony McLaughlin",
+        "wrestler": {
+            "weight": "197",
+            "name": "Anthony McLaughlin",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Anthony Sparacio",
+        "wrestler": {
+            "weight": "141",
+            "name": "Anthony Sparacio",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Antonio Pelusi",
+        "wrestler": {
+            "weight": "285",
+            "name": "Antonio Pelusi",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Austin DeSanto",
+        "wrestler": {
+            "weight": "133",
+            "name": "Austin DeSanto",
+            "ad_points": "3.0",
+            "act_points": "3.0",
+            "place_points": "7.0",
+            "total_points": "13.0"
+        }
+    },
+    {
+        "name": "Austin Gomez",
+        "wrestler": {
+            "weight": "133",
+            "name": "Austin Gomez",
+            "ad_points": "2.0",
+            "act_points": "2.5",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Austin Headlee",
+        "wrestler": {
+            "weight": "141",
+            "name": "Austin Headlee",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Austin O`Connor",
+        "wrestler": {
+            "weight": "149",
+            "name": "Austin O`Connor",
+            "ad_points": "3.5",
+            "act_points": "0.0",
+            "place_points": "10.0",
+            "total_points": "13.5"
+        }
+    },
+    {
+        "name": "BC LaPrade",
+        "wrestler": {
+            "weight": "157",
+            "name": "BC LaPrade",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Ben Anderson",
+        "wrestler": {
+            "weight": "157",
+            "name": "Ben Anderson",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Ben Harvey",
+        "wrestler": {
+            "weight": "174",
+            "name": "Ben Harvey",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Ben Thornton",
+        "wrestler": {
+            "weight": "133",
+            "name": "Ben Thornton",
+            "ad_points": "1.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Benjamin Barton",
+        "wrestler": {
+            "weight": "157",
+            "name": "Benjamin Barton",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Benjamin Honis",
+        "wrestler": {
+            "weight": "197",
+            "name": "Benjamin Honis",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "3.0",
+            "total_points": "5.0"
+        }
+    },
+    {
+        "name": "Billy Miller",
+        "wrestler": {
+            "weight": "285",
+            "name": "Billy Miller",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Bo Nickal",
+        "wrestler": {
+            "weight": "197",
+            "name": "Bo Nickal",
+            "ad_points": "4.0",
+            "act_points": "7.0",
+            "place_points": "16.0",
+            "total_points": "27.0"
+        }
+    },
+    {
+        "name": "Bob Coleman",
+        "wrestler": {
+            "weight": "184",
+            "name": "Bob Coleman",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Brady Berge",
+        "wrestler": {
+            "weight": "149",
+            "name": "Brady Berge",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Brandon Ngati",
+        "wrestler": {
+            "weight": "285",
+            "name": "Brandon Ngati",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Brandon Paetzell",
+        "wrestler": {
+            "weight": "133",
+            "name": "Brandon Paetzell",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Brandon Whitman",
+        "wrestler": {
+            "weight": "197",
+            "name": "Brandon Whitman",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Brandon Womack",
+        "wrestler": {
+            "weight": "174",
+            "name": "Brandon Womack",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Branson Ashworth",
+        "wrestler": {
+            "weight": "165",
+            "name": "Branson Ashworth",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Brent Fleetwood",
+        "wrestler": {
+            "weight": "125",
+            "name": "Brent Fleetwood",
+            "ad_points": "2.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Brett Perry",
+        "wrestler": {
+            "weight": "197",
+            "name": "Brett Perry",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Brian Andrews",
+        "wrestler": {
+            "weight": "285",
+            "name": "Brian Andrews",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Brit Wilson",
+        "wrestler": {
+            "weight": "174",
+            "name": "Brit Wilson",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Brock Mauller",
+        "wrestler": {
+            "weight": "149",
+            "name": "Brock Mauller",
+            "ad_points": "3.0",
+            "act_points": "3.0",
+            "place_points": "6.0",
+            "total_points": "12.0"
+        }
+    },
+    {
+        "name": "Bryan Lantry",
+        "wrestler": {
+            "weight": "141",
+            "name": "Bryan Lantry",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Bryce Martin",
+        "wrestler": {
+            "weight": "165",
+            "name": "Bryce Martin",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Bryce Steiert",
+        "wrestler": {
+            "weight": "165",
+            "name": "Bryce Steiert",
+            "ad_points": "2.5",
+            "act_points": "3.0",
+            "place_points": "3.0",
+            "total_points": "8.5"
+        }
+    },
+    {
+        "name": "Bryce West",
+        "wrestler": {
+            "weight": "125",
+            "name": "Bryce West",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Cael McCormick",
+        "wrestler": {
+            "weight": "165",
+            "name": "Cael McCormick",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Cam Coy",
+        "wrestler": {
+            "weight": "165",
+            "name": "Cam Coy",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Cam Sykora",
+        "wrestler": {
+            "weight": "133",
+            "name": "Cam Sykora",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Cameron Caffey",
+        "wrestler": {
+            "weight": "184",
+            "name": "Cameron Caffey",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Cameron Kelly",
+        "wrestler": {
+            "weight": "141",
+            "name": "Cameron Kelly",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Carmen Ferrante",
+        "wrestler": {
+            "weight": "125",
+            "name": "Carmen Ferrante",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Carson Brolsma",
+        "wrestler": {
+            "weight": "165",
+            "name": "Carson Brolsma",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Cary Miller",
+        "wrestler": {
+            "weight": "285",
+            "name": "Cary Miller",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Cash Wilcke",
+        "wrestler": {
+            "weight": "184",
+            "name": "Cash Wilcke",
+            "ad_points": "1.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Chad Red",
+        "wrestler": {
+            "weight": "141",
+            "name": "Chad Red",
+            "ad_points": "2.5",
+            "act_points": "3.0",
+            "place_points": "3.0",
+            "total_points": "8.5"
+        }
+    },
+    {
+        "name": "Chance Marsteller",
+        "wrestler": {
+            "weight": "165",
+            "name": "Chance Marsteller",
+            "ad_points": "3.5",
+            "act_points": "2.0",
+            "place_points": "10.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Charles Tucker",
+        "wrestler": {
+            "weight": "133",
+            "name": "Charles Tucker",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Chase Singletary",
+        "wrestler": {
+            "weight": "285",
+            "name": "Chase Singletary",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Chase Straw",
+        "wrestler": {
+            "weight": "157",
+            "name": "Chase Straw",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Chip Ness",
+        "wrestler": {
+            "weight": "184",
+            "name": "Chip Ness",
+            "ad_points": "3.0",
+            "act_points": "0.0",
+            "place_points": "6.0",
+            "total_points": "9.0"
+        }
+    },
+    {
+        "name": "Chris Debien",
+        "wrestler": {
+            "weight": "141",
+            "name": "Chris Debien",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Chris Kober",
+        "wrestler": {
+            "weight": "184",
+            "name": "Chris Kober",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Christian Brunner",
+        "wrestler": {
+            "weight": "197",
+            "name": "Christian Brunner",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Christian LaFragola",
+        "wrestler": {
+            "weight": "184",
+            "name": "Christian LaFragola",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Christian Labrie",
+        "wrestler": {
+            "weight": "157",
+            "name": "Christian Labrie",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Christian Monserrat",
+        "wrestler": {
+            "weight": "149",
+            "name": "Christian Monserrat",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Christian Moody",
+        "wrestler": {
+            "weight": "125",
+            "name": "Christian Moody",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Christian Pagdilao",
+        "wrestler": {
+            "weight": "157",
+            "name": "Christian Pagdilao",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Christopher Sandoval",
+        "wrestler": {
+            "weight": "141",
+            "name": "Christopher Sandoval",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Codi Russell",
+        "wrestler": {
+            "weight": "133",
+            "name": "Codi Russell",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Cole Martin",
+        "wrestler": {
+            "weight": "149",
+            "name": "Cole Martin",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Cole Verner",
+        "wrestler": {
+            "weight": "125",
+            "name": "Cole Verner",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Colston DiBlasi",
+        "wrestler": {
+            "weight": "165",
+            "name": "Colston DiBlasi",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Colton McKiernan",
+        "wrestler": {
+            "weight": "285",
+            "name": "Colton McKiernan",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Conan Jennings",
+        "wrestler": {
+            "weight": "285",
+            "name": "Conan Jennings",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Connor Flynn",
+        "wrestler": {
+            "weight": "165",
+            "name": "Connor Flynn",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Corey Hazel",
+        "wrestler": {
+            "weight": "184",
+            "name": "Corey Hazel",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Corey Shie",
+        "wrestler": {
+            "weight": "141",
+            "name": "Corey Shie",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Cortlandt Schuyler",
+        "wrestler": {
+            "weight": "149",
+            "name": "Cortlandt Schuyler",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Cory Gilliland-Daniel",
+        "wrestler": {
+            "weight": "285",
+            "name": "Cory Gilliland-Daniel",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "DJ Fehlman",
+        "wrestler": {
+            "weight": "133",
+            "name": "DJ Fehlman",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Dack Punke",
+        "wrestler": {
+            "weight": "125",
+            "name": "Dack Punke",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Dakota Geer",
+        "wrestler": {
+            "weight": "184",
+            "name": "Dakota Geer",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Dan Reed",
+        "wrestler": {
+            "weight": "157",
+            "name": "Dan Reed",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Daniel Bullard",
+        "wrestler": {
+            "weight": "174",
+            "name": "Daniel Bullard",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Daniel Lewis",
+        "wrestler": {
+            "weight": "174",
+            "name": "Daniel Lewis",
+            "ad_points": "3.5",
+            "act_points": "6.0",
+            "place_points": "9.0",
+            "total_points": "18.5"
+        }
+    },
+    {
+        "name": "Daton Fix",
+        "wrestler": {
+            "weight": "133",
+            "name": "Daton Fix",
+            "ad_points": "4.0",
+            "act_points": "2.0",
+            "place_points": "12.0",
+            "total_points": "18.0"
+        }
+    },
+    {
+        "name": "David Jensen",
+        "wrestler": {
+            "weight": "285",
+            "name": "David Jensen",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "David McFadden",
+        "wrestler": {
+            "weight": "174",
+            "name": "David McFadden",
+            "ad_points": "3.0",
+            "act_points": "1.0",
+            "place_points": "7.0",
+            "total_points": "11.0"
+        }
+    },
+    {
+        "name": "Davion Jeffries",
+        "wrestler": {
+            "weight": "149",
+            "name": "Davion Jeffries",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Dean Sherry",
+        "wrestler": {
+            "weight": "174",
+            "name": "Dean Sherry",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Demetrius Romero",
+        "wrestler": {
+            "weight": "165",
+            "name": "Demetrius Romero",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Demetrius Thomas",
+        "wrestler": {
+            "weight": "285",
+            "name": "Demetrius Thomas",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Derek Spann",
+        "wrestler": {
+            "weight": "133",
+            "name": "Derek Spann",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Derek White",
+        "wrestler": {
+            "weight": "285",
+            "name": "Derek White",
+            "ad_points": "4.0",
+            "act_points": "1.0",
+            "place_points": "12.0",
+            "total_points": "17.0"
+        }
+    },
+    {
+        "name": "Devan Turner",
+        "wrestler": {
+            "weight": "133",
+            "name": "Devan Turner",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Devin Kane",
+        "wrestler": {
+            "weight": "174",
+            "name": "Devin Kane",
+            "ad_points": "2.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Devin Schroder",
+        "wrestler": {
+            "weight": "125",
+            "name": "Devin Schroder",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Devin Skatzka",
+        "wrestler": {
+            "weight": "174",
+            "name": "Devin Skatzka",
+            "ad_points": "2.5",
+            "act_points": "3.0",
+            "place_points": "3.0",
+            "total_points": "8.5"
+        }
+    },
+    {
+        "name": "Dom Demas",
+        "wrestler": {
+            "weight": "141",
+            "name": "Dom Demas",
+            "ad_points": "3.5",
+            "act_points": "2.0",
+            "place_points": "9.0",
+            "total_points": "14.5"
+        }
+    },
+    {
+        "name": "Dom Ducharme",
+        "wrestler": {
+            "weight": "184",
+            "name": "Dom Ducharme",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Drew Foster",
+        "wrestler": {
+            "weight": "184",
+            "name": "Drew Foster",
+            "ad_points": "4.0",
+            "act_points": "1.0",
+            "place_points": "16.0",
+            "total_points": "21.0"
+        }
+    },
+    {
+        "name": "Drew Hildebrandt",
+        "wrestler": {
+            "weight": "125",
+            "name": "Drew Hildebrandt",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Drew Hughes",
+        "wrestler": {
+            "weight": "174",
+            "name": "Drew Hughes",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Drew Mattin",
+        "wrestler": {
+            "weight": "125",
+            "name": "Drew Mattin",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Drew Phipps",
+        "wrestler": {
+            "weight": "197",
+            "name": "Drew Phipps",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Dylan Duncan",
+        "wrestler": {
+            "weight": "133",
+            "name": "Dylan Duncan",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Dylan Lydy",
+        "wrestler": {
+            "weight": "174",
+            "name": "Dylan Lydy",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Dylan Wisman",
+        "wrestler": {
+            "weight": "184",
+            "name": "Dylan Wisman",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Ebed Jarrell",
+        "wrestler": {
+            "weight": "165",
+            "name": "Ebed Jarrell",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Elijah Oliver",
+        "wrestler": {
+            "weight": "125",
+            "name": "Elijah Oliver",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Emery Parker",
+        "wrestler": {
+            "weight": "184",
+            "name": "Emery Parker",
+            "ad_points": "3.0",
+            "act_points": "2.0",
+            "place_points": "7.0",
+            "total_points": "12.0"
+        }
+    },
+    {
+        "name": "Eric Barone",
+        "wrestler": {
+            "weight": "157",
+            "name": "Eric Barone",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Eric Schultz",
+        "wrestler": {
+            "weight": "197",
+            "name": "Eric Schultz",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Ethan Laird",
+        "wrestler": {
+            "weight": "197",
+            "name": "Ethan Laird",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Ethan Lizak",
+        "wrestler": {
+            "weight": "133",
+            "name": "Ethan Lizak",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Ethan Smith",
+        "wrestler": {
+            "weight": "174",
+            "name": "Ethan Smith",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Evan Delong",
+        "wrestler": {
+            "weight": "165",
+            "name": "Evan Delong",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Evan Wick",
+        "wrestler": {
+            "weight": "165",
+            "name": "Evan Wick",
+            "ad_points": "3.5",
+            "act_points": "3.0",
+            "place_points": "9.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Gabe Townsell",
+        "wrestler": {
+            "weight": "125",
+            "name": "Gabe Townsell",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Gable Steveson",
+        "wrestler": {
+            "weight": "285",
+            "name": "Gable Steveson",
+            "ad_points": "3.5",
+            "act_points": "3.5",
+            "place_points": "10.0",
+            "total_points": "17.0"
+        }
+    },
+    {
+        "name": "Gage Curry",
+        "wrestler": {
+            "weight": "125",
+            "name": "Gage Curry",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Gannon Gremmel",
+        "wrestler": {
+            "weight": "285",
+            "name": "Gannon Gremmel",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Gary Joint",
+        "wrestler": {
+            "weight": "133",
+            "name": "Gary Joint",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Gary Wayne Harding",
+        "wrestler": {
+            "weight": "133",
+            "name": "Gary Wayne Harding",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Gordon Wolf",
+        "wrestler": {
+            "weight": "165",
+            "name": "Gordon Wolf",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Grant Willits",
+        "wrestler": {
+            "weight": "141",
+            "name": "Grant Willits",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Greg Bulsak",
+        "wrestler": {
+            "weight": "197",
+            "name": "Greg Bulsak",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Griffin Parriott",
+        "wrestler": {
+            "weight": "157",
+            "name": "Griffin Parriott",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Hayden Hastings",
+        "wrestler": {
+            "weight": "174",
+            "name": "Hayden Hastings",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Hayden Hidlay",
+        "wrestler": {
+            "weight": "157",
+            "name": "Hayden Hidlay",
+            "ad_points": "3.5",
+            "act_points": "3.0",
+            "place_points": "9.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Haydn Maley",
+        "wrestler": {
+            "weight": "285",
+            "name": "Haydn Maley",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Henry Pohlmeyer",
+        "wrestler": {
+            "weight": "149",
+            "name": "Henry Pohlmeyer",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Hunter Willits",
+        "wrestler": {
+            "weight": "157",
+            "name": "Hunter Willits",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Ian Butterbrodt",
+        "wrestler": {
+            "weight": "285",
+            "name": "Ian Butterbrodt",
+            "ad_points": "1.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Ian Parker",
+        "wrestler": {
+            "weight": "141",
+            "name": "Ian Parker",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Isaiah White",
+        "wrestler": {
+            "weight": "165",
+            "name": "Isaiah White",
+            "ad_points": "3.0",
+            "act_points": "0.0",
+            "place_points": "7.0",
+            "total_points": "10.0"
+        }
+    },
+    {
+        "name": "Jack Mueller",
+        "wrestler": {
+            "weight": "125",
+            "name": "Jack Mueller",
+            "ad_points": "4.0",
+            "act_points": "3.0",
+            "place_points": "12.0",
+            "total_points": "19.0"
+        }
+    },
+    {
+        "name": "Jackson Hemauer",
+        "wrestler": {
+            "weight": "184",
+            "name": "Jackson Hemauer",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Jacob Aven",
+        "wrestler": {
+            "weight": "285",
+            "name": "Jacob Aven",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Jacob Oliver",
+        "wrestler": {
+            "weight": "174",
+            "name": "Jacob Oliver",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Jacob Seely",
+        "wrestler": {
+            "weight": "197",
+            "name": "Jacob Seely",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Jacob Warner",
+        "wrestler": {
+            "weight": "197",
+            "name": "Jacob Warner",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Jacobe Smith",
+        "wrestler": {
+            "weight": "174",
+            "name": "Jacobe Smith",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Jake Covaciu",
+        "wrestler": {
+            "weight": "174",
+            "name": "Jake Covaciu",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Jake Jakobsen",
+        "wrestler": {
+            "weight": "197",
+            "name": "Jake Jakobsen",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Jake Woodley",
+        "wrestler": {
+            "weight": "197",
+            "name": "Jake Woodley",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Jamel Morris",
+        "wrestler": {
+            "weight": "141",
+            "name": "Jamel Morris",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Jared Prince",
+        "wrestler": {
+            "weight": "149",
+            "name": "Jared Prince",
+            "ad_points": "1.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Jarrett Degen",
+        "wrestler": {
+            "weight": "149",
+            "name": "Jarrett Degen",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Jarrett Jacques",
+        "wrestler": {
+            "weight": "157",
+            "name": "Jarrett Jacques",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Jason Nolf",
+        "wrestler": {
+            "weight": "157",
+            "name": "Jason Nolf",
+            "ad_points": "4.0",
+            "act_points": "6.0",
+            "place_points": "16.0",
+            "total_points": "26.0"
+        }
+    },
+    {
+        "name": "Jay Aiello",
+        "wrestler": {
+            "weight": "197",
+            "name": "Jay Aiello",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Jay Schwarm",
+        "wrestler": {
+            "weight": "125",
+            "name": "Jay Schwarm",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Jaydin Eierman",
+        "wrestler": {
+            "weight": "141",
+            "name": "Jaydin Eierman",
+            "ad_points": "3.5",
+            "act_points": "2.0",
+            "place_points": "10.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Jeramy Sweany",
+        "wrestler": {
+            "weight": "285",
+            "name": "Jeramy Sweany",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Jesse Dellavecchia",
+        "wrestler": {
+            "weight": "165",
+            "name": "Jesse Dellavecchia",
+            "ad_points": "1.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Joe Grello",
+        "wrestler": {
+            "weight": "174",
+            "name": "Joe Grello",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Joey McKenna",
+        "wrestler": {
+            "weight": "141",
+            "name": "Joey McKenna",
+            "ad_points": "4.0",
+            "act_points": "3.5",
+            "place_points": "12.0",
+            "total_points": "19.5"
+        }
+    },
+    {
+        "name": "John Erneste",
+        "wrestler": {
+            "weight": "133",
+            "name": "John Erneste",
+            "ad_points": "3.0",
+            "act_points": "2.0",
+            "place_points": "6.0",
+            "total_points": "11.0"
+        }
+    },
+    {
+        "name": "John Van Brill",
+        "wrestler": {
+            "weight": "157",
+            "name": "John Van Brill",
+            "ad_points": "1.5",
+            "act_points": "3.0",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Jonathan Viruet",
+        "wrestler": {
+            "weight": "165",
+            "name": "Jonathan Viruet",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Jordan Kutler",
+        "wrestler": {
+            "weight": "174",
+            "name": "Jordan Kutler",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "4.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Jordan Wood",
+        "wrestler": {
+            "weight": "285",
+            "name": "Jordan Wood",
+            "ad_points": "3.5",
+            "act_points": "0.0",
+            "place_points": "9.0",
+            "total_points": "12.5"
+        }
+    },
+    {
+        "name": "Joseph Goodhart",
+        "wrestler": {
+            "weight": "285",
+            "name": "Joseph Goodhart",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Joseph Gunther",
+        "wrestler": {
+            "weight": "165",
+            "name": "Joseph Gunther",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Joseph Smith",
+        "wrestler": {
+            "weight": "165",
+            "name": "Joseph Smith",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Josh Alber",
+        "wrestler": {
+            "weight": "141",
+            "name": "Josh Alber",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Josh Finesilver",
+        "wrestler": {
+            "weight": "141",
+            "name": "Josh Finesilver",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Josh Hokit",
+        "wrestler": {
+            "weight": "197",
+            "name": "Josh Hokit",
+            "ad_points": "3.0",
+            "act_points": "1.0",
+            "place_points": "7.0",
+            "total_points": "11.0"
+        }
+    },
+    {
+        "name": "Josh Humphreys",
+        "wrestler": {
+            "weight": "157",
+            "name": "Josh Humphreys",
+            "ad_points": "2.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Josh Terao",
+        "wrestler": {
+            "weight": "133",
+            "name": "Josh Terao",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Joshua Heil",
+        "wrestler": {
+            "weight": "149",
+            "name": "Joshua Heil",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Joshua Maruca",
+        "wrestler": {
+            "weight": "149",
+            "name": "Joshua Maruca",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Joshua McClure",
+        "wrestler": {
+            "weight": "157",
+            "name": "Joshua McClure",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Joshua Roetman",
+        "wrestler": {
+            "weight": "197",
+            "name": "Joshua Roetman",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Joshua Shields",
+        "wrestler": {
+            "weight": "165",
+            "name": "Joshua Shields",
+            "ad_points": "3.0",
+            "act_points": "2.0",
+            "place_points": "6.0",
+            "total_points": "11.0"
+        }
+    },
+    {
+        "name": "Justin Oliver",
+        "wrestler": {
+            "weight": "149",
+            "name": "Justin Oliver",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Justin Ruffin",
+        "wrestler": {
+            "weight": "157",
+            "name": "Justin Ruffin",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Justin Thomas",
+        "wrestler": {
+            "weight": "157",
+            "name": "Justin Thomas",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Kaden Gfeller",
+        "wrestler": {
+            "weight": "149",
+            "name": "Kaden Gfeller",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Kaid Brock",
+        "wrestler": {
+            "weight": "141",
+            "name": "Kaid Brock",
+            "ad_points": "2.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.0"
+        }
+    },
+    {
+        "name": "Kaleb Young",
+        "wrestler": {
+            "weight": "157",
+            "name": "Kaleb Young",
+            "ad_points": "3.0",
+            "act_points": "2.5",
+            "place_points": "7.0",
+            "total_points": "12.5"
+        }
+    },
+    {
+        "name": "Kanen Storr",
+        "wrestler": {
+            "weight": "141",
+            "name": "Kanen Storr",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Ke-Shawn Hayes",
+        "wrestler": {
+            "weight": "157",
+            "name": "Ke-Shawn Hayes",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Kellan Stout",
+        "wrestler": {
+            "weight": "197",
+            "name": "Kellan Stout",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Kevin Parker",
+        "wrestler": {
+            "weight": "184",
+            "name": "Kevin Parker",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Khristian Olivas",
+        "wrestler": {
+            "weight": "149",
+            "name": "Khristian Olivas",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Kimball Bastian",
+        "wrestler": {
+            "weight": "174",
+            "name": "Kimball Bastian",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Kollin Moore",
+        "wrestler": {
+            "weight": "197",
+            "name": "Kollin Moore",
+            "ad_points": "4.0",
+            "act_points": "3.0",
+            "place_points": "12.0",
+            "total_points": "19.0"
+        }
+    },
+    {
+        "name": "Korbin Meink",
+        "wrestler": {
+            "weight": "125",
+            "name": "Korbin Meink",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Korbin Myers",
+        "wrestler": {
+            "weight": "133",
+            "name": "Korbin Myers",
+            "ad_points": "1.5",
+            "act_points": "3.0",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Kyle Shoop",
+        "wrestler": {
+            "weight": "141",
+            "name": "Kyle Shoop",
+            "ad_points": "2.5",
+            "act_points": "2.0",
+            "place_points": "4.0",
+            "total_points": "8.5"
+        }
+    },
+    {
+        "name": "Larry Early",
+        "wrestler": {
+            "weight": "157",
+            "name": "Larry Early",
+            "ad_points": "2.5",
+            "act_points": "1.0",
+            "place_points": "3.0",
+            "total_points": "6.5"
+        }
+    },
+    {
+        "name": "Logan Massa",
+        "wrestler": {
+            "weight": "165",
+            "name": "Logan Massa",
+            "ad_points": "2.0",
+            "act_points": "3.5",
+            "place_points": "0.0",
+            "total_points": "5.5"
+        }
+    },
+    {
+        "name": "Logan Parks",
+        "wrestler": {
+            "weight": "157",
+            "name": "Logan Parks",
+            "ad_points": "0.5",
+            "act_points": "1.5",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Lorenzo De La Riva",
+        "wrestler": {
+            "weight": "174",
+            "name": "Lorenzo De La Riva",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Lou Deprez",
+        "wrestler": {
+            "weight": "184",
+            "name": "Lou Deprez",
+            "ad_points": "2.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Luke Pletcher",
+        "wrestler": {
+            "weight": "133",
+            "name": "Luke Pletcher",
+            "ad_points": "3.5",
+            "act_points": "1.0",
+            "place_points": "9.0",
+            "total_points": "13.5"
+        }
+    },
+    {
+        "name": "Luke Weiland",
+        "wrestler": {
+            "weight": "157",
+            "name": "Luke Weiland",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Malik Amine",
+        "wrestler": {
+            "weight": "149",
+            "name": "Malik Amine",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Malik Heinselman",
+        "wrestler": {
+            "weight": "125",
+            "name": "Malik Heinselman",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Malik McDonald",
+        "wrestler": {
+            "weight": "197",
+            "name": "Malik McDonald",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Marcus Coleman",
+        "wrestler": {
+            "weight": "174",
+            "name": "Marcus Coleman",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Mario Guillen",
+        "wrestler": {
+            "weight": "133",
+            "name": "Mario Guillen",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Mark Hall",
+        "wrestler": {
+            "weight": "174",
+            "name": "Mark Hall",
+            "ad_points": "4.0",
+            "act_points": "1.0",
+            "place_points": "12.0",
+            "total_points": "17.0"
+        }
+    },
+    {
+        "name": "Mason Parris",
+        "wrestler": {
+            "weight": "285",
+            "name": "Mason Parris",
+            "ad_points": "1.5",
+            "act_points": "5.0",
+            "place_points": "0.0",
+            "total_points": "6.5"
+        }
+    },
+    {
+        "name": "Mason Pengilly",
+        "wrestler": {
+            "weight": "133",
+            "name": "Mason Pengilly",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Mason Reinhardt",
+        "wrestler": {
+            "weight": "184",
+            "name": "Mason Reinhardt",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Matt Findlay",
+        "wrestler": {
+            "weight": "141",
+            "name": "Matt Findlay",
+            "ad_points": "1.5",
+            "act_points": "3.0",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Matt Finesilver",
+        "wrestler": {
+            "weight": "174",
+            "name": "Matt Finesilver",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Matt Stencel",
+        "wrestler": {
+            "weight": "285",
+            "name": "Matt Stencel",
+            "ad_points": "2.5",
+            "act_points": "3.0",
+            "place_points": "4.0",
+            "total_points": "9.5"
+        }
+    },
+    {
+        "name": "Matt Voss",
+        "wrestler": {
+            "weight": "285",
+            "name": "Matt Voss",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Matthew Kolodzik",
+        "wrestler": {
+            "weight": "149",
+            "name": "Matthew Kolodzik",
+            "ad_points": "3.0",
+            "act_points": "0.0",
+            "place_points": "7.0",
+            "total_points": "10.0"
+        }
+    },
+    {
+        "name": "Matthew Schmitt",
+        "wrestler": {
+            "weight": "133",
+            "name": "Matthew Schmitt",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Matthew Zovistoski",
+        "wrestler": {
+            "weight": "149",
+            "name": "Matthew Zovistoski",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Max Lyon",
+        "wrestler": {
+            "weight": "184",
+            "name": "Max Lyon",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Max Murin",
+        "wrestler": {
+            "weight": "141",
+            "name": "Max Murin",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Max Thomsen",
+        "wrestler": {
+            "weight": "149",
+            "name": "Max Thomsen",
+            "ad_points": "2.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Maxwell Dean",
+        "wrestler": {
+            "weight": "184",
+            "name": "Maxwell Dean",
+            "ad_points": "4.0",
+            "act_points": "1.0",
+            "place_points": "12.0",
+            "total_points": "17.0"
+        }
+    },
+    {
+        "name": "Mekhi Lewis",
+        "wrestler": {
+            "weight": "165",
+            "name": "Mekhi Lewis",
+            "ad_points": "4.0",
+            "act_points": "2.0",
+            "place_points": "16.0",
+            "total_points": "22.0"
+        }
+    },
+    {
+        "name": "Micah Jordan",
+        "wrestler": {
+            "weight": "149",
+            "name": "Micah Jordan",
+            "ad_points": "4.0",
+            "act_points": "3.0",
+            "place_points": "12.0",
+            "total_points": "19.0"
+        }
+    },
+    {
+        "name": "Michael Carr",
+        "wrestler": {
+            "weight": "141",
+            "name": "Michael Carr",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Michael McGee",
+        "wrestler": {
+            "weight": "125",
+            "name": "Michael McGee",
+            "ad_points": "2.0",
+            "act_points": "1.5",
+            "place_points": "0.0",
+            "total_points": "3.5"
+        }
+    },
+    {
+        "name": "Michael Sprague",
+        "wrestler": {
+            "weight": "149",
+            "name": "Michael Sprague",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Micky Phillippi",
+        "wrestler": {
+            "weight": "133",
+            "name": "Micky Phillippi",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Mikey Labriola",
+        "wrestler": {
+            "weight": "174",
+            "name": "Mikey Labriola",
+            "ad_points": "3.0",
+            "act_points": "0.0",
+            "place_points": "6.0",
+            "total_points": "9.0"
+        }
+    },
+    {
+        "name": "Mitch Finesilver",
+        "wrestler": {
+            "weight": "149",
+            "name": "Mitch Finesilver",
+            "ad_points": "3.5",
+            "act_points": "2.5",
+            "place_points": "9.0",
+            "total_points": "15.0"
+        }
+    },
+    {
+        "name": "Mitch McKee",
+        "wrestler": {
+            "weight": "141",
+            "name": "Mitch McKee",
+            "ad_points": "3.0",
+            "act_points": "2.0",
+            "place_points": "6.0",
+            "total_points": "11.0"
+        }
+    },
+    {
+        "name": "Mitch Moore",
+        "wrestler": {
+            "weight": "141",
+            "name": "Mitch Moore",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Montorie Bridges",
+        "wrestler": {
+            "weight": "133",
+            "name": "Montorie Bridges",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Myles Amine",
+        "wrestler": {
+            "weight": "174",
+            "name": "Myles Amine",
+            "ad_points": "3.5",
+            "act_points": "1.0",
+            "place_points": "10.0",
+            "total_points": "14.5"
+        }
+    },
+    {
+        "name": "Myles Martin",
+        "wrestler": {
+            "weight": "184",
+            "name": "Myles Martin",
+            "ad_points": "3.5",
+            "act_points": "4.0",
+            "place_points": "10.0",
+            "total_points": "17.5"
+        }
+    },
+    {
+        "name": "Nate Limmex",
+        "wrestler": {
+            "weight": "141",
+            "name": "Nate Limmex",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Nathan Traxler",
+        "wrestler": {
+            "weight": "197",
+            "name": "Nathan Traxler",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Neal Richards",
+        "wrestler": {
+            "weight": "174",
+            "name": "Neal Richards",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Nicholas Gil",
+        "wrestler": {
+            "weight": "141",
+            "name": "Nicholas Gil",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Nicholas Piccininni",
+        "wrestler": {
+            "weight": "125",
+            "name": "Nicholas Piccininni",
+            "ad_points": "3.0",
+            "act_points": "5.0",
+            "place_points": "7.0",
+            "total_points": "15.0"
+        }
+    },
+    {
+        "name": "Nick Gravina",
+        "wrestler": {
+            "weight": "184",
+            "name": "Nick Gravina",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Nick Kiussis",
+        "wrestler": {
+            "weight": "165",
+            "name": "Nick Kiussis",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Nick Lee",
+        "wrestler": {
+            "weight": "141",
+            "name": "Nick Lee",
+            "ad_points": "3.0",
+            "act_points": "6.0",
+            "place_points": "7.0",
+            "total_points": "16.0"
+        }
+    },
+    {
+        "name": "Nick Reenan",
+        "wrestler": {
+            "weight": "184",
+            "name": "Nick Reenan",
+            "ad_points": "0.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "2.5"
+        }
+    },
+    {
+        "name": "Nick Suriano",
+        "wrestler": {
+            "weight": "133",
+            "name": "Nick Suriano",
+            "ad_points": "4.0",
+            "act_points": "3.0",
+            "place_points": "16.0",
+            "total_points": "23.0"
+        }
+    },
+    {
+        "name": "Nino Bonaccorsi",
+        "wrestler": {
+            "weight": "184",
+            "name": "Nino Bonaccorsi",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Noah Adams",
+        "wrestler": {
+            "weight": "197",
+            "name": "Noah Adams",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Noah Gonser",
+        "wrestler": {
+            "weight": "133",
+            "name": "Noah Gonser",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Noah Stewart",
+        "wrestler": {
+            "weight": "184",
+            "name": "Noah Stewart",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Parker Kropman",
+        "wrestler": {
+            "weight": "149",
+            "name": "Parker Kropman",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Pat Glory",
+        "wrestler": {
+            "weight": "125",
+            "name": "Pat Glory",
+            "ad_points": "3.0",
+            "act_points": "3.5",
+            "place_points": "6.0",
+            "total_points": "12.5"
+        }
+    },
+    {
+        "name": "Pat Lugo",
+        "wrestler": {
+            "weight": "149",
+            "name": "Pat Lugo",
+            "ad_points": "2.5",
+            "act_points": "0.0",
+            "place_points": "3.0",
+            "total_points": "5.5"
+        }
+    },
+    {
+        "name": "Patrick Brucki",
+        "wrestler": {
+            "weight": "197",
+            "name": "Patrick Brucki",
+            "ad_points": "3.5",
+            "act_points": "0.0",
+            "place_points": "9.0",
+            "total_points": "12.5"
+        }
+    },
+    {
+        "name": "Pete Lipari",
+        "wrestler": {
+            "weight": "141",
+            "name": "Pete Lipari",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Preston Weigel",
+        "wrestler": {
+            "weight": "197",
+            "name": "Preston Weigel",
+            "ad_points": "3.5",
+            "act_points": "5.5",
+            "place_points": "10.0",
+            "total_points": "19.0"
+        }
+    },
+    {
+        "name": "Quincy Monday",
+        "wrestler": {
+            "weight": "157",
+            "name": "Quincy Monday",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Randall Diabe",
+        "wrestler": {
+            "weight": "197",
+            "name": "Randall Diabe",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "RayVon Foley",
+        "wrestler": {
+            "weight": "125",
+            "name": "RayVon Foley",
+            "ad_points": "2.5",
+            "act_points": "2.5",
+            "place_points": "4.0",
+            "total_points": "9.0"
+        }
+    },
+    {
+        "name": "Requir van der Merwe",
+        "wrestler": {
+            "weight": "149",
+            "name": "Requir van der Merwe",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Rico Montoya",
+        "wrestler": {
+            "weight": "125",
+            "name": "Rico Montoya",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Rocco Caywood",
+        "wrestler": {
+            "weight": "197",
+            "name": "Rocco Caywood",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Rod Jones",
+        "wrestler": {
+            "weight": "197",
+            "name": "Rod Jones",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Roman Bravo-Young",
+        "wrestler": {
+            "weight": "133",
+            "name": "Roman Bravo-Young",
+            "ad_points": "2.5",
+            "act_points": "0.0",
+            "place_points": "3.0",
+            "total_points": "5.5"
+        }
+    },
+    {
+        "name": "Ronnie Bresser",
+        "wrestler": {
+            "weight": "125",
+            "name": "Ronnie Bresser",
+            "ad_points": "2.5",
+            "act_points": "2.0",
+            "place_points": "3.0",
+            "total_points": "7.5"
+        }
+    },
+    {
+        "name": "Russell Rohlfing",
+        "wrestler": {
+            "weight": "149",
+            "name": "Russell Rohlfing",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Ryan Blees",
+        "wrestler": {
+            "weight": "149",
+            "name": "Ryan Blees",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Ryan Christensen",
+        "wrestler": {
+            "weight": "174",
+            "name": "Ryan Christensen",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Ryan Deakin",
+        "wrestler": {
+            "weight": "157",
+            "name": "Ryan Deakin",
+            "ad_points": "3.0",
+            "act_points": "1.0",
+            "place_points": "6.0",
+            "total_points": "10.0"
+        }
+    },
+    {
+        "name": "Ryan Preisch",
+        "wrestler": {
+            "weight": "184",
+            "name": "Ryan Preisch",
+            "ad_points": "3.5",
+            "act_points": "2.0",
+            "place_points": "9.0",
+            "total_points": "14.5"
+        }
+    },
+    {
+        "name": "Sa`Derian Perry",
+        "wrestler": {
+            "weight": "141",
+            "name": "Sa`Derian Perry",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Sam Krivus",
+        "wrestler": {
+            "weight": "141",
+            "name": "Sam Krivus",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Sam Stoll",
+        "wrestler": {
+            "weight": "285",
+            "name": "Sam Stoll",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Sam Turner",
+        "wrestler": {
+            "weight": "141",
+            "name": "Sam Turner",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Samuel Colbray",
+        "wrestler": {
+            "weight": "184",
+            "name": "Samuel Colbray",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Sawyer Root",
+        "wrestler": {
+            "weight": "197",
+            "name": "Sawyer Root",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Sean Fausz",
+        "wrestler": {
+            "weight": "125",
+            "name": "Sean Fausz",
+            "ad_points": "2.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.0"
+        }
+    },
+    {
+        "name": "Sean Nickell",
+        "wrestler": {
+            "weight": "133",
+            "name": "Sean Nickell",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Sean Russell",
+        "wrestler": {
+            "weight": "125",
+            "name": "Sean Russell",
+            "ad_points": "2.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.0"
+        }
+    },
+    {
+        "name": "Sebastian Rivera",
+        "wrestler": {
+            "weight": "125",
+            "name": "Sebastian Rivera",
+            "ad_points": "3.5",
+            "act_points": "1.5",
+            "place_points": "10.0",
+            "total_points": "15.0"
+        }
+    },
+    {
+        "name": "Shakur Rasheed",
+        "wrestler": {
+            "weight": "184",
+            "name": "Shakur Rasheed",
+            "ad_points": "1.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.5"
+        }
+    },
+    {
+        "name": "Shayne Oster",
+        "wrestler": {
+            "weight": "149",
+            "name": "Shayne Oster",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Spencer Carey",
+        "wrestler": {
+            "weight": "174",
+            "name": "Spencer Carey",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Spencer Lee",
+        "wrestler": {
+            "weight": "125",
+            "name": "Spencer Lee",
+            "ad_points": "4.0",
+            "act_points": "4.5",
+            "place_points": "16.0",
+            "total_points": "24.5"
+        }
+    },
+    {
+        "name": "Stephen Loiseau",
+        "wrestler": {
+            "weight": "197",
+            "name": "Stephen Loiseau",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Stevan Micic",
+        "wrestler": {
+            "weight": "133",
+            "name": "Stevan Micic",
+            "ad_points": "3.5",
+            "act_points": "3.0",
+            "place_points": "10.0",
+            "total_points": "16.5"
+        }
+    },
+    {
+        "name": "Steve Bleise",
+        "wrestler": {
+            "weight": "157",
+            "name": "Steve Bleise",
+            "ad_points": "2.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Taleb Rahmani",
+        "wrestler": {
+            "weight": "157",
+            "name": "Taleb Rahmani",
+            "ad_points": "1.5",
+            "act_points": "3.0",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Tanner Harvey",
+        "wrestler": {
+            "weight": "184",
+            "name": "Tanner Harvey",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Tanner Orndorff",
+        "wrestler": {
+            "weight": "197",
+            "name": "Tanner Orndorff",
+            "ad_points": "1.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.0"
+        }
+    },
+    {
+        "name": "Tanner Skidgel",
+        "wrestler": {
+            "weight": "165",
+            "name": "Tanner Skidgel",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Tanner Smith",
+        "wrestler": {
+            "weight": "149",
+            "name": "Tanner Smith",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Tariq Wilson",
+        "wrestler": {
+            "weight": "133",
+            "name": "Tariq Wilson",
+            "ad_points": "2.0",
+            "act_points": "2.5",
+            "place_points": "0.0",
+            "total_points": "4.5"
+        }
+    },
+    {
+        "name": "Tate Orndorff",
+        "wrestler": {
+            "weight": "285",
+            "name": "Tate Orndorff",
+            "ad_points": "1.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Tate Samuelson",
+        "wrestler": {
+            "weight": "184",
+            "name": "Tate Samuelson",
+            "ad_points": "0.5",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "1.5"
+        }
+    },
+    {
+        "name": "Taylor Lujan",
+        "wrestler": {
+            "weight": "174",
+            "name": "Taylor Lujan",
+            "ad_points": "2.0",
+            "act_points": "3.0",
+            "place_points": "0.0",
+            "total_points": "5.0"
+        }
+    },
+    {
+        "name": "Taylor Venz",
+        "wrestler": {
+            "weight": "184",
+            "name": "Taylor Venz",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Te`shan Campbell",
+        "wrestler": {
+            "weight": "165",
+            "name": "Te`shan Campbell",
+            "ad_points": "2.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.0"
+        }
+    },
+    {
+        "name": "Tejon Anthony",
+        "wrestler": {
+            "weight": "149",
+            "name": "Tejon Anthony",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Thomas Bullard",
+        "wrestler": {
+            "weight": "165",
+            "name": "Thomas Bullard",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Thomas Haines",
+        "wrestler": {
+            "weight": "285",
+            "name": "Thomas Haines",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Thomas Lane",
+        "wrestler": {
+            "weight": "197",
+            "name": "Thomas Lane",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Thomas Thorn",
+        "wrestler": {
+            "weight": "149",
+            "name": "Thomas Thorn",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Tim Rooney",
+        "wrestler": {
+            "weight": "133",
+            "name": "Tim Rooney",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Tom Sleigh",
+        "wrestler": {
+            "weight": "197",
+            "name": "Tom Sleigh",
+            "ad_points": "2.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Travis Piotrowski",
+        "wrestler": {
+            "weight": "125",
+            "name": "Travis Piotrowski",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Travis Stefanik",
+        "wrestler": {
+            "weight": "174",
+            "name": "Travis Stefanik",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Trent Hillger",
+        "wrestler": {
+            "weight": "285",
+            "name": "Trent Hillger",
+            "ad_points": "2.5",
+            "act_points": "0.0",
+            "place_points": "3.0",
+            "total_points": "5.5"
+        }
+    },
+    {
+        "name": "Trey Chalifoux",
+        "wrestler": {
+            "weight": "125",
+            "name": "Trey Chalifoux",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Tristan Moran",
+        "wrestler": {
+            "weight": "141",
+            "name": "Tristan Moran",
+            "ad_points": "1.5",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "3.5"
+        }
+    },
+    {
+        "name": "Troy Keller",
+        "wrestler": {
+            "weight": "165",
+            "name": "Troy Keller",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Tyler Berger",
+        "wrestler": {
+            "weight": "157",
+            "name": "Tyler Berger",
+            "ad_points": "4.0",
+            "act_points": "3.5",
+            "place_points": "12.0",
+            "total_points": "19.5"
+        }
+    },
+    {
+        "name": "Tyler Marinelli",
+        "wrestler": {
+            "weight": "165",
+            "name": "Tyler Marinelli",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Tyler Morland",
+        "wrestler": {
+            "weight": "165",
+            "name": "Tyler Morland",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Vincent Deprez",
+        "wrestler": {
+            "weight": "174",
+            "name": "Vincent Deprez",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Vincenzo Joseph",
+        "wrestler": {
+            "weight": "165",
+            "name": "Vincenzo Joseph",
+            "ad_points": "4.0",
+            "act_points": "2.0",
+            "place_points": "12.0",
+            "total_points": "18.0"
+        }
+    },
+    {
+        "name": "Vitali Arujau",
+        "wrestler": {
+            "weight": "125",
+            "name": "Vitali Arujau",
+            "ad_points": "3.5",
+            "act_points": "3.0",
+            "place_points": "9.0",
+            "total_points": "15.5"
+        }
+    },
+    {
+        "name": "Will Schany",
+        "wrestler": {
+            "weight": "184",
+            "name": "Will Schany",
+            "ad_points": "0.5",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.5"
+        }
+    },
+    {
+        "name": "Will Sumner",
+        "wrestler": {
+            "weight": "184",
+            "name": "Will Sumner",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "William Miklus",
+        "wrestler": {
+            "weight": "197",
+            "name": "William Miklus",
+            "ad_points": "3.0",
+            "act_points": "3.0",
+            "place_points": "6.0",
+            "total_points": "12.0"
+        }
+    },
+    {
+        "name": "Willy Girard",
+        "wrestler": {
+            "weight": "125",
+            "name": "Willy Girard",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Yianni Diakomihalis",
+        "wrestler": {
+            "weight": "141",
+            "name": "Yianni Diakomihalis",
+            "ad_points": "4.0",
+            "act_points": "0.0",
+            "place_points": "16.0",
+            "total_points": "20.0"
+        }
+    },
+    {
+        "name": "Youssif Hemida",
+        "wrestler": {
+            "weight": "285",
+            "name": "Youssif Hemida",
+            "ad_points": "3.0",
+            "act_points": "4.0",
+            "place_points": "6.0",
+            "total_points": "13.0"
+        }
+    },
+    {
+        "name": "Zac Carson",
+        "wrestler": {
+            "weight": "157",
+            "name": "Zac Carson",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Zach Elam",
+        "wrestler": {
+            "weight": "285",
+            "name": "Zach Elam",
+            "ad_points": "2.0",
+            "act_points": "2.0",
+            "place_points": "0.0",
+            "total_points": "4.0"
+        }
+    },
+    {
+        "name": "Zach Finesilver",
+        "wrestler": {
+            "weight": "165",
+            "name": "Zach Finesilver",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Zach Hartman",
+        "wrestler": {
+            "weight": "157",
+            "name": "Zach Hartman",
+            "ad_points": "1.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "1.0"
+        }
+    },
+    {
+        "name": "Zachary Zavatsky",
+        "wrestler": {
+            "weight": "184",
+            "name": "Zachary Zavatsky",
+            "ad_points": "2.5",
+            "act_points": "0.0",
+            "place_points": "3.0",
+            "total_points": "5.5"
+        }
+    },
+    {
+        "name": "Zack Parker",
+        "wrestler": {
+            "weight": "285",
+            "name": "Zack Parker",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    },
+    {
+        "name": "Zack Trampe",
+        "wrestler": {
+            "weight": "133",
+            "name": "Zack Trampe",
+            "ad_points": "1.0",
+            "act_points": "1.0",
+            "place_points": "0.0",
+            "total_points": "2.0"
+        }
+    },
+    {
+        "name": "Zahid Valencia",
+        "wrestler": {
+            "weight": "174",
+            "name": "Zahid Valencia",
+            "ad_points": "4.0",
+            "act_points": "5.0",
+            "place_points": "16.0",
+            "total_points": "25.0"
+        }
+    },
+    {
+        "name": "Zeke Moisey",
+        "wrestler": {
+            "weight": "125",
+            "name": "Zeke Moisey",
+            "ad_points": "0.0",
+            "act_points": "0.0",
+            "place_points": "0.0",
+            "total_points": "0.0"
+        }
+    }
+]
