@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import seeds from '../../assets/json/wrestlers-seeds.json';
 import points from '../../assets/json/wrestlers-scores.json';
 import deductions from '../../assets/json/wrestlers-deductions.json';
+import counts from '../../assets/json/wrestlers-counts.json';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
  
@@ -33,43 +34,56 @@ export class DataComponent implements OnInit {
 
   displayedColumns = ['weight', 'seed', 'name', 'adPoints', 'actPoints', 'plPoints', 'points', 'numPicks', 'percentDiscount', 'discountedPoints'];
   dataSource: MatTableDataSource<TrackData>;
+  updateWrestler: TrackData;
+  finalWrestlers: TrackData[] = [];
+  wrestlersWeights: number [] = [125, 133, 141, 149, 157, 165, 174, 184, 197, 285]
+  findNumPicksBySeedByWeight: number[][];
+
+  wrestlerLookupByName = this.wPoints.reduce((current_dict, new_dict) => {
+    current_dict[new_dict.name.slice(0,19)] = new_dict.wrestler;
+    return current_dict;
+  }, {} );
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor() {
     // Create 320 (32 wrestlers in 10 weight classes) from data
-
-    const wrestlerLookup = this.wPoints.reduce((current_dict, new_dict) => {
-      current_dict[new_dict.name] = new_dict.wrestler;
-      console.log("CD: ",current_dict);
-      return current_dict;
-    }, {}
-    );
-
-    console.log("Spencer Lee: ", wrestlerLookup["Spencer Lee"])
-
-    const users = Array.from({length: 320}, (_, k) => createWrestler(k + 1));
-    
-
-
-    // let users2 = {};
-    // this.wPoints.forEach(x => {users2[x.name]=x.wrestler});
-    // console.log(users2);
-    // for (let index = 0; index < this.wPoints.length; index++) {
-    //   const element = this.wPoints[index];
-    //   console.log("EL: ", element);
       
-    // }
-    
-      
-    
-
     // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+    
 };
   ngOnInit() {
+
+  
+
+    console.log(counts);
+
+    for (let w =0; w<10; w++){
+      for (let x = 0; x<32; x++){
+        console.log("look name: ", seeds[w][x].name.slice(0,19));
+        let lookup = this.wrestlerLookupByName[seeds[w][x].name.slice(0,19)];        
+        console.log("lookup: ", lookup);
+
+        this.updateWrestler = {
+                weight: lookup.weight,
+                seed: seeds[w][x].seed,
+                name: lookup.name,
+                adPoints: lookup.ad_points,
+                actPoints: lookup.act_points,
+                plPoints: lookup.place_points,
+                points: lookup.total_points,
+                numPicks: x < 16 ? counts[x][w].toString() : "36", // Sum up total number of people who picked them
+                percentDiscount: x < 16 ? counts[x][w]>0 ? (1 - (counts[x][w]-1)/36).toFixed(4).toString() : "1" : "0",  // calculate 1 - (numPicks-1)/total entries
+                discountedPoints: x < 16 ? counts[x][w]>0 ? ((1 - (counts[x][w]-1)/36)*Number(lookup.total_points)).toFixed(2).toString() : lookup.total_points.toString() : "0"// this.discountedPoints
+          };
+          this.finalWrestlers.push(this.updateWrestler);
+      }
+    }
+    this.dataSource = new MatTableDataSource(this.finalWrestlers);
     this.dataSource.sort = this.sort;
   }
+    //console.log("CD: ",current_dict);
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -77,38 +91,6 @@ export class DataComponent implements OnInit {
   }
 
 }
-
-
-/** Builds and returns a new User. */
-function mergeWrestler(id: number): TrackData {
-  //MAKE THIS MORE LOOKUP .map etc.
-  let seed;
-  // for (let w =0; w<10; w++){
-  //   console.log("SEED ", w, ": ", seeds[w])
-  //   for (let x = 0; x<32; x++){
-  //       if (seeds[w][x].name === points[id].name){
-  //         console.log("MADE: ", seeds[w][x].name);
-  //         seed = seeds[w][x].name;
-  //       }
-  //   }
-  // }
-  //let discountedPoints = .9*points[id].wrestler.total_points;
-
-  return {
-    weight: points[id].wrestler.weight,
-    seed: this.seed,
-    name: points[id].name,
-    adPoints: points[id].wrestler.ad_points,
-    actPoints: points[id].wrestler.act_points,
-    plPoints: points[id].wrestler.place_points,
-    points: points[id].wrestler.total_points,
-    numPicks: "5", //Sum up total number of people who picked them
-    percentDiscount: ".9",  //calculate 1 - (numPicks-1)/total entries
-    discountedPoints: "22"//this.discountedPoints
-  };
-};
-
-
 
 /** Builds and returns a new User. */
 function createWrestler(id: number): TrackData {
