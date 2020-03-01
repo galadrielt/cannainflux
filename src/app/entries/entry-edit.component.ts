@@ -11,8 +11,6 @@ import { EntryService } from './entry.service';
 import { GenericValidator } from '../shared/generic-validator';
 
 
-
-
 @Component({
   templateUrl: './entry-edit.component.html',
   styleUrls: ['./entry-edit.component.css']
