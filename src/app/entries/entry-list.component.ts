@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Entry } from './entry';
 import { EntryService } from './entry.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -11,8 +13,10 @@ import { EntryService } from './entry.service';
 
 
 export class EntryComponent implements OnInit {
-  pageTitle = '2020 Ensure Cup Picks';
+  pageTitle = '';
   errorMessage = '';
+  poolsId = 0;
+  private sub: Subscription;
 
   cmp(a, b) {
     console.log("A: ", a, "B: ", b)
@@ -30,11 +34,17 @@ export class EntryComponent implements OnInit {
     this.filteredEntries = this.listFilter ? this.performFilter(this.listFilter) : this.entries;
   }
 
-  filteredEntries: Entry[] = [];
-  entries: Entry[] = [];
+
+  filteredEntries: any[] = [];
+  //filteredEntries: Entry[] = [];
+  //entries: Entry[] = [];
+  entries: any[] = [];
+  
 
   constructor(
     private entryService: EntryService,
+    private route: ActivatedRoute,
+    private router: Router,
     ) { }
 
   performFilter(filterBy: string): Entry[] {
@@ -45,14 +55,29 @@ export class EntryComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.entryService.getEntries().subscribe({
-      next: entries => {
-        entries.sort((a, b) => b.entryPoints - a.entryPoints);
-        this.entries = entries;
-        this.filteredEntries = this.entries;
-      },
-      error: err => this.errorMessage = err
-    });
+
+    this.sub = this.route.paramMap.subscribe(
+      params => {
+        this.poolsId = +params.get('poolsId');
+
+    this.entryService.getFireEntries(this.poolsId).subscribe({
+        next: entries => {
+          //entries.sort((a, b) => b.entryPoints - a.entryPoints);
+          this.entries = entries;
+          this.filteredEntries = this.entries;
+        },
+        error: err => this.errorMessage = err
+      });;
+    }
+    );
+    // this.entryService.getEntries().subscribe({
+    //   next: entries => {
+    //     entries.sort((a, b) => b.entryPoints - a.entryPoints);
+    //     this.entries = entries;
+    //     this.filteredEntries = this.entries;
+    //   },
+    //   error: err => this.errorMessage = err
+    // });
   }
 
 

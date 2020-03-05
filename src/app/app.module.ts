@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 //Components
 import { AppComponent } from './app.component';
@@ -50,6 +53,8 @@ import { MatIconModule } from '@angular/material/icon'
     MatSortModule,
     MatChipsModule,
     MatIconModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -67,7 +72,6 @@ import { MatIconModule } from '@angular/material/icon'
     MatchesModule,
     DemoMaterialModule,
     BrowserAnimationsModule
-
 
   ],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import { Entry } from './entry';
 import { EntryService } from './entry.service';
 
 import { GenericValidator } from '../shared/generic-validator';
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
 
 @Component({
@@ -27,6 +29,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   verification_array: string [] = ['125', '133', '141', '149','157', '165', '174', '184', '197', '285'];
   entry: Entry;
   private sub: Subscription;
+  items: Observable<any[]>;
 
   // Use with the generic validation message class
   displayMessage: { [key: string]: string } = {};
@@ -38,11 +41,18 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   //  return this.entryForm.get('entryTags') as FormArray;
   //}
 
+  
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private entryService: EntryService) {
-
+              private entryService: EntryService,
+              firestore: AngularFirestore
+              ) {
+    
+    this.items = firestore.collection('picks').valueChanges();
+    console.log("Items:", this.items);
+    
+    
     // Defines all of the validation messages for the form.
     // These could instead be retrieved from a file or database.
     this.validationMessages = {
@@ -112,6 +122,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    
     this.entryForm = this.fb.group({
       entryName: ['', [Validators.required,
                        Validators.minLength(3),
@@ -140,7 +151,9 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
     // Read the entryId from the route parameter
     this.sub = this.route.paramMap.subscribe(
       params => {
+        const poolsId = +params.get('poolsId');
         const id = +params.get('id');
+        // I don't allow editing of entry for now.  Just pass 0.
         this.getEntry(id);
       }
     );

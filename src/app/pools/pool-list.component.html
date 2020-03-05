@@ -42,6 +42,7 @@
               <th>Total Entries</th>
               <th>Pool Entry Amount</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -65,8 +66,14 @@
               <td>{{ pool.poolEntryAmount | currency }}</td>
               <td>
                 <button class="btn btn-outline-primary btn-sm"
-                        [routerLink]="['/pools', pool.id, 'edit']">
-                  Edit
+                        [routerLink]="['/entries', pool.id, 0, 'edit']">
+                  +New Entry
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/entries', pool.id]">
+                  See Entries
                 </button>
               </td>
             </tr>

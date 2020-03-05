@@ -2,9 +2,11 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import seeds from '../../assets/json/wrestlers-seeds.json';
 import points from '../../assets/json/wrestlers-scores.json';
 import deductions from '../../assets/json/wrestlers-deductions.json';
+//counts is by [seed][weight] so #1 seeds is 0 array and 125 #1 would be [0][0] 
 import counts from '../../assets/json/wrestlers-counts.json';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { TrackData } from './data';
  
   /** Constants used to fill up our data base. */
   const COLORS: string[] = [
@@ -68,13 +70,13 @@ export class DataComponent implements OnInit {
                 weight: lookup.weight,
                 seed: seeds[w][x].seed,
                 name: lookup.name,
-                adPoints: lookup.ad_points,
-                actPoints: lookup.act_points,
-                plPoints: lookup.place_points,
-                points: lookup.total_points,
+                adPoints: lookup.adPoints,
+                actPoints: lookup.actPoints,
+                plPoints: lookup.plPoints,
+                points: lookup.points,
                 numPicks: x < 16 ? counts[x][w].toString() : "36", // Sum up total number of people who picked them
                 percentDiscount: x < 16 ? counts[x][w]>0 ? (1 - (counts[x][w]-1)/36).toFixed(4).toString() : "1" : "0",  // calculate 1 - (numPicks-1)/total entries
-                discountedPoints: x < 16 ? counts[x][w]>0 ? ((1 - (counts[x][w]-1)/36)*Number(lookup.total_points)).toFixed(2).toString() : lookup.total_points.toString() : "0"// this.discountedPoints
+                discountedPoints: x < 16 ? counts[x][w]>0 ? ((1 - (counts[x][w]-1)/36)*Number(lookup.points)).toFixed(2).toString() : lookup.points.toString() : "0"// this.discountedPoints
           };
           this.finalWrestlers.push(this.updateWrestler);
       }
@@ -109,18 +111,4 @@ function createWrestler(id: number): TrackData {
       percentDiscount: Math.round(Math.random()).toString(),
       discountedPoints: Math.round(Math.random() * .1).toString()
     };
-  };
-
-
-export interface TrackData {
-    weight: string;
-    seed: string;
-    name: string;
-    adPoints: string;
-    actPoints: string;
-    plPoints: string;
-    points: string;
-    numPicks: string;
-    percentDiscount: string;
-    discountedPoints: string;
   };

@@ -3,10 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
-import { Entry } from './entry';
-
-//import entry2 from '../assets/entries.json';
+import { Entry, Seeds, EntryFire } from './entry';
 
 
 @Injectable({
@@ -14,13 +14,52 @@ import { Entry } from './entry';
 })
 export class EntryService {
   private entriesUrl = 'api/entries';
+  private jsonUrl = 'assets';
+  items: Observable<any[]>;
   
   constructor(
     private http: HttpClient,
-    private http2: HttpClient
+    private httpjson: HttpClient,
+    private firestore: AngularFirestore
     ) { 
+
+
 }
-  
+
+getSeeds(id: number): Observable<Seeds> {
+  const sUrl = `${this.jsonUrl}/wrestlers-seeds.json`;
+  console.log(sUrl);
+  return this.httpjson.get<Seeds>(sUrl)
+    .pipe(
+      tap(data => console.log('Seeds: ' + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+};
+
+
+/************************************************
+ * 
+ * Firestore functions
+ * - replaced the functions with same name without "Fire"
+ ************************************************/
+
+  getFireEntries(poolsId): Observable<any[]>{
+  return this.firestore.collection('picks', ref =>
+  ref.where('poolsId', '==', poolsId)).valueChanges();
+  };
+
+  getFireEntry(poolsId: number, id: number): Observable<any> {
+    console.log('In Firestore Entry');
+    return this.firestore.collection('picks', ref =>
+    ref.where('poolsId', '==', poolsId).where('id', '==', id)).valueChanges();
+  }
+
+//--------End Firestore functions-----------------
+
+
+
+
+  // This getEntry(id) & getEntryNames() uses the in-memory-api module for testing.
 
   getEntries(): Observable<Entry[]> {
     return this.http.get<Entry[]>(this.entriesUrl)
@@ -31,8 +70,9 @@ export class EntryService {
         catchError(this.handleError)
         )
       );
-  }
-  
+  };
+
+
   getEntryNames(): Observable<Entry[]> {
     return this.http.get<any[]>(this.entriesUrl)
       .pipe(
@@ -41,7 +81,8 @@ export class EntryService {
         );
       
   }
-  
+
+
   getEntry(id: number): Observable<Entry> {
     console.log('In Entry');
     if (id === 0) {

@@ -1,8 +1,9 @@
 <div class="card">
     <div class="card-header"
-         *ngIf="entry">
-      {{pageTitle + ": Entry id:" + entry.id}}
+         *ngIf="entry_final; else stillLoading">
+      {{pageTitle + ": Entry id:" + entry_final.id}}
     </div>
+    <ng-template #stillLoading><p>Loading...</p></ng-template>
     <div class="row mt-4">
       <div class="col-md-4">
         &nbsp;&nbsp;<button class="btn btn-outline-secondary mr-3"
@@ -13,41 +14,88 @@
       </div>
     </div>
   
-    <div class="card-body"
-         *ngIf="entry">
+    <div class="card-body">
 
       <div class="row">
         <div class="col-md-8">
           <div class="row">
-            <div class="col-md-3">Name:</div>
-            <div class="col-md-6">{{entry.entryName}}</div>
+            <div class="col-md-3">Bracket Name:</div>
+            <div class="col-md-6">{{entry_final.entryName}}</div>
           </div>
           <div class="row">
-            <div class="col-md-3">Username:</div>
-            <div class="col-md-6">{{entry.entryUsername}}</div>
+            <div class="col-md-3">Your Name:</div>
+            <div class="col-md-6">{{entry_final.entryUsername}}</div>
           </div>
           <div class="row">
-            <div class="col-md-3">Picks:</div>
-            <div class="col-md-6">
-              #1 Seed: {{entry.entryPick1}}<br>
-              #2 Seed: {{entry.entryPick2}}<br>
-              #3 Seed: {{entry.entryPick3}}<br>
-              #4 Seed: {{entry.entryPick4}}<br>
-              #5 Seed: {{entry.entryPick5}}<br>
-              #6 Seed: {{entry.entryPick6}}<br>
-              #7 Seed: {{entry.entryPick7}}<br>
-              #8 Seed: {{entry.entryPick8}}<br>
-              #9 Seed: {{entry.entryPick9}}<br>
-              #10 Seed: {{entry.entryPick10}}<br>
-              #11 Seed: {{entry.entryPick11}}<br>
-              #12 Seed: {{entry.entryPick12}}<br>
-              #13 Seed: {{entry.entryPick13}}<br>
-              #14 Seed: {{entry.entryPick14}}<br>
-              #15 Seed: {{entry.entryPick15}}<br>
-              #16 Seed: {{entry.entryPick16}}<br>
+            <div class="col-md-12 table-data">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="seed">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Seed </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.seed}} </td>
+                  <td mat-footer-cell *matFooterCellDef>Totals:</td>
+                </ng-container>
+
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.weight}} </td>
+                  <td mat-footer-cell *matFooterCellDef></td>
+                </ng-container>
+            
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.name}} </td>
+                  <td mat-footer-cell *matFooterCellDef></td>
+                </ng-container>
+  
+                <ng-container matColumnDef="adPoints">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Advancement Points </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.adPoints}} </td>
+                  <td mat-footer-cell *matFooterCellDef>{{totalPickAdPoints}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="actPoints">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Activity Points </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.actPoints}} </td>
+                  <td mat-footer-cell *matFooterCellDef>{{totalPickActPoints}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="plPoints">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Placement Points </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.plPoints}} </td>
+                  <td mat-footer-cell *matFooterCellDef>{{totalPickPlPoints}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="points">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Gross Points </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.points}} </td>
+                  <td mat-footer-cell *matFooterCellDef>{{totalPickPoints}}</td>
+                </ng-container>
+  
+                <ng-container matColumnDef="numPicks">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> #Picks </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.numPicks}} </td>
+                  <td mat-footer-cell *matFooterCellDef></td>
+                </ng-container>
+  
+                <ng-container matColumnDef="percentDiscount">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount Percent </th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.percentDiscount*100}}% </td>
+                  <td mat-footer-cell *matFooterCellDef></td>
+                </ng-container>
+  
+                <ng-container matColumnDef="discountedPoints">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Final Score</th>
+                  <td mat-cell *matCellDef="let wrestler"> {{wrestler.discountedPoints}} </td>
+                  <td mat-footer-cell *matFooterCellDef> {{totalPickDiscountPoints | number : '1.2-2'}} </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+              </table> 
             </div>
           </div>
-        </div>    
+        </div>
     </div>
   
     <div class="alert alert-danger"

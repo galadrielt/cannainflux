@@ -1,3 +1,5 @@
+import { TrackData } from '../data/data';
+
 /* Defines the a wrestling team entity */
 export interface Entry {
     id: number;
@@ -19,6 +21,28 @@ export interface Entry {
     entryPick14: string,
     entryPick15: string,
     entryPick16: string,
-    entryPoints: number,
+    entryPoints?: number,
    }
    
+   export interface EntryExt {
+    id: number;
+    poolsId: number;
+    entryUsername: string;
+    entryName: string;
+    entryPicks: TrackData [];
+   }
+   
+   export interface EntryFire {
+    id: number;
+    entryUsername: string;
+    entryName: string;
+    entryPicks: number [];
+   }
+
+
+
+   export interface Seeds {
+       name: string;
+       seed: string;
+       weight: string;
+   }

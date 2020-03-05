@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "matmadness-87c01": {
+      "hosting": {
+        "apm": [
+          "matmadness-87c01"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "apm",
+      "public": "dist/apm",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
