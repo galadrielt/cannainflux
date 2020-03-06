@@ -10,7 +10,7 @@
           <input type="text"
                  [(ngModel)]="listFilter" />
         </div>
-        <div class="nav-ml-auto">
+        <div class="nav-ml-auto" *ngIf="poolsId==1">
           <button class="btn btn-outline-success btn-sm"
           routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/entries', poolsId, '0', 'edit']">
            +Add New
@@ -28,6 +28,7 @@
                *ngIf="entries && entries.length">
           <thead>
             <tr>
+              <th></th>
               <th>Entry Name</th>
               <th>Entry Owner</th>
               <th>Picks</th>
@@ -35,7 +36,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let entry of filteredEntries">
+            <tr *ngFor="let entry of filteredEntries;let indexOfelement=index;">
+              <td>
+                {{indexOfelement+1}}
+              </td>
               <td>
                 <a [routerLink]="['/entries', poolsId, entry.id]">
                   {{ entry.entryName }}

@@ -8,7 +8,7 @@ import { EventService } from './event.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  pageTitle = 'Watch a  tournament';
+  pageTitle = 'Follow an event';
   imageWidth = 50;
   imageMargin = 2;
   showImage = true;

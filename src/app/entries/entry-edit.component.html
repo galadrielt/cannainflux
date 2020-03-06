@@ -17,7 +17,7 @@
 
   <div class="card-body">
     <form novalidate
-          (ngSubmit)="saveEntry()"
+          (ngSubmit)="saveFireEntry()"
           [formGroup]="entryForm">
           <div class="form-group row mb-2">
             <label class="col-md-2 col-form-label"
@@ -65,12 +65,17 @@
           </span>
         </div>
       </div>
-
+      <div>
+        Use all weights: {{verification_array | json}}
+        <br>
+        &nbsp;
+      </div>
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
                for="entryPick1Id">#1 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick1">
+          <select formControlName="entryPick1" #mySelect1
+          (change)='verifyAllWeightsSelected(mySelect1.value, 1)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" [ngClass]="{'is-invalid': displayMessage.entryName }" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -83,7 +88,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick2Id">#2 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick2">
+          <select formControlName="entryPick2" #mySelect2
+          (change)='verifyAllWeightsSelected(mySelect2.value, 2)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -96,7 +102,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick3Id">#3 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick3">
+          <select formControlName="entryPick3" #mySelect3
+          (change)='verifyAllWeightsSelected(mySelect3.value, 3)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -109,7 +116,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick4Id">#4 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick4">
+          <select formControlName="entryPick4" #mySelect4
+          (change)='verifyAllWeightsSelected(mySelect4.value, 4)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -122,7 +130,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick5Id">#5 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick5">
+          <select formControlName="entryPick5" #mySelect5
+          (change)='verifyAllWeightsSelected(mySelect5.value, 5)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -135,7 +144,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick6Id">#6 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick6">
+          <select formControlName="entryPick6" #mySelect6
+          (change)='verifyAllWeightsSelected(mySelect6.value, 6)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -148,7 +158,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick7Id">#7 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick7">
+          <select formControlName="entryPick7" #mySelect7
+          (change)='verifyAllWeightsSelected(mySelect7.value, 7)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -161,7 +172,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick8Id">#8 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick8">
+          <select formControlName="entryPick8" #mySelect8
+          (change)='verifyAllWeightsSelected(mySelect8.value, 8)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -174,7 +186,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick9Id">#9 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick9">
+          <select formControlName="entryPick9" #mySelect9
+          (change)='verifyAllWeightsSelected(mySelect9.value, 9)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -187,7 +200,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick10Id">#10 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick10">
+          <select formControlName="entryPick10" #mySelect10
+          (change)='verifyAllWeightsSelected(mySelect10.value, 10)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -200,7 +214,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick11Id">#11 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick11">
+          <select formControlName="entryPick11" #mySelect11
+          (change)='verifyAllWeightsSelected(mySelect11.value, 11)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -213,7 +228,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick12Id">#12 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick12">
+          <select formControlName="entryPick12" #mySelect12
+          (change)='verifyAllWeightsSelected(mySelect12.value, 12)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -226,7 +242,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick13Id">#13 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick13">
+          <select formControlName="entryPick13" #mySelect13
+          (change)='verifyAllWeightsSelected(mySelect13.value, 13)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -239,7 +256,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick14Id">#14 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick14">
+          <select formControlName="entryPick14" #mySelect14
+          (change)='verifyAllWeightsSelected(mySelect14.value, 14)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -252,7 +270,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick15Id">#15 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick15">
+          <select formControlName="entryPick15" #mySelect15
+          (change)='verifyAllWeightsSelected(mySelect15.value, 15)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -265,7 +284,8 @@
         <label class="col-md-2 col-form-label"
                for="entryPick16Id">#16 Seed:</label>
           <div class="col-md-8">
-          <select formControlName="entryPick16">
+          <select formControlName="entryPick16" #mySelect16
+          (change)='verifyAllWeightsSelected(mySelect16.value, 16)'>
             <option value="" [disabled]="true">--Choose one weight--</option>
             <option *ngFor="let pick of weightClasses" value="{{pick}}">{{pick}}</option>
           </select>          
@@ -280,8 +300,8 @@
                   style="width:80px;"
                   type="submit"
                   [title]="entryForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
-                  [disabled]="!entryForm.valid">
-            Save
+                  [disabled]="!entryForm.valid && verification_array.length>0">
+            {{entryForm.valid && verification_array.length==0 ? "Save" : "Invalid"}}
           </button>
           <button class="btn btn-outline-secondary mr-3"
                   style="width:80px;"
@@ -290,13 +310,13 @@
                   [routerLink]="['/entries']">
             Cancel
           </button>
-          <button class="btn btn-outline-warning"
+          <!-- <button class="btn btn-outline-warning"
                   style="width:80px"
                   type="button"
                   title="Delete this entry"
                   (click)="deleteEntry()">
             Delete
-          </button>
+          </button> -->
         </div>
       </div>
     </form>

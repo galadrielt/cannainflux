@@ -200,8 +200,8 @@ export class EntryDetailComponent implements OnInit {
               plPoints: this.entry_final.entryPicks[x].plPoints,
               points: this.entry_final.entryPicks[x].points,
               numPicks: counts[SeedLocation(this.entry_final.entryPicks[x].weight)][x] ? counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)].toString() : "0", // Sum up total number of people who picked them
-              percentDiscount: counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]>1 ? (1 - (counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]-1)/36).toFixed(4).toString() : "1",  // calculate 1 - (numPicks-1)/total entries
-              discountedPoints: counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]>1 ? ((1 - (counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]-1)/36)*Number(this.entry_final.entryPicks[x].points)).toFixed(2).toString() : this.entry_final.entryPicks[x].points.toString()
+              percentDiscount: counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]>1 ? (1 - (counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]-1)/counts[16][0]).toFixed(4).toString() : "1",  // calculate 1 - (numPicks-1)/total entries
+              discountedPoints: counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]>1 ? ((1 - (counts[x][SeedLocation(this.entry_final.entryPicks[x].weight)]-1)/counts[16][0])*Number(this.entry_final.entryPicks[x].points)).toFixed(2).toString() : this.entry_final.entryPicks[x].points.toString()
         };
         this.finalWrestlers.push(this.updateWrestler);
 
@@ -215,7 +215,7 @@ export class EntryDetailComponent implements OnInit {
     };
     this.dataSource = new MatTableDataSource(this.finalWrestlers);
     setTimeout(() => this.dataSource.sort = this.sort);
-  }, 4000);
+  }, 1000);
   }
 
 

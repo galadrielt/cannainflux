@@ -74,9 +74,9 @@ export class DataComponent implements OnInit {
                 actPoints: lookup.actPoints,
                 plPoints: lookup.plPoints,
                 points: lookup.points,
-                numPicks: x < 16 ? counts[x][w].toString() : "36", // Sum up total number of people who picked them
-                percentDiscount: x < 16 ? counts[x][w]>0 ? (1 - (counts[x][w]-1)/36).toFixed(4).toString() : "1" : "0",  // calculate 1 - (numPicks-1)/total entries
-                discountedPoints: x < 16 ? counts[x][w]>0 ? ((1 - (counts[x][w]-1)/36)*Number(lookup.points)).toFixed(2).toString() : lookup.points.toString() : "0"// this.discountedPoints
+                numPicks: x < 16 ? counts[x][w].toString() : (counts[16][0]).toString(), // Sum up total number of people who picked them
+                percentDiscount: x < 16 ? counts[x][w]>0 ? (1 - (counts[x][w]-1)/counts[16][0]).toFixed(4).toString() : "1" : "0",  // calculate 1 - (numPicks-1)/total entries
+                discountedPoints: x < 16 ? counts[x][w]>0 ? ((1 - (counts[x][w]-1)/counts[16][0])*Number(lookup.points)).toFixed(2).toString() : lookup.points.toString() : "0"// this.discountedPoints
           };
           this.finalWrestlers.push(this.updateWrestler);
       }

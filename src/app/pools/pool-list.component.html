@@ -5,16 +5,17 @@
   
     <div class="card-body">
       <div class="row">
-        <div class="col-md-2">Filter by:</div>
+        <div class="col-md-2">Filter Pool Name by:</div>
         <div class="col-md-4">
           <input type="text"
                  [(ngModel)]="listFilter" />
         </div>
         <div class="nav-ml-auto">
-            <button class="btn btn-outline-success btn-sm"
+            <!-- <button class="btn btn-outline-success btn-sm"
             routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/pools/0/edit']">
              +Add New
-            </button>
+            </button> -->
+            &nbsp;&nbsp;&nbsp;{{now | date:'medium'}}
         </div>
       </div>
       <div class="row"
@@ -43,6 +44,8 @@
               <th>Pool Entry Amount</th>
               <th></th>
               <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -66,7 +69,14 @@
               <td>{{ pool.poolEntryAmount | currency }}</td>
               <td>
                 <button class="btn btn-outline-primary btn-sm"
-                        [routerLink]="['/entries', pool.id, 0, 'edit']">
+                        [routerLink]="['/data']">
+                  Data
+                </button>
+              </td>              
+              <!--<td *ngIf="(pool.poolDeadlineDate | date:'EEEE d MMMM') >= (now | date:'EEEE d MMMM')">-->
+                <td>
+                <button class="btn btn-outline-primary btn-sm"
+                        [routerLink]="['/entries', pool.id, 0, 'edit']" *ngIf="pool.id==1">
                   +New Entry
                 </button>
               </td>

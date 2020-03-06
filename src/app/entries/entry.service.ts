@@ -20,7 +20,8 @@ export class EntryService {
   constructor(
     private http: HttpClient,
     private httpjson: HttpClient,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private firestore2: AngularFirestore
     ) { 
 
 
@@ -49,10 +50,61 @@ getSeeds(id: number): Observable<Seeds> {
   };
 
   getFireEntry(poolsId: number, id: number): Observable<any> {
-    console.log('In Firestore Entry');
+    //console.log('In Firestore Entry');
     return this.firestore.collection('picks', ref =>
     ref.where('poolsId', '==', poolsId).where('id', '==', id)).valueChanges();
   }
+
+  getFireIndex(poolsId: number): Observable<any> {
+    //console.log('In Firestore Entry');
+    return this.firestore.collection('numOfEntries', ref =>
+    ref.where('poolsId', '==', poolsId)).valueChanges();
+  }
+
+
+createFireEntry(entry: Entry, poolsId: number, index) {
+// console.log("In CreateFireEntry");
+// let indexing = this.firestore2.collection('numOfEntries').valueChanges();
+// console.log("INX: ", indexing);
+
+this.firestore.collection('picks').add({
+  entryName: entry.entryName,
+  entryUsername: entry.entryUsername,
+  entryPicks: [entry.entryPick1, 
+                  entry.entryPick2,
+                  entry.entryPick3,
+                  entry.entryPick4,
+                  entry.entryPick5,
+                  entry.entryPick6,
+                  entry.entryPick7,
+                  entry.entryPick8,
+                  entry.entryPick9, 
+                  entry.entryPick10,
+                  entry.entryPick11, 
+                  entry.entryPick12,
+                  entry.entryPick13, 
+                  entry.entryPick14,
+                  entry.entryPick15,
+                  entry.entryPick16  
+                  ],
+  id:  index, //NEED THIS TO INCREMENT - cannot read database numOfEntries??
+  poolsId: poolsId
+})
+.catch(function(error) {
+  console.error("Error adding document: ", error);
+});
+
+// Need to just increment index??? .update???
+
+// this.firestore2.collection('numOfEntries', ref=>ref.where('poolsId', '==', poolsId)).set {
+//     name: indexing[0].name,
+//     poolsId: indexing[0].poolsId,
+//     index: indexing[0].index + 1
+// });
+
+}
+
+
 
 //--------End Firestore functions-----------------
 
@@ -97,6 +149,12 @@ getSeeds(id: number): Observable<Seeds> {
         catchError(this.handleError)
       );
   }
+
+
+
+
+
+
 
   createEntry(entry: Entry): Observable<Entry> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

@@ -32,9 +32,9 @@ import { Component } from '@angular/core';
         <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
         [routerLink]="['/entries']">Entries</a>
         </li>-->
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+        <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
         [routerLink]="['/data']">Data</a>
-        </li>
+        </li>-->
       </ul>
       
       <ul class='navbar-nav ml-auto'>

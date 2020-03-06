@@ -16,6 +16,8 @@ export class PoolComponent implements OnInit {
   imageMargin = 2;
   showImage = true;
   errorMessage = '';
+  now = new Date();
+  math = Math;
 
 
   _listFilter = '';
@@ -52,5 +54,8 @@ export class PoolComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
+    setInterval(() => {
+      this.now = new Date();
+   }, 1000);
   }
 }

@@ -27,9 +27,12 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   numberOfPicks: number [] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
   weightClasses: string [] = ['125', '133', '141', '149','157', '165', '174', '184', '197', '285'];
   verification_array: string [] = ['125', '133', '141', '149','157', '165', '174', '184', '197', '285'];
+  verification_picks: string [] = ['','','','','','','','','','','','','','','',''];
   entry: Entry;
   private sub: Subscription;
   items: Observable<any[]>;
+  poolsId: number;
+  autoindex: any[] = [];
 
   // Use with the generic validation message class
   displayMessage: { [key: string]: string } = {};
@@ -151,7 +154,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
     // Read the entryId from the route parameter
     this.sub = this.route.paramMap.subscribe(
       params => {
-        const poolsId = +params.get('poolsId');
+        this.poolsId = +params.get('poolsId');
         const id = +params.get('id');
         // I don't allow editing of entry for now.  Just pass 0.
         this.getEntry(id);
@@ -237,6 +240,56 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+
+saveFireEntry(): void {
+  if (this.entryForm.valid) {
+    if (this.entryForm.dirty) {
+      console.log("poolsId:", this.poolsId);
+      this.entryService.getFireIndex(this.poolsId).subscribe({
+        next: entries => {
+          this.autoindex = entries;
+          console.log("Ent:", entries);
+          console.log("INDX:", entries[0].index);
+        },
+        error: err => this.errorMessage = err
+      });
+      // Todo: Need to change setTimeout to a Promise so the code can execute correctly.
+      // I need the index from the firestore database to set the new forms id.
+      setTimeout(() => {
+      const p = { ...this.entry, ...this.entryForm.value };
+        this.entryService.createFireEntry(p, this.poolsId, this.autoindex[0].index);
+        this.onSaveComplete();
+      }, 2000);
+    } else {
+      this.onSaveComplete();
+    }
+  } else {
+    this.errorMessage = 'Please correct the validation errors.';
+  }
+}
+
+verifyAllWeightsSelected(value:string, position:number){
+  //console.log("the selected value is " + value, position);
+  let old_val = this.verification_picks[position-1];
+  this.verification_picks[position-1] = value;
+  //console.log("Old Value: ", old_val);
+  //console.log("VP: ", this.verification_picks);
+
+   //console.log("IVA: ", this.verification_array.indexOf(value));
+  if (this.verification_array.indexOf(value)>=0){
+    //console.log("Inside splice");
+    //console.log("Index VA: ", this.verification_array.indexOf(value));
+    this.verification_array.splice(this.verification_array.indexOf(value),1);
+    //console.log("VWC: ", this.verification_array);
+  }
+
+  if (old_val !== ''){
+    if (!this.verification_picks.includes(old_val)){
+      this.verification_array.push(old_val);
+    }
+  }
+}
+
   saveEntry(): void {
     if (this.entryForm.valid) {
       if (this.entryForm.dirty) {
@@ -266,6 +319,6 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   onSaveComplete(): void {
     // Reset the form to clear the flags
     this.entryForm.reset();
-    this.router.navigate(['/entriess']);
+    this.router.navigate(['/entries', this.poolsId]);
   }
 }
