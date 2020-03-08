@@ -282,8 +282,8 @@ saveFireEntry(): void {
             console.log("IDX:", index[i].poolsId, this.poolsId)
             if (index[i].poolsId == this.poolsId){
               console.log("MDE HR")
-              // this.autoid = index[i];
-              // this.autoindex = index[i];
+              this.autoid = index[i].id;
+              this.autoindex = index[i].index;
             }
           }
         },
@@ -295,9 +295,13 @@ saveFireEntry(): void {
       });
 
       const p = { ...this.entry, ...this.entryForm.value };
-      this.entryService.createFireEntry(p, this.poolsId, 1);
-      this.entryService.updateFireIndex("y1S2XNMMwqh8vOOMrkgW");  // Get doc id from firestore
-      this.onSaveComplete();
+      setTimeout(() => {
+        console.log("AUTOS:", this.autoindex, this.autoid);
+        this.entryService.createFireEntry(p, this.poolsId, this.autoindex);
+        this.entryService.updateFireIndex(this.autoid, this.autoindex+1);  // Get doc id from firestore
+        this.onSaveComplete();
+      }, 2000);
+
       
 
 
@@ -366,7 +370,7 @@ verifyAllWeightsSelected(value:string, position:number){
 
 
 updateFireIndexTest(){
-  this.entryService.updateFireIndex("y1S2XNMMwqh8vOOMrkgW");
+  this.entryService.updateFireIndex("y1S2XNMMwqh8vOOMrkgW", 9);
   //console.log("I am here inc up");
 }
 

@@ -65,9 +65,9 @@ getSeeds(id: number): Observable<Seeds> {
     ref.where('poolsId', '==', poolsId)).valueChanges();
   }
 
-  updateFireIndex(id: string){
-    this.afs.collection("numOfEntries").doc("y1S2XNMMwqh8vOOMrkgW")
-    .update({index: 5});
+  updateFireIndex(id: string, autoindex: number){
+    this.afs.collection("numOfEntries").doc(id)
+    .update({index: autoindex});
     console.log("FireUp +1");
   }
 
