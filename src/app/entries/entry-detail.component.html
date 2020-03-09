@@ -80,7 +80,7 @@
                 <ng-container matColumnDef="percentDiscount">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Discount Percent </th>
                   <td mat-cell *matCellDef="let wrestler"> {{wrestler.percentDiscount*100}}% </td>
-                  <td mat-footer-cell *matFooterCellDef></td>
+                  <td mat-footer-cell *matFooterCellDef>{{totalAverageDiscount*100}}%</td>
                 </ng-container>
   
                 <ng-container matColumnDef="discountedPoints">

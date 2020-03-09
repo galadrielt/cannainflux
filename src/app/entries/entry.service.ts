@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of, throwError } from 'rxjs';
+import seeds from '../../assets/json/wrestlers-seeds.json';
+import points from '../../assets/json/wrestlers-scores.json';
 import { catchError, tap, map } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 //import firebase from 'firebase-admin';
-import 'firebase/firestore';
-
+// import 'firebase/firestore';
+import * as firebase from 'firebase';
 
 import { Entry, Seeds, EntryFire } from './entry';
 
@@ -27,7 +29,7 @@ export class EntryService {
     ) {
 
           //console.log(firebase.firestore)
-          //this.increment = firebase.firestore.FieldValue.increment(1);
+          this.increment = firebase.firestore.FieldValue.increment(1);
 
      }
 
@@ -40,6 +42,82 @@ getSeeds(id: number): Observable<Seeds> {
       catchError(this.handleError)
     );
 };
+
+
+getSeedName(pick: string, position: number = -1){
+  switch (pick){
+    case "125":
+      return seeds[0][position].name;
+    break;
+    case "133":
+      return seeds[1][position].name;
+    break;
+    case "141":
+      return seeds[2][position].name;
+    break;
+    case "149":
+      return seeds[3][position].name;
+    break;
+    case "157":
+      return seeds[4][position].name;
+    break;
+    case "165":
+      return seeds[5][position].name;
+    break;
+    case "174":
+      return seeds[6][position].name;
+    break;
+    case "184":
+      return seeds[7][position].name;
+    break;
+    case "197":
+      return seeds[8][position].name;
+    break;
+    case "285":
+      return seeds[9][position].name;
+    break;  
+  }
+};
+
+getSeedArrayIndex(pick: string){
+  switch (pick){
+    case "125":
+      return 0;
+    break;
+    case "133":
+      return 1
+    break;
+    case "141":
+      return 2;
+    break;
+    case "149":
+      return 3;
+    break;
+    case "157":
+      return 4;
+    break;
+    case "165":
+      return 5;
+    break;
+    case "174":
+      return 6;
+    break;
+    case "184":
+      return 7;
+    break;
+    case "197":
+      return 8;
+    break;
+    case "285":
+      return 9;
+    break;  
+  }
+};
+
+
+calcDiscountedTotalForEntry(picks: number []){
+  
+}
 
 
 /************************************************
@@ -67,7 +145,7 @@ getSeeds(id: number): Observable<Seeds> {
 
   updateFireIndex(id: string, autoindex: number){
     this.afs.collection("numOfEntries").doc(id)
-    .update({index: autoindex});
+    .update({index: this.increment});
     console.log("FireUp +1");
   }
 

@@ -39,8 +39,6 @@ export interface Entry {
     entryPicks: number [];
    }
 
-
-
    export interface Seeds {
        name: string;
        seed: string;
