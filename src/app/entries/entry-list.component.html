@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-      {{pageTitle}} ({{entries.length}} total)
+      <span *ngIf="entries">{{pageTitle}} ({{entries.length}} total)</span>
     </div>
   
     <div class="card-body">
@@ -46,12 +46,12 @@
                 </a>
               </td>
               <td>{{ entry.entryUsername }}</td>
-              <td><span *ngFor="let pick of entry.entryPicks; let isLast=last">
+              <td *ngIf="true"><span *ngFor="let pick of entry.entryPicks; let isLast=last">
                 {{pick}}{{isLast ? '' : ', '}}</span>
 
               </td>
               <td>
-                {{entry.entryPoints}}
+                {{entry.entryPoints | number:'1.1-4'}}
               </td>
             </tr>
           </tbody>

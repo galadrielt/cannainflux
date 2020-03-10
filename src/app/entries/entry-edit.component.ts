@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription, fromEvent, merge } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 
-import seeds from '../../assets/json/wrestlers-seeds.json';
+//import seeds from '../../assets/json/wrestlers-seeds.json';
 
 import { Entry } from './entry';
 import { EntryService } from './entry.service';
@@ -49,7 +49,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   poolsId: number;
   autoindex: number;
   autoid: string;
-  wSeeds = seeds;
+  wSeeds: any;
 
 
   // Use with the generic validation message class
@@ -188,6 +188,16 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
         this.getEntry(id);
       }
     );
+    
+    //  get the SEEDS for the changes in the brackets.
+    this.entryService.getFireSeeds(this.poolsId).subscribe({
+      //this.entryService.getEntry(id).subscribe({
+        next: seeds => {
+          this.wSeeds = seeds;
+          console.log("Seeds:", this.wSeeds);
+        },
+        error: err => this.errorMessage = err
+      });
   }
 
   ngOnDestroy(): void {
@@ -268,6 +278,9 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+updateFireCount(){
+  //this.entryService.updateFireCounts(1, 0, 0);
+}
 
 saveFireEntry(): void {
   console.log("POOLSID:", this.poolsId);
@@ -281,24 +294,21 @@ saveFireEntry(): void {
           for(let i=0; i < index.length; i++){
             console.log("IDX:", index[i].poolsId, this.poolsId)
             if (index[i].poolsId == this.poolsId){
-              console.log("MDE HR")
               this.autoid = index[i].id;
-              this.autoindex = index[i].index;
+              this.autoindex = index[i].index+1;
             }
           }
         },
         error(msg) {
           console.log('Error Getting Location: ', msg);
         }
-      //   ,
-      //   onComplete(){indexSubscription.unsubscribe();}
       });
 
       const p = { ...this.entry, ...this.entryForm.value };
       setTimeout(() => {
         console.log("AUTOS:", this.autoindex, this.autoid);
         this.entryService.createFireEntry(p, this.poolsId, this.autoindex);
-        this.entryService.updateFireIndex(this.autoid, this.autoindex+1);  // Get doc id from firestore
+        this.entryService.updateFireIndex(this.autoid);  // Get doc id from firestore
         this.onSaveComplete();
       }, 2000);
 
@@ -315,39 +325,39 @@ saveFireEntry(): void {
 }
 
 verifyAllWeightsSelected(value:string, position:number){
-  console.log("the selected value is " + value, position);
+
   let old_val = this.verification_picks[position-1];
   this.verification_picks[position-1] = value;
   switch(value){
     case "125":
-      this.verification_picks_names[position-1] = this.wSeeds[0][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["125"][position-1].name;
     break;
     case "133":
-      this.verification_picks_names[position-1] = this.wSeeds[1][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["133"][position-1].name;
     break;
     case "141":
-      this.verification_picks_names[position-1] = this.wSeeds[2][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["141"][position-1].name;
     break;
     case "149":
-      this.verification_picks_names[position-1] = this.wSeeds[3][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["149"][position-1].name;
     break;
     case "157":
-      this.verification_picks_names[position-1] = this.wSeeds[4][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["157"][position-1].name;
     break;
     case "165":
-      this.verification_picks_names[position-1] = this.wSeeds[5][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["165"][position-1].name;
     break;
     case "174":
-      this.verification_picks_names[position-1] = this.wSeeds[6][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["174"][position-1].name;
     break;
     case "184":
-      this.verification_picks_names[position-1] = this.wSeeds[7][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["185"][position-1].name;
     break;
     case "197":
-      this.verification_picks_names[position-1] = this.wSeeds[8][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["197"][position-1].name;
     break;
     case "285":
-      this.verification_picks_names[position-1] = this.wSeeds[9][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["285"][position-1].name;
    break;
   }
   //console.log("Old Value: ", old_val);
@@ -370,7 +380,7 @@ verifyAllWeightsSelected(value:string, position:number){
 
 
 updateFireIndexTest(){
-  this.entryService.updateFireIndex("y1S2XNMMwqh8vOOMrkgW", 9);
+  this.entryService.updateFireIndexes("y1S2XNMMwqh8vOOMrkgW");
   //console.log("I am here inc up");
 }
 

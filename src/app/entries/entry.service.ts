@@ -115,8 +115,8 @@ getSeedArrayIndex(pick: string){
 };
 
 
-calcDiscountedTotalForEntry(picks: number []){
-  
+calcDiscountedTotalForEntry(entry){
+  return [1,0,0,5,7,2,4,6,7,8,9,12,1,0,0,5,7,2,4,6,7,8,9,12,1,0,0,5,7,2,4,6,7,8,9,12];
 }
 
 
@@ -143,34 +143,48 @@ calcDiscountedTotalForEntry(picks: number []){
     ref.where('poolsId', '==', poolsId)).valueChanges();
   }
 
-  updateFireIndex(id: string, autoindex: number){
+  getFireSeeds(poolsId: number): Observable<any> {
+    //console.log('In Firestore Entry');
+    return this.afs.collection('seeds').doc((poolsId).toString()).valueChanges();
+  }
+
+  updateFireIndex(id: string){
     this.afs.collection("numOfEntries").doc(id)
     .update({index: this.increment});
     console.log("FireUp +1");
   }
 
+  updateFireIndexes(id: string){
+    this.afs.collection("numOfEntries").doc(id)
+    .update({index: this.increment});
+    let record = this.afs.collection("numOfEntries").doc(id).snapshotChanges;
+    //console.log("Rec:", record);
+    console.log("FireUps +1");
+  }
+
+
   createFireEntry(entry: Entry, poolsId: number, index) {
     // Still cannot get a value for for firebase index correctly???
+    let entryPicksArr = [entry.entryPick1, 
+                        entry.entryPick2,
+                        entry.entryPick3,
+                        entry.entryPick4,
+                        entry.entryPick5,
+                        entry.entryPick6,
+                        entry.entryPick7,
+                        entry.entryPick8,
+                        entry.entryPick9, 
+                        entry.entryPick10,
+                        entry.entryPick11, 
+                        entry.entryPick12,
+                        entry.entryPick13, 
+                        entry.entryPick14,
+                        entry.entryPick15,
+                        entry.entryPick16 ];
     this.afs.collection('picks').add({
       entryName: entry.entryName,
       entryUsername: entry.entryUsername,
-      entryPicks: [entry.entryPick1, 
-                      entry.entryPick2,
-                      entry.entryPick3,
-                      entry.entryPick4,
-                      entry.entryPick5,
-                      entry.entryPick6,
-                      entry.entryPick7,
-                      entry.entryPick8,
-                      entry.entryPick9, 
-                      entry.entryPick10,
-                      entry.entryPick11, 
-                      entry.entryPick12,
-                      entry.entryPick13, 
-                      entry.entryPick14,
-                      entry.entryPick15,
-                      entry.entryPick16  
-                      ],
+      entryPicks: entryPicksArr,
       id:  index, //NEED THIS TO INCREMENT - cannot read database numOfEntries??
       poolsId: poolsId
     })
@@ -178,14 +192,7 @@ calcDiscountedTotalForEntry(picks: number []){
       console.error("Error adding document: ", error);
     });
 
-    // Need to just increment index??? .update???
-
-    // this.firestore2.collection('numOfEntries', ref=>ref.where('poolsId', '==', poolsId)).set {
-    //     name: indexing[0].name,
-    //     poolsId: indexing[0].poolsId,
-    //     index: indexing[0].index + 1
-    // });
-
+ 
     }
 
 
@@ -220,10 +227,9 @@ calcDiscountedTotalForEntry(picks: number []){
 
 
   getEntry(id: number): Observable<Entry> {
-    console.log('In Entry');
+    //console.log('In Entry');
     if (id === 0) {
       return of(this.initializeEntry());
-      console.log('Init Entry');
     }
     const url = `${this.entriesUrl}/${id}`;
     console.log(url);

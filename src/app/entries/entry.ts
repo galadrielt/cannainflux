@@ -30,6 +30,7 @@ export interface Entry {
     entryUsername: string;
     entryName: string;
     entryPicks: TrackData [];
+    entryPoints?: number;
    }
    
    export interface EntryFire {

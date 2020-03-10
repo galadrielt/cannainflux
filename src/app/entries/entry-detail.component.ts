@@ -5,7 +5,7 @@ import { Entry, Seeds, EntryExt } from './entry';
 import { EntryService } from './entry.service';
 import { HttpClient } from '@angular/common/http';
 
-import seeds from '../../assets/json/wrestlers-seeds.json';
+//import seeds from '../../assets/json/wrestlers-seeds.json';
 import points from '../../assets/json/wrestlers-scores.json';
 //import counts from '../../assets/json/wrestlers-counts.json';
 
@@ -27,7 +27,7 @@ export class EntryDetailComponent implements OnInit {
   entry: any | undefined;
   seed: Seeds |  undefined;
   display_final: EntryExt | undefined;
-  wSeeds = seeds;
+  wSeeds: any;
   wPoints = points;
   counts: any | undefined;
 
@@ -58,7 +58,6 @@ export class EntryDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    //console.log("SEEDS: ", this.wSeeds);
     this.dataSource = new MatTableDataSource<TrackData>();
     const param = this.route.snapshot.paramMap.get('id');
     const param2 = this.route.snapshot.paramMap.get('poolsId');
@@ -107,7 +106,7 @@ export class EntryDetailComponent implements OnInit {
                       ]
         };
 
-        console.log("FINAL ENTRY:", this.entry_final);
+        //console.log("FINAL ENTRY:", this.entry_final);
       },
       error: err => this.errorMessage = err
     });
@@ -122,7 +121,7 @@ export class EntryDetailComponent implements OnInit {
       //this.entryService.getEntry(id).subscribe({
         next: counts => {
           this.counts = counts;
-          console.log("Counts:", this.counts);
+          //console.log("Counts:", this.counts);
         },
         error: err => this.errorMessage = err
       });
@@ -131,7 +130,6 @@ export class EntryDetailComponent implements OnInit {
     // Need to convert above code into a Promise to get returned variable
     setTimeout(() => {  
     for (let x = 0; x<16; x++){
-      console.log("16:", x);
       //this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight);
       this.updateWrestler = {
               seed: (x+1).toString(),
@@ -163,7 +161,7 @@ export class EntryDetailComponent implements OnInit {
     
     this.dataSource = new MatTableDataSource(this.finalWrestlers);
     setTimeout(() => this.dataSource.sort = this.sort);
-  }, 4000);
+  }, 2000);
   }
 
 
@@ -172,7 +170,7 @@ export class EntryDetailComponent implements OnInit {
       next: seed => this.seed = seed,
       error: err => this.errorMessage = err
     });
-    console.log(this.entry);
+    //console.log(this.entry);
   }
 
   onBack(): void {
