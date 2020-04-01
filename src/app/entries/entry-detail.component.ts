@@ -30,6 +30,7 @@ export class EntryDetailComponent implements OnInit {
   wSeeds: any;
   wPoints = points;
   counts: any | undefined;
+  timestampNow = Date.now();
 
   displayedColumns = ['seed', 'weight', 'name', 'adPoints', 'actPoints', 'plPoints', 'points', 'numPicks', 'percentDiscount', 'discountedPoints'];
   dataSource: MatTableDataSource<TrackData>;
@@ -42,6 +43,7 @@ export class EntryDetailComponent implements OnInit {
   totalPickDiscountPoints: number;
   totalAverageDiscount: number;
   poolsId: number;
+
 
   wrestlerLookupByName = this.wPoints.reduce((current_dict, new_dict) => {
     current_dict[new_dict.name.slice(0,19)] = new_dict.wrestler;
@@ -72,6 +74,11 @@ export class EntryDetailComponent implements OnInit {
         entryPicks: []
       };
       this.getEntry(this.poolsId, id);
+      // if (this.timestampNow >= 1584633599000){
+      // this.getEntry(this.poolsId, id);
+      // }else{
+      //   this.pageTitle = "Sorry this page is not available until the event starts!!!";
+      // };
     }
   }
 
@@ -131,6 +138,10 @@ export class EntryDetailComponent implements OnInit {
     setTimeout(() => {  
     for (let x = 0; x<16; x++){
       //this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight);
+      let seed = x+1;
+      let key = this.entry_final.entryPicks[x].weight + "-" + seed;
+      //console.log("Key:", seed, key);
+
       this.updateWrestler = {
               seed: (x+1).toString(),
               weight: this.entry_final.entryPicks[x].weight,
@@ -139,11 +150,11 @@ export class EntryDetailComponent implements OnInit {
               actPoints: this.entry_final.entryPicks[x].actPoints,
               plPoints: this.entry_final.entryPicks[x].plPoints,
               points: this.entry_final.entryPicks[x].points,
-              numPicks: this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)] ? this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)].toString() : "0", // Sum up total number of people who picked them
-              percentDiscount: this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]>1 ? (1 - (this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]-1)/this.counts[0].index).toFixed(4).toString() : "1",  // calculate 1 - (numPicks-1)/total entries
-              discountedPoints: this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]>1 ? ((1 - (this.counts[0][x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]-1)/this.counts[0].index)*Number(this.entry_final.entryPicks[x].points)).toFixed(2).toString() : this.entry_final.entryPicks[x].points.toString()
+              numPicks: this.counts[0][key] ? this.counts[0][key] : "0", // Sum up total number of people who picked them
+              percentDiscount: this.counts[0][key]>1 ? (1 - (this.counts[0][key]-1)/this.counts[0].poolTotals).toFixed(4).toString() : "1",  // calculate 1 - (numPicks-1)/total entries
+              discountedPoints: this.counts[0][key]>1 ? ((1 - (this.counts[0][key]-1)/this.counts[0].poolTotals)*Number(this.entry_final.entryPicks[x].points)).toFixed(2).toString() : this.entry_final.entryPicks[x].points.toString()
  
-        //       numPicks: counts[this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)][x] ? counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)].toString() : "0", // Sum up total number of people who picked them
+              // numPicks: counts[this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)][x] ? counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)].toString() : "0", // Sum up total number of people who picked them
               // percentDiscount: counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]>1 ? (1 - (counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]-1)/counts[16][0]).toFixed(4).toString() : "1",  // calculate 1 - (numPicks-1)/total entries
               // discountedPoints: counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]>1 ? ((1 - (counts[x][this.entryService.getSeedArrayIndex(this.entry_final.entryPicks[x].weight)]-1)/counts[16][0])*Number(this.entry_final.entryPicks[x].points)).toFixed(2).toString() : this.entry_final.entryPicks[x].points.toString()
         };
@@ -159,8 +170,10 @@ export class EntryDetailComponent implements OnInit {
         //console.log("DP:", this.totalPickDiscountPoints);
     };
     
-    this.dataSource = new MatTableDataSource(this.finalWrestlers);
-    setTimeout(() => this.dataSource.sort = this.sort);
+      this.dataSource = new MatTableDataSource(this.finalWrestlers);
+      setTimeout(() => this.dataSource.sort = this.sort);
+    
+    
   }, 2000);
   }
 

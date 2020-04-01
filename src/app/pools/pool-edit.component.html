@@ -5,7 +5,7 @@
 
   <div class="card-body">
     <form novalidate
-          (ngSubmit)="savePool()"
+          (ngSubmit)="saveFirePool()"
           [formGroup]="poolForm">
 
           <div class="form-group row mb-2">
@@ -90,16 +90,16 @@
       </div>
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label"
-               for="poolImageUrlBackgroundId">Pool Main Image Url:</label>
+               for="poolImageUrlMainId">Pool Main Image Url:</label>
         <div class="col-md-8">
           <input class="form-control"
-                 id="poolImageUrlBackgroundId"
+                 id="poolImageUrlMainId"
                  type="text"
                  placeholder="Image Url Background (required)"
-                 formControlName="poolImageUrlBackground"
-                 [ngClass]="{'is-invalid': displayMessage.poolImageUrlBackground}" />
+                 formControlName="poolImageUrlMain"
+                 [ngClass]="{'is-invalid': displayMessage.poolImageUrlMain}" />
           <span class="invalid-feedback">
-            {{displayMessage.poolImageUrlBackground}}
+            {{displayMessage.poolImageUrlMain}}
           </span>
         </div>
       </div>
@@ -226,4 +226,5 @@
        *ngIf="errorMessage">{{errorMessage}}
   </div>
 </div>
-<!--<pre>{{pool|json}}</pre>-->
+
+<button (click)="makeTestData()">Make Test</button>

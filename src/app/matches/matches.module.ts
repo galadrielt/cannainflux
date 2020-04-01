@@ -14,6 +14,9 @@ import { MatchesComponent } from './matches.component';
   ],
   declarations: [
     MatchesComponent
+  ],
+  exports: [
+    
   ]
 })
 export class MatchesModule { }

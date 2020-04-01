@@ -35,7 +35,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
   errorMessage: string;
   entryForm: FormGroup;
   indexRef: AngularFirestoreCollection<IndexStore>;
-  index$: Observable<IndexStore[]>;
+  index$: Observable<any[]>;
   items: Observable<any[]>;
   
   // cheat for now and just bruteforce running out of time.
@@ -72,14 +72,17 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
               ) {
     
     this.items = firestore.collection('picks').valueChanges();
-    console.log("Items:", this.items);
+    //console.log("Items:", this.items);
     
-    this.indexRef = this.afs.collection<IndexStore>('numOfEntries');
+    //this.indexRef = this.afs.collection<IndexStore>('numOfEntries');
+    //this.indexRef = this.afs.collection('pools', ref => ref.where("poolTotals","==",1));
+    this.indexRef = this.afs.collection('pools');
     this.index$ = this.indexRef.snapshotChanges().pipe(map(actions => {
       return actions.map(action => {
-        const data = action.payload.doc.data() as IndexStore;
-        const id = action.payload.doc.id;
-        return { id, ...data };
+        //const data = action.payload.doc.data() as IndexStore;
+        const data = action.payload.doc.data();
+        const docid = action.payload.doc.id;
+        return { docid, ...data };
       });
     }));
     
@@ -183,7 +186,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
       params => {
         this.poolsId = +params.get('poolsId');
         const id = +params.get('id');
-        console.log("1st poolsId:", this.poolsId, id);
+        //console.log("1st poolsId:", this.poolsId, id);
         // I don't allow editing of entry for now.  Just pass 0.
         this.getEntry(id);
       }
@@ -194,7 +197,7 @@ export class EntryEditComponent implements OnInit, AfterViewInit, OnDestroy {
       //this.entryService.getEntry(id).subscribe({
         next: seeds => {
           this.wSeeds = seeds;
-          console.log("Seeds:", this.wSeeds);
+          //console.log("Seeds:", this.wSeeds);
         },
         error: err => this.errorMessage = err
       });
@@ -283,19 +286,21 @@ updateFireCount(){
 }
 
 saveFireEntry(): void {
-  console.log("POOLSID:", this.poolsId);
+  //console.log("In saveFire POOLSID:", this.poolsId);
   if (this.entryForm.valid) {
     if (this.entryForm.dirty) {
 
 
       let indexSubscription = this.index$.subscribe({
         next: index => {
-          console.log('ID ALL: ', index);
+          //console.log('ID ALL: ', index);
           for(let i=0; i < index.length; i++){
-            console.log("IDX:", index[i].poolsId, this.poolsId)
-            if (index[i].poolsId == this.poolsId){
-              this.autoid = index[i].id;
-              this.autoindex = index[i].index+1;
+            //console.log("ID, PID:", index[i].id, this.poolsId)
+            if (Number(index[i].id) === this.poolsId){
+              //this.autoid = index[i].id;
+              this.autoid = index[i].docid;
+              this.autoindex = Number(index[i].poolTotals)+1;
+              //console.log("Inside Autos:", index[i].docid, index[i].id, index[i].poolTotals+1)
             }
           }
         },
@@ -306,11 +311,14 @@ saveFireEntry(): void {
 
       const p = { ...this.entry, ...this.entryForm.value };
       setTimeout(() => {
-        console.log("AUTOS:", this.autoindex, this.autoid);
+        //console.log("AUTOS after Timeout:", this.autoindex, this.autoid);
         this.entryService.createFireEntry(p, this.poolsId, this.autoindex);
-        this.entryService.updateFireIndex(this.autoid);  // Get doc id from firestore
+        //this.entryService.updateFireIndex(this.autoid);  // Get doc id from firestore
+        //this.entryService.updateFirePoolTotals(this.autoid);  // Get doc id from firestore
+        this.entryService.updateFirePoolTotals(this.autoid);  // Get doc id from firestore
+        
         this.onSaveComplete();
-      }, 2000);
+      }, 4000);
 
       
 
@@ -351,7 +359,7 @@ verifyAllWeightsSelected(value:string, position:number){
       this.verification_picks_names[position-1] = this.wSeeds["174"][position-1].name;
     break;
     case "184":
-      this.verification_picks_names[position-1] = this.wSeeds["185"][position-1].name;
+      this.verification_picks_names[position-1] = this.wSeeds["184"][position-1].name;
     break;
     case "197":
       this.verification_picks_names[position-1] = this.wSeeds["197"][position-1].name;

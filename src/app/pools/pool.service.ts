@@ -4,6 +4,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Pool } from './pool';
+import { AngularFirestore } from '@angular/fire/firestore';
+//import firebase from 'firebase-admin';
+// import 'firebase/firestore';
+import * as firebase from 'firebase';
 
 
 @Injectable({
@@ -11,10 +15,13 @@ import { Pool } from './pool';
 })
 export class PoolService {
   private poolsUrl = 'api/pools';
+  increment: any;
 
   constructor(
     private http: HttpClient,
+    private afs: AngularFirestore
     ) { 
+      this.increment = firebase.firestore.FieldValue.increment(1);
 }  
 
   getPools(): Observable<Pool[]> {
@@ -26,6 +33,10 @@ export class PoolService {
         catchError(this.handleError)
         )
       );
+  }
+
+  getFirePools(): Observable<any[]> {
+    return this.afs.collection('pools').valueChanges();
   }
   
   getPoolNames(): Observable<Pool[]> {
@@ -51,6 +62,10 @@ export class PoolService {
       );
   }
 
+  getFirePool(id: number): Observable<any[]> {
+    return this.afs.collection("pools", ref => ref.where("id","==",id)).valueChanges();
+  }
+
   createPool(pool: Pool): Observable<Pool> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     pool.id = null;  //DOES NOT HAVE A ID???????????
@@ -60,6 +75,56 @@ export class PoolService {
         catchError(this.handleError)
       );
   }
+
+  createFirePool(pool: Pool, id: number){
+    console.log("HIIIII!!!!!");
+    let batch = this.afs.firestore.batch();
+    let testRef = this.afs.firestore.collection('pools').doc();
+    
+    batch.set(testRef, {
+    poolName: pool.poolName,
+    poolImageUrlBackground: pool.poolImageUrlBackground, 
+    poolImageUrlMain: pool.poolImageUrlMain,
+    poolOrganizer: pool.poolOrganizer,
+    poolOrganizerPhone: pool.poolOrganizerPhone,
+    //for Pool Details
+    poolDeadlineDate: pool.poolDeadlineDate,
+    poolDeadlineTime: pool.poolDeadlineTime,
+    poolType: pool.poolType,
+    poolPaymentBreakdown: pool.poolPaymentBreakdown,
+    poolEntryAmount: pool.poolEntryAmount,
+    poolTotalEntriesAllowed: pool.poolTotalEntriesAllowed,
+    poolDeadlineEpoch: pool.poolDeadlineEpoch,
+    eventLinkId: pool.eventLinkId,
+    // This one needs to be new id incremented from firestore /totals/"doc id string"/totalPoints
+    id: id,//NEED THIS TO INCREMENT - cannot read database numOfEntries??
+    poolTotals: 0
+    });
+
+    if (pool.poolType === "Pick Team (16 Seeds)"){
+      // Create 160 counts or 16 * numOfBreakdowns...
+      console.log("I am batching now.")
+      // This should get passed in eventually from the Event... setup...
+      let weights = [125, 133, 141, 149, 157, 165, 174, 184, 197, 285];
+      for (let i=1;i<=16;i++){
+        for(let wt of weights){
+          let key = (wt).toString() + "-" + (i).toString();
+          batch.update(testRef, {[key]: 0});
+        }
+      }
+    }
+
+    batch.commit();
+
+  }
+
+  updateFireTotalCount(key: string){
+    this.afs.collection("totals").doc("2JRPOBHoMSzWnvnLaPFU")
+    .update({[key]: this.increment});
+    console.log("FireUps +1 totalPools");
+  }
+
+
 
   deletePool(id: number): Observable<{}> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

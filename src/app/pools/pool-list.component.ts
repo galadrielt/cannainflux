@@ -12,7 +12,7 @@ import { PoolService } from './pool.service';
 export class PoolComponent implements OnInit {
   pageTitle = 'Pools';
   poolImageUrlMain = 'assets/images/pools/';
-  imageHeight = 25;
+  imageHeight = 40;
   imageMargin = 2;
   showImage = true;
   errorMessage = '';
@@ -30,7 +30,7 @@ export class PoolComponent implements OnInit {
   }
 
   filteredPools: Pool[] = [];
-  pools: Pool[] = [];
+  pools: any[] = [];
   
   constructor(
     private poolService: PoolService,
@@ -47,13 +47,20 @@ export class PoolComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.poolService.getPools().subscribe({
+    this.poolService.getFirePools().subscribe({
       next: pools => {
         this.pools = pools;
         this.filteredPools = this.pools;
       },
       error: err => this.errorMessage = err
     });
+    // this.poolService.getPools().subscribe({
+    //   next: pools => {
+    //     this.pools = pools;
+    //     this.filteredPools = this.pools;
+    //   },
+    //   error: err => this.errorMessage = err
+    // });
     setInterval(() => {
       this.now = new Date();
    }, 1000);

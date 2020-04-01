@@ -137,10 +137,17 @@ calcDiscountedTotalForEntry(entry){
     ref.where('poolsId', '==', poolsId).where('id', '==', id)).valueChanges();
   }
 
+  // GET THE POOLS INFORMATION
   getFireIndex(poolsId: number): Observable<any> {
-    //console.log('In Firestore Entry');
-    return this.afs.collection('numOfEntries', ref =>
-    ref.where('poolsId', '==', poolsId)).valueChanges();
+    console.log('In getFireIndex with ', poolsId);
+    return this.afs.collection('pools', ref =>
+    ref.where('id', '==', poolsId)).valueChanges();
+  }
+
+  getFirePoolCounts(id: number): Observable<any> {
+    console.log('In Firestore Entry:', id);
+    return this.afs.collection('pools', ref =>
+    ref.where('id', '==', id)).valueChanges();
   }
 
   getFireSeeds(poolsId: number): Observable<any> {
@@ -154,6 +161,27 @@ calcDiscountedTotalForEntry(entry){
     console.log("FireUp +1");
   }
 
+  updateFirePoolTotals(id: string){
+    this.afs.collection("pools").doc(id)
+    .update({poolTotals: this.increment});
+    console.log("FireUp +1");
+  }
+
+  updateFireCount(poolsId: number, weight: number, pick: number){
+    let key = weight + "-" + pick;
+    console.log("PID, Key:", poolsId, key);
+    if (poolsId === 1){
+      this.afs.collection("pools").doc("YSYZWQYW34UEnDmnJx7H").update({[key]: this.increment});
+      console.log("FireUp +1 for ", poolsId);
+    }
+    if (poolsId === 2){
+      this.afs.collection("pools").doc("pxqo2OMVam8tgNlwIvo2").update({[key]: this.increment});
+      console.log("FireUp +1 for ", poolsId);
+    }
+
+  }
+
+
   updateFireIndexes(id: string){
     this.afs.collection("numOfEntries").doc(id)
     .update({index: this.increment});
@@ -164,7 +192,7 @@ calcDiscountedTotalForEntry(entry){
 
 
   createFireEntry(entry: Entry, poolsId: number, index) {
-    // Still cannot get a value for for firebase index correctly???
+    console.log("Inside createFireEntry")
     let entryPicksArr = [entry.entryPick1, 
                         entry.entryPick2,
                         entry.entryPick3,
@@ -192,7 +220,11 @@ calcDiscountedTotalForEntry(entry){
       console.error("Error adding document: ", error);
     });
 
- 
+    for (let i = 0; i<15; i++){
+      console.log("init fire:", i+1)
+      this.updateFireCount(poolsId, Number(entryPicksArr[i]), i+1);
+    }
+
     }
 
 

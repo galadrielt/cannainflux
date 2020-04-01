@@ -8,6 +8,7 @@ import { PoolService } from './pool.service';
   templateUrl: './pool-detail.component.html',
   styleUrls: ['./pool-detail.component.css']
 })
+
 export class PoolDetailComponent implements OnInit {
   pageTitle = 'Pool Details';
   errorMessage = '';
@@ -34,6 +35,14 @@ export class PoolDetailComponent implements OnInit {
   getPool(id: number) {
     this.poolService.getPool(id).subscribe({
       next: pool => this.pool = pool,
+      error: err => this.errorMessage = err
+    });
+    console.log(this.pool);
+  }
+
+  getFirePool(id: number) {
+    this.poolService.getFirePool(id).subscribe({
+      next: pool => this.pool = pool[0],
       error: err => this.errorMessage = err
     });
     console.log(this.pool);

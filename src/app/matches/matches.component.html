@@ -1,1 +1,61 @@
-<p>Put some HTML HERE FOR scoring</p>
+<h1>
+    Dynamic Matches<br>
+    <small><i>In realtime</i></small>
+  </h1>
+  <div id="{{ElementIds.TimerDisplay}}" class="countdownHolder">
+    <p style="font-size:40px;">
+    Press Start <br>
+    <small>
+      Have fun! :) <br>
+      <small>
+        read the comments
+      </small>
+    </small>
+    </p>
+  </div>
+
+  <button type="button" id="{{ElementIds.BtnStart}}">
+    Start
+  </button>
+
+  <button type="button" id="{{ElementIds.BtnPause}}">
+    Pause
+  </button>
+
+  <br/>
+
+  <button type="button" id="{{ElementIds.BtnSetTo}}">
+    Set To
+  </button>
+  <input id="{{ElementIds.InputSetTo}}" style="width:40px" type="number" min=0 value="{{ initialSetTo }}"/>
+  <!-- I'm sorry for this, but I was lazy.. :) -->
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+ <button type="button" id="{{ElementIds.BtnReset}}">
+    Reset
+  </button>
+
+<br/>
+
+  <button type="button" id="{{ElementIds.BtnUp}}">
+    Count Up
+  </button>
+
+  <button type="submit" type="button" id="{{ElementIds.BtnDown}}">
+    Count Down
+  </button>
+
+<br/>
+
+  <label>
+    Tick Speed
+  </label>
+  <input id="{{ElementIds.InputTickSpeed}}" style="width:60px" type="number" min=0 value="{{initialTickSpeed}}"/>
+
+<!-- I'm sorry for this, but I was lazy.. :) -->
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
+  <label>
+    Count Diff   
+  </label>
+  <input id="{{ElementIds.InputCountDiff}}" style="width:60px" type="number" min=0 value="{{initialCountDiff}}"/>

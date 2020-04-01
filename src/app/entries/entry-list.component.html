@@ -46,7 +46,8 @@
                 </a>
               </td>
               <td>{{ entry.entryUsername }}</td>
-              <td *ngIf="true"><span *ngFor="let pick of entry.entryPicks; let isLast=last">
+              <!--<td *ngIf="poolsId == 2">-->
+              <td><span *ngFor="let pick of entry.entryPicks; let isLast=last">
                 {{pick}}{{isLast ? '' : ', '}}</span>
 
               </td>

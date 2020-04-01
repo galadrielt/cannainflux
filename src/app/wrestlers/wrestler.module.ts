@@ -12,6 +12,7 @@ import { WrestlerEditComponent } from './wrestler-edit.component';
 import { WrestlerDetailComponent } from './wrestler-detail.component';
 
 import { WrestlerEditGuard } from './wrestler-edit.guard';
+import { WrestlerDataListComponent } from './wrestler-datalist.component';
 
 @NgModule({
   imports: [
@@ -20,18 +21,20 @@ import { WrestlerEditGuard } from './wrestler-edit.guard';
     InMemoryWebApiModule.forRoot(WrestlerData),
     RouterModule.forChild([
       { path: 'wrestlers', component: WrestlerComponent },
+      { path: 'wrestlers/data', component: WrestlerDataListComponent },
       { path: 'wrestlers/:id', component: WrestlerDetailComponent },
       {
         path: 'wrestlers/:id/edit',
         canDeactivate: [WrestlerEditGuard],
         component: WrestlerEditComponent
-      }
+      },
     ])
   ],
   declarations: [
     WrestlerComponent,
     WrestlerEditComponent,
-    WrestlerDetailComponent
+    WrestlerDetailComponent,
+    WrestlerDataListComponent
   ]
 })
 export class WrestlerModule { }
