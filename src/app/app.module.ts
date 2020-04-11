@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 //Components
 import { AppComponent } from './app.component';
@@ -44,6 +46,12 @@ import { MatIconModule } from '@angular/material/icon'
     ToteComponent,
   ],
   imports: [
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      name: 'matMadness',
+      maxAge: 25,
+      logOnly: environment.production
+    }),
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,

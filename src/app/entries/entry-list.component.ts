@@ -32,11 +32,11 @@ export class EntryComponent implements OnInit, AfterViewInit {
 
 
   cmp(a, b) {
-    //console.log("A: ", a, "B: ", b)
-    if (a < b) return +1;
-    if (a > b) return -1;
+    //console.log('A: ', a, 'B: ', b);
+    if (a < b) {return +1;}
+    if (a > b) {return -1;}
     return 0;
-  } 
+  }
 
   _listFilter = '';
   get listFilter(): string {
@@ -52,7 +52,7 @@ export class EntryComponent implements OnInit, AfterViewInit {
   //filteredEntries: Entry[] = [];
   //entries: Entry[] = [];
   entries: any[];
-  
+
 
   constructor(
     private entryService: EntryService,
@@ -76,42 +76,39 @@ export class EntryComponent implements OnInit, AfterViewInit {
         //   //this.entryService.getEntry(id).subscribe({
         //     next: counts => {
         //       this.counts = counts;
-        //       //console.log("Counts:", this.counts);
+        //       //console.log('Counts:', this.counts);
         //     },
         //     error: err => this.errorMessage = err
         //   });
 
         this.entryService.getFirePoolCounts(this.poolsId).subscribe({
-          //this.entryService.getEntry(id).subscribe({
             next: counts => {
               this.counts = counts;
-              //console.log("Counts:", this.counts);
             },
             error: err => this.errorMessage = err
           });
 
     this.entryService.getFireEntries(this.poolsId).subscribe({
         next: entries => {
-          //entries.sort((a, b) => b.entryPoints - a.entryPoints);
           this.entries = entries;
           this.filteredEntries = this.entries;
-          //console.log("Entries:", this.entries);
         },
         error: err => this.errorMessage = err
       });
-      setTimeout(() => { 
-        //console.log("TCI:", this.counts[0].index); this.counts[0].poolTotals
-      for (let y = 0; y < this.counts[0].poolTotals; y++){ 
+
+      setTimeout(() => {
+        //console.log('TCI:', this.counts[0].index); this.counts[0].poolTotals
+      for (let y = 0; y < this.counts[0].poolTotals; y++){
         this.totalPickDiscountPoints = 0;
         for (let x = 0; x < 16; x++){
           this.singlePickDiscountPoints = 0;
           let key = this.entries[y].entryPicks[x] + '-' + Number(x+1); //weight-seed ex.: 125-1
-          //console.log("Key:", key, this.counts[0][key]);
-          //console.log("Discount:", Number(1 - ((this.counts[0][key]-1)/this.counts[0].poolTotals)))
+          //console.log('Key:', key, this.counts[0][key]);
+          //console.log('Discount:', Number(1 - ((this.counts[0][key]-1)/this.counts[0].poolTotals)))
           this.singlePickDiscountPoints = Number(this.counts[0][key]) > 1 ? Number(1 - ((this.counts[0][key]-1)/this.counts[0].poolTotals))*Number(this.wrestlerLookupByName[this.entryService.getSeedName(this.entries[y].entryPicks[x].toString(), x).slice(0,19)].points) : Number(this.wrestlerLookupByName[this.entryService.getSeedName(this.entries[y].entryPicks[x].toString(), x).slice(0,19)].points);
-            //console.log("Discounted Total: ", this.singlePickDiscountPoints);
+            //console.log('Discounted Total: ', this.singlePickDiscountPoints);
             this.totalPickDiscountPoints = this.totalPickDiscountPoints + this.singlePickDiscountPoints;
-            //console.log("TotalTotals: ", this.totalPickDiscountPoints);
+            //console.log('TotalTotals: ', this.totalPickDiscountPoints);
           };
         this.entries[y].entryPoints = this.totalPickDiscountPoints;
       };
@@ -136,7 +133,7 @@ export class EntryComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(()=>{this.entries.sort((a, b) => b.entryPoints - a.entryPoints)}, 3000);
+    setTimeout(()=>{this.entries.sort((a, b) => b.entryPoints - a.entryPoints)}, 2000);
   }
 
 

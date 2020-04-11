@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Wrestler } from './wrestler';
 import { WrestlerService } from './wrestler.service';
+import { Store, select } from '@ngrx/store';
 
 
 @Component({
@@ -12,9 +13,9 @@ export class WrestlerComponent implements OnInit {
   pageTitle = '2019 NCAA Wrestling Wrestlers';
   imageWidth = 50;
   imageMargin = 2;
-  showImage = true;
+  showImage;
   errorMessage = '';
- 
+
   _listFilter = '';
   get listFilter(): string {
     return this._listFilter;
@@ -27,7 +28,8 @@ export class WrestlerComponent implements OnInit {
   filteredWrestlers: Wrestler[] = [];
   wrestlers: Wrestler[] = [];
 
-  constructor(private wrestlerService: WrestlerService) { }
+  constructor(private wrestlerService: WrestlerService,
+              private store: Store<any>) { }
 
   performFilter(filterBy: string): Wrestler[] {
     filterBy = filterBy.toLocaleLowerCase();
@@ -36,7 +38,12 @@ export class WrestlerComponent implements OnInit {
   }
 
   toggleImage(): void {
-    this.showImage = !this.showImage;
+    // this.showImage = !this.showImage;
+    this.store.dispatch({
+      type: 'TOOGLE_IMAGE_CODE',
+      payload: !this.showImage
+
+    });
   }
 
   ngOnInit(): void {
@@ -47,5 +54,13 @@ export class WrestlerComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
+
+    this.store.pipe(select('wrestler')).subscribe(
+      wrestler => {
+        if (wrestler){
+          this.showImage = wrestler.showImage;
+        }
+      }
+    )
   }
 }

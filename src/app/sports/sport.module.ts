@@ -1,6 +1,8 @@
+import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -18,6 +20,7 @@ import { SportEditGuard } from './sport-edit.guard';
     SharedModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(SportData),
+    StoreModule.forFeature('sports', {}),
     RouterModule.forChild([
       { path: 'sports', component: SportComponent },
       { path: 'sports/:id', component: SportDetailComponent },

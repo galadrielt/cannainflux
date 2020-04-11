@@ -1,6 +1,6 @@
-import './match.component.scss';
+import './matches.component.scss';
 
-import { Subject, Observable, fromEvent} from 'rxjs'; 
+import { Subject, Observable, fromEvent} from 'rxjs';
 import { mapTo, map, withLatestFrom, startWith, shareReplay} from 'rxjs/operators';
 
 export interface CounterConfig {
@@ -12,19 +12,19 @@ export interface CounterConfig {
 
 export interface CountDownState {
  isTicking: boolean;
- count: number; 
+ count: number;
  countUp: boolean;
  tickSpeed: number;
- countDiff:number;
+ countDiff: number;
 }
 
 
-export type PartialCountDownState = 
-  { isTicking: boolean } | 
-  { count: number } | 
+export type PartialCountDownState =
+  { isTicking: boolean } |
+  { count: number } |
   { countUp: boolean } |
   { tickSpeed: number } |
-  { countDiff:number};
+  { countDiff: number};
 
 export enum ConterStateKeys {
  isTicking = 'isTicking',
@@ -63,7 +63,7 @@ export class Counter {
   public initialTickSpeed: number;
   public initialCountDiff: number;
 
-  private viewHtml = (): string =>`
+  private viewHtml = (): string => `
     <div id="${ElementIds.TimerDisplay}" class="countdownHolder">
       <p style="font-size:40px;">
       Press Start <br/>
@@ -113,18 +113,18 @@ export class Counter {
       Tick Speed
     </label>
     <input id="${ElementIds.InputTickSpeed}" style="width:60px" type="number" min=0 value="${this.initialTickSpeed}"/>
- 
+
 <!-- I'm sorry for this, but I was lazy.. :) -->
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
     <label>
-      Count Diff   
+      Count Diff
     </label>
     <input id="${ElementIds.InputCountDiff}" style="width:60px" type="number" min=0 value="${this.initialCountDiff}"/>
     `;
 
   private display: HTMLParagraphElement;
-  
+
   public renderCounterValue(count: number) {
      if(this.display) {
       this.display.innerHTML = count.toString()
@@ -132,7 +132,7 @@ export class Counter {
           .map(this.getDigit)
           .join('');
      }
-  
+
 }
 
   private setToInput: HTMLInputElement;
@@ -141,15 +141,15 @@ export class Counter {
       this.setToInput.value = value.toString();
     }
   }
-  
-  
+
+
   private tickSpeedInput;
   public renderTickSpeedInputValue = (value: number): void => {
     if(this.tickSpeedInput) {
       this.tickSpeedInput.value = value.toString();
     }
   }
-  
+
   private countDiffInput;
   public renderCountDiffInputValue = (value: number): void => {
     if(this.countDiffInput) {
@@ -178,10 +178,10 @@ export class Counter {
 
   private init(parent: HTMLElement) {
     parent.innerHTML = parent.innerHTML + this.viewHtml();
-    
+
     // getElements
     this.display = document.getElementById(ElementIds.TimerDisplay) as HTMLParagraphElement;
-    this.setToInput = document.getElementById(ElementIds.InputSetTo) as HTMLInputElement; 
+    this.setToInput = document.getElementById(ElementIds.InputSetTo) as HTMLInputElement;
     this.tickSpeedInput = document.getElementById(ElementIds.InputTickSpeed) as HTMLInputElement;
     this.countDiffInput = document.getElementById(ElementIds.InputCountDiff) as HTMLInputElement;
 
@@ -191,15 +191,15 @@ export class Counter {
     this.btnUp$ = getCommandObservableByElem(ElementIds.BtnUp, 'click',ActionNames.Up);
     this.btnDown$ = getCommandObservableByElem(ElementIds.BtnDown, 'click', ActionNames.Down);
     this.btnReset$ = getCommandObservableByElem(ElementIds.BtnReset, 'click', ActionNames.Reset);
-    
+
     this.inputSetTo$ = getValueObservable(ElementIds.InputSetTo, 'input').pipe(startWith(this.initialSetTo));
     this.inputTickSpeed$ = getValueObservable(ElementIds.InputTickSpeed, 'input').pipe(startWith(this.initialTickSpeed));
     this.inputCountDiff$ = getValueObservable(ElementIds.InputCountDiff, 'input').pipe(startWith(this.initialCountDiff));
 
     this.btnSetTo$ = getCommandObservableByElem(ElementIds.BtnSetTo, 'click', ActionNames.SetTo)
       .pipe(withLatestFrom(this.inputSetTo$, (_, i$) => i$));
-  
-  } 
+
+  }
 
 
 private getDigit(d): string {
@@ -214,7 +214,7 @@ private getDigitDivider(): string {
   return '<span class="countDiv"></span>'
 }
 
-  
+
 }
 
 // FUNCTIONS BELOW

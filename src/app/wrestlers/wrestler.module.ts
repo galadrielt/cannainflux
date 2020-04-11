@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -13,12 +14,14 @@ import { WrestlerDetailComponent } from './wrestler-detail.component';
 
 import { WrestlerEditGuard } from './wrestler-edit.guard';
 import { WrestlerDataListComponent } from './wrestler-datalist.component';
+import { reducer } from './state/wrestler.reducer';
 
 @NgModule({
   imports: [
     SharedModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(WrestlerData),
+    StoreModule.forFeature('wrestler', reducer),
     RouterModule.forChild([
       { path: 'wrestlers', component: WrestlerComponent },
       { path: 'wrestlers/data', component: WrestlerDataListComponent },

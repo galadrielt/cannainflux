@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -18,6 +19,7 @@ import { TeamEditGuard } from './team-edit.guard';
     SharedModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(TeamData),
+    StoreModule.forFeature('teams', {}),
     RouterModule.forChild([
       { path: 'teams', component: TeamComponent },
       { path: 'teams/:id', component: TeamDetailComponent },
