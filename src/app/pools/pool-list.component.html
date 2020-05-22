@@ -1,21 +1,27 @@
 <div class="card">
-    <div class="card-header">
-      {{pageTitle}} ({{pools.length}} total)
+    <div class="card-header bg-info text-white">
+      <div class="row" style="width: 100%;">
+      <div class="col-md-3">
+        {{pageTitle}} ({{pools.length}} total)
+      </div>
+      <div class="col-md-3" style="text-align: right">
+        <button class="btn btn-outline-success btn-light btn-sm"
+        routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/pools/0/edit']">
+        +Add New Pool
+        </button>
+      </div>
     </div>
-  
+    </div>
+
     <div class="card-body">
       <div class="row">
         <div class="col-md-2">Filter Pool Name by:</div>
         <div class="col-md-4">
           <input type="text"
-                 [(ngModel)]="listFilter" />
+                [(ngModel)]="listFilter" />
         </div>
-        <div class="nav-ml-auto">
-            <!-- <button class="btn btn-outline-success btn-sm"
-            routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/pools/0/edit']">
-             +Add New
-            </button> -->
-            &nbsp;&nbsp;&nbsp;{{now | date:'medium'}}
+        <div class="col-md-2">
+          {{now | date:'medium'}}
         </div>
       </div>
       <div class="row"
@@ -24,7 +30,7 @@
           <h4>Filtered by: {{listFilter}}</h4>
         </div>
       </div>
-  
+
       <div class="table-responsive">
         <table class="table mb-0"
                *ngIf="pools && pools.length">
@@ -43,9 +49,9 @@
               <th>Deadline</th>
               <th>Total Entries</th>
               <th>Pool Entry Amount</th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>New</th>
+              <th>Data</th>
+              <th>Results</th>
               <th></th>
             </tr>
           </thead>
@@ -53,10 +59,10 @@
             <tr *ngFor="let pool of filteredPools">
               <td>
                 <img *ngIf="showImage && pool.poolImageUrlMain"
-                     [src]="pool.poolImageUrlMain"
-                     [title]="pool.poolName"
-                     [style.height.px]="imageHeight"
-                     [style.margin.px]="imageMargin">
+                    [src]="pool.poolImageUrlMain"
+                    [title]="pool.poolName"
+                    [style.height.px]="imageHeight"
+                    [style.margin.px]="imageMargin">
               </td>
               <td>
                 <a [routerLink]="['/pools', pool.id]">
@@ -71,20 +77,20 @@
               <td>{{ pool.poolEntryAmount | currency }}</td>
               <td>
                 <button class="btn btn-outline-primary btn-sm"
-                        [routerLink]="['/data']">
-                  Data
+                [routerLink]="['/entries', pool.id, 0, 'edit']" *ngIf="pool.id==1">
+                +New Entry
                 </button>
-              </td>              
+              </td>
               <!--<td *ngIf="(pool.poolDeadlineDate | date:'EEEE d MMMM') >= (now | date:'EEEE d MMMM')">-->
                 <td>
-                <button class="btn btn-outline-primary btn-sm"
-                        [routerLink]="['/entries', pool.id, 0, 'edit']" *ngIf="pool.id==1">
-                  +New Entry
-                </button>
+                  <button class="btn btn-outline-primary btn-sm"
+                  [routerLink]="['/data']">
+                  Data
+                  </button>
               </td>
               <td>
                 <button class="btn btn-outline-primary btn-sm"
-                        [routerLink]="['/entries', pool.id]">
+                  [routerLink]="['/entries', pool.id]">
                   See Entries
                 </button>
               </td>
@@ -92,10 +98,10 @@
           </tbody>
         </table>
       </div>
-  
+
     </div>
   </div>
-  
+
   <div *ngIf="errorMessage"
        class="alert alert-danger">
     Error: {{ errorMessage }}

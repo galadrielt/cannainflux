@@ -14,14 +14,14 @@ import { WrestlerDetailComponent } from './wrestler-detail.component';
 
 import { WrestlerEditGuard } from './wrestler-edit.guard';
 import { WrestlerDataListComponent } from './wrestler-datalist.component';
-import { reducer } from './state/wrestler.reducer';
+import { reducer, WRESTLER } from './state/wrestler.reducer';
 
 @NgModule({
   imports: [
     SharedModule,
     ReactiveFormsModule,
     InMemoryWebApiModule.forRoot(WrestlerData),
-    StoreModule.forFeature('wrestler', reducer),
+    StoreModule.forFeature(WRESTLER, reducer),
     RouterModule.forChild([
       { path: 'wrestlers', component: WrestlerComponent },
       { path: 'wrestlers/data', component: WrestlerDataListComponent },

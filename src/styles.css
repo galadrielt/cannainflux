@@ -3,7 +3,6 @@
 @import "~font-awesome/css/font-awesome.min.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-
 div.card-header {
   font-size: large;
 }

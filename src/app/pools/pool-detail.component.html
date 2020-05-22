@@ -1,25 +1,25 @@
 <div class="card">
-    <div class="card-header"
+    <div class="card-header bg-info text-white"
          *ngIf="pool" style="background-image: url('assets/images/pools/ensure-background.jpg'); ">
-         <img *ngIf="pool.poolImageUrlMain" class="center-block img-responsive"
-         [style.height.px]="75"
-         [style.margin.px]="2"
-         [src]="pool.poolImageUrlMain"
-         [title]="pool.poolName">
-         <span style="font-size: 15pt; padding: 10px;">{{pool.poolName}}</span>
-         <span style="font-size: 10pt;  background:#222;
-         color:#fff;
-         display:block;
-         float:right;
-         margin:10px 10px 0 0;
-         padding:5px 10px">{{pool.poolOrganizer}} {{pool.poolOrganizerPhone}}</span>
-        </div>
-  
+      <img *ngIf="pool.poolImageUrlMain" class="center-block img-responsive"
+      [style.height.px]="75"
+      [style.margin.px]="2"
+      [src]="pool.poolImageUrlMain"
+      [title]="pool.poolName">
+      <span style="font-size: 15pt; padding: 10px;">{{pool.poolName}}</span>
+      <span style="font-size: 10pt;  background:#222;
+      color:#fff;
+      display:block;
+      float:right;
+      margin:10px 10px 0 0;
+      padding:5px 10px">{{pool.poolOrganizer}} {{pool.poolOrganizerPhone}}</span>
+    </div>
+
     <div class="card-body"
          *ngIf="pool">
-  
+
       <div class="row">
-  
+
         <div class="col-md-8">
           <div class="row">
             <div class="col-md-4">Pool Id:</div>
@@ -51,35 +51,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-  
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-12"><br>Entries (Public after deadline):</div>
-          </div>
-          <div class="row">
-            <div class="col-md-3"><u>Bracket Name</u></div>
-            <div class="col-md-3"><u>Player</u></div>
-            <div class="col-md-3"><u>Points</u></div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">BayArea Brawler</div>
-            <div class="col-md-3">Ryan Barnes</div>
-            <div class="col-md-3">88pts</div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">Red Dirt Boy</div>
-            <div class="col-md-3">Scott Chapman</div>
-            <div class="col-md-3">92pts</div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">Oregon Kush</div>
-            <div class="col-md-3">Warren McPherson</div>
-            <div class="col-md-3">42pts</div>
-          </div>
-        </div>
-      </div>
-  
+
       <div class="row mt-4">
         <div class="col-md-4">
           <button class="btn btn-outline-secondary mr-3"
@@ -94,9 +66,9 @@
           </button>
         </div>
       </div>
-  
+
     </div>
-  
+
     <div class="alert alert-danger"
          *ngIf="errorMessage">{{errorMessage}}
     </div>

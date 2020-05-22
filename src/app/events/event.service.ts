@@ -23,6 +23,16 @@ export class EventService {
       );
   }
 
+  getEventNames(): Observable<Event[]> {
+    return this.http.get<any[]>(this.eventsUrl)
+      .pipe(
+        map(data=>data.map(obj=>obj.eventName)),
+
+        catchError(this.handleError)
+        );
+  }
+
+
   getEvent(id: number): Observable<Event> {
     if (id === 0) {
       return of(this.initializeEvent());
@@ -106,7 +116,7 @@ export class EventService {
       eventLevels: [' '],
       eventBreakdowns: [['']],
       eventType: 'Tournament',
-      eventNumOfSeeding: null,        
+      eventNumOfSeeding: null,
       eventOrganizerFullName: null,
       eventOrganizerPhone: null,
       eventBracketType: null,

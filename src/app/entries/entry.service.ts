@@ -220,6 +220,9 @@ calcDiscountedTotalForEntry(entry){
       console.error("Error adding document: ", error);
     });
 
+
+    // This 15 below needs to be converted to a number from the Type of Pool they pick
+    // Example: Pick Top 16 Seeds is 15 but Pick Top 10 Seeds would be 9.
     for (let i = 0; i<15; i++){
       console.log("init fire:", i+1)
       this.updateFireCount(poolsId, Number(entryPicksArr[i]), i+1);
@@ -227,11 +230,7 @@ calcDiscountedTotalForEntry(entry){
 
     }
 
-
-
 //--------End Firestore functions-----------------
-
-
 
 
   // This getEntry(id) & getEntryNames() uses the in-memory-api module for testing.

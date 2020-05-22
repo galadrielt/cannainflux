@@ -1,8 +1,8 @@
-<div class="card">
+ <div class="card">
     <div class="card-header">
       {{pageTitle}} ({{wrestlers.length}} total)
     </div>
-  
+
     <div class="card-body">
       <div class="row">
         <div class="col-md-2">Filter by:</div>
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-  
+
       <div class="table-responsive">
         <table class="table mb-0"
                *ngIf="wrestlers && wrestlers.length">
@@ -33,7 +33,7 @@
               <th>
                 <button class="btn btn-outline-primary btn-sm"
                         (click)="toggleImage()">
-                  {{showImage ? "Hide" : "Show"}} Image
+                  {{(showImage$ | async) ? "Hide" : "Show"}} Image
                 </button>
               </th>
               <th>Last Name</th>
@@ -48,7 +48,7 @@
           <tbody>
             <tr *ngFor="let wrestler of filteredWrestlers">
               <td>
-                <img *ngIf="showImage && wrestler.wrestlerImageUrl"
+                <img *ngIf="(showImage$ | async) && wrestler.wrestlerImageUrl"
                      [src]="wrestler.wrestlerImageUrl"
                      [title]="wrestler.wrestlerLastName"
                      [style.width.px]="imageWidth"
@@ -78,10 +78,10 @@
           </tbody>
         </table>
       </div>
-  
+
     </div>
   </div>
-  
+
   <div *ngIf="errorMessage"
        class="alert alert-danger">
     Error: {{ errorMessage }}

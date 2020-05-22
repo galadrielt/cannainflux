@@ -1,0 +1,11 @@
+@startuml
+
+[*] --> TOOGLE_IMAGE_CODE
+TOOGLE_IMAGE_CODE --> [*]
+TOOGLE_IMAGE_CODE : showImage
+TOOGLE_IMAGE_CODE : this is another string
+
+TOOGLE_IMAGE_CODE --> State2:bob
+State2 --> [*]
+
+@enduml

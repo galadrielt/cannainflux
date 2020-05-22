@@ -17,7 +17,7 @@ export class WrestlerService {
   getWrestlers(): Observable<Wrestler[]> {
     return this.http.get<Wrestler[]>(this.wrestlersUrl)
       .pipe(
-        tap(data => console.log(JSON.stringify(data))),
+        // tap(data => console.log(JSON.stringify(data))),
         catchError(this.handleError)
       );
   }
@@ -93,7 +93,7 @@ export class WrestlerService {
       wrestlerLastName: '',
       wrestlerYearCollege: '',
       wrestlerHeight: '',
-      wrestlerWeight: '', 
+      wrestlerWeight: '',
       wrestlerHometownCity: '',
       wrestlerHometownState: '',
       wrestlerHighSchool: '',
