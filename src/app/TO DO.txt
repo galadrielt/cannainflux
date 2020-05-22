@@ -4,13 +4,17 @@
 
 This document is to provide some direction for matmadness.
 
-1.  Change the name to reflect all sports
-2.  HttpInterceptors
+1.  Change the name to reflect all sports (sportssoftware.com? - I own the domain)
+2.  HttpInterceptors (Ward Bell uses 12 different ones on some applications)
 3.  concatMap for the returning of the http request
-4.  NGRX needs to be installed
+4.  NGRX Store for all Components (Wrestlers and Pools only using)
 5.  ng-Universal for fast loading and to store the teams, participants, old events, etc. (landing page startup faster)
-6.  RXJS for the matches
+or Scully (just came out) which uses Puppeteer (which I like and use for this program to scrap information in Node.js)
+6.  RXJS for the matches (clocks working but need to track the scores and matches)
 7.  Abstract the breakdowns for scoring (this will have to be added to the sport information, add existing or known scoring types)
 8.  Lots of work on the brackets part of the site, or rather more sport specific event types
 9.  Break out the pools (betting from the event site but have seamless api)
 10. Payment system to make it easy to get money and share money
+11. UX upgrade so pools can have color schemes and graphics as part of their appeal.
+12. Validations of Forms needs to be gone back over and all need to be added.
+13. Probably need to make a ToDo for each Component (That would be nice to track the progress of each)
