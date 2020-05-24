@@ -5,7 +5,7 @@ export interface Pool {
     // for Pool Details
     eventLinkId: number;
     poolName: string;
-    poolDeadlineDate: string;
+    poolDeadlineDate: any;  // Timestamp isn't working correctly with anything but any??
     poolType: string;
     poolEntryAmount: number;
     poolTotalEntriesAllowed: number;

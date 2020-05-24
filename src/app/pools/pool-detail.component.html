@@ -6,13 +6,13 @@
       [style.margin.px]="2"
       [src]="pool.poolImageUrlMain"
       [title]="pool.poolName">
-      <span style="font-size: 15pt; padding: 10px;">{{pool.poolName}}</span>
+      <span style="font-size: 15pt; color: black; padding: 10px;">{{pool.poolName}}</span>
       <span style="font-size: 10pt;  background:#222;
       color:#fff;
       display:block;
       float:right;
       margin:10px 10px 0 0;
-      padding:5px 10px">{{pool.poolOrganizer}} {{pool.poolOrganizerPhone}}</span>
+      padding:5px 10px">MANAGER: {{pool.poolOrganizer}} {{pool.poolOrganizerPhone}}</span>
     </div>
 
     <div class="card-body"
@@ -21,17 +21,17 @@
       <div class="row">
 
         <div class="col-md-8">
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-4">Pool Id:</div>
             <div class="col-md-5"><a href="">{{pool.id}}</a></div>
           </div>
           <div class="row">
             <div class="col-md-4">Linked Event:</div>
             <div class="col-md-5"><a href="">{{pool.eventLinkId}}</a></div>
-          </div>
+          </div> -->
           <div class="row">
             <div class="col-md-4">Deadline:</div>
-            <div class="col-md-5">{{pool.poolDeadlineDate | date:'medium' }}</div>
+            <div class="col-md-5">{{ pool.poolDeadlineDate.toDate() | date:'MMM d, y, h:mm:ss a'}}</div>
           </div>
           <div class="row">
             <div class="col-md-4">Type:</div>
@@ -47,7 +47,11 @@
           </div>
           <div class="row">
             <div class="col-md-4">Total Entries Allowed:</div>
-            <div class="col-md-5">{{pool.poolTotalEntriesAllowed}} (27 of 30 remaining)</div>
+            <div class="col-md-5">(27 of {{pool.poolTotalEntriesAllowed}} remaining)</div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">Invited Emails:</div>
+            <div class="col-md-5">{{pool.poolInviteEmails}}</div>
           </div>
         </div>
       </div>

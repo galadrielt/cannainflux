@@ -17,6 +17,7 @@ export class PoolService {
   private poolsUrl = 'api/pools';
   increment: any;
   poolTypePicks: number;
+  readPoolUniqueId: number;
 
   constructor(
     private http: HttpClient,
@@ -78,19 +79,30 @@ export class PoolService {
   }
 
   getFirePool(id: number): Observable<any[]> {
-    return this.afs.collection("pools", ref => ref.where("id","==",id)).valueChanges();
+    return this.afs.collection('pools', ref => ref.where('id', '==', id)).valueChanges();
   }
 
   updateFireTotalCount(key: string): number{
     // this is hardcoded - remove eventually
-    let totalNumOfPools = this.afs.collection('totals').doc('sipKeIDowtrvOaBGOqWa').valueChanges();
-
-    totalNumOfPools.subscribe(val=>console.log(val));
+    // let totalNumOfPools = this.afs.collection('totals').doc('sipKeIDowtrvOaBGOqWa').valueChanges();
+    // totalNumOfPools.subscribe({
+    //   next: totals => {
+    //     if (!totals[0]){
+    //       setTimeout(() => {}, 800);
+    //     }
+    //     console.log('Tots2:', totals[0]);
+    //     this.readPoolUniqueId = totals[0].pools;
+    //     totals[0].update({[key]: this.increment});
+    //   },
+    //   error(msg) {
+    //     console.log('Error Getting Location: ', msg);
+    //   }
+    //   });
  
     this.afs.collection('totals').doc('sipKeIDowtrvOaBGOqWa')
     .update({[key]: this.increment});
     console.log('FireUps +1 totalPools');
-    return (99);
+    return (this.readPoolUniqueId);
   }
 
 
@@ -139,11 +151,6 @@ export class PoolService {
     batch.commit();
 
   }
-
-
-
-
-
 
   deletePool(id: number): Observable<{}> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

@@ -43,12 +43,13 @@
                 </button>
               </th>
               <th>Pool Name</th>
-              <th>Pool Id</th>
               <th>Organizer</th>
               <th>Type</th>
               <th>Deadline</th>
               <th>Total Entries</th>
               <th>Pool Entry Amount</th>
+              <!-- <th>Pool Id</th>
+              <th>Event</th> -->
               <th>New</th>
               <th>Data</th>
               <th>Results</th>
@@ -69,12 +70,13 @@
                   {{ pool.poolName }}
                 </a>
               </td>
-              <td>{{pool.id}}</td>
-              <td>{{ pool.poolOrganizer }} for event:{{pool.eventLinkId}}</td>
+              <td>{{ pool.poolOrganizer }}</td>
               <td>{{ pool.poolType }}</td>
-              <td>{{ pool.poolDeadlineDate}} {{ pool.poolDeadlineTime}}</td>
+              <td>{{ pool.poolDeadlineDate.toDate() | date:'MMM d, y, h:mm:ss a'}}</td>
               <td>{{ pool.poolTotalEntriesAllowed}}</td>
               <td>{{ pool.poolEntryAmount | currency }}</td>
+              <!-- <td>{{pool.id}}</td>
+              <td>{{pool.eventLinkId}}</td> -->
               <td>
                 <button class="btn btn-outline-primary btn-sm"
                 [routerLink]="['/entries', pool.id, 0, 'edit']" *ngIf="pool.id==1">

@@ -23,7 +23,6 @@ export interface TotalsStore {
   totalPools: number;
 }
 
-
 @Component({
   templateUrl: './pool-edit.component.html',
   styleUrls: ['../../../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css', 'pool-edit.component.scss'],
@@ -84,7 +83,8 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
   indexRef: AngularFirestoreCollection<TotalsStore>;
   totals$: Observable<TotalsStore[]>;
   index$: Observable<any[]>;
-
+  autoindex: number;
+  autoid: string;
 
   // Fake Test Data as to not have to fill out the form again and again using button at bottom of html
   testPool: Pool = {
@@ -307,33 +307,36 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
         const p = { ...this.pool, ...this.poolForm.value };
 
         if (p.id === 0) {
-          let indexSubscription = this.index$.subscribe({
-            next: index => {
-              //console.log('ID ALL: ', index);
-              for(let i=0; i < index.length; i++){
-                //console.log("ID, PID:", index[i].id, this.poolsId)
-                if (Number(index[i].id) === this.poolsId){
-                  //this.autoid = index[i].id;
-                  this.autoid = index[i].docid;
-                  this.autoindex = Number(index[i].poolTotals)+1;
-                  //console.log("Inside Autos:", index[i].docid, index[i].id, index[i].poolTotals+1)
-                }
-              }
-            },
-            error(msg) {
-              console.log('Error Getting Location: ', msg);
-            }
-          });
+          // let indexSubscription = this.index$.subscribe({
+          //   next: index => {
+          //     //console.log('ID ALL: ', index);
+          //     for(let i=0; i < index.length; i++){
+          //       //console.log("ID, PID:", index[i].id, this.poolsId)
+          //       if (Number(index[i].id) === this.poolsId){
+          //         //this.autoid = index[i].id;
+          //         this.autoid = index[i].docid;
+          //         this.autoindex = Number(index[i].poolTotals)+1;
+          //         //console.log("Inside Autos:", index[i].docid, index[i].id, index[i].poolTotals+1)
+          //       }
+          //     }
+          //   },
+          //   error(msg) {
+          //     console.log('Error Getting Location: ', msg);
+          //   }
+          // });
 
-          let uniqueId = this.poolService.updateFireTotalCount('pools');
-          // This should fire FIRST!!! #1
+          let uniqueId = this.poolService.updateFireTotalCount('totalPools');
+          
           setTimeout(() => {this.totals$.subscribe({
           next: totals => {
             console.log('Tots:', totals);
             this.poolsId = totals[0].totalPools;
             // This should fire SECOND!!!  #2 ... This needs this.poolsId to be updated by totals$.
-            // this.poolService.createFirePool(p, this.poolsId);
-            this.poolService.createFirePool(p, uniqueId);
+            console.log('poolsId:',this.poolsId);
+            this.poolService.createFirePool(p, this.poolsId);
+            
+            //this.poolService.createFirePool(p, uniqueId);
+            
             // This should fire LAST!!!  #4
             this.onSaveComplete();          },
           error(msg) {

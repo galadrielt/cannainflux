@@ -27,8 +27,10 @@ export class PoolDetailComponent implements OnInit {
     console.log(param);
     if (param) {
       const id = +param;
-      this.getPool(id);
+      //this.getPool(id);
+      this.getFirePool(id);
       console.log(id);
+      console.log(this.pool);
     }
   }
 
