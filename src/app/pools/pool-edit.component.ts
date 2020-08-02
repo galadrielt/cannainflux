@@ -17,6 +17,7 @@ import {MatCalendarCellCssClasses} from '@angular/material/datepicker';
 import moment from 'moment';
 import { ThemePalette } from '@angular/material/core';
 import { TooltipPosition } from '@angular/material/tooltip';
+import { Event } from '../events/event';
 
 
 export interface TotalsStore {
@@ -78,7 +79,7 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
   poolsId: number;
   pTypes: Array<string> = ['Pick Top 16 Seeds', 'Pick Top 10 Seeds'];
   events: any[];
-  eventsAndId: any[];
+  eventsAndId: Event[] = [];
   eventLinkId: any;
   indexRef: AngularFirestoreCollection<TotalsStore>;
   totals$: Observable<TotalsStore[]>;
@@ -156,7 +157,7 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
 
     this.date = moment();
-    console.log('Mom: ', moment());
+    console.log('Moment: ', moment());
 
     this.poolForm = this.fb.group({
       eventLinkId: '',
@@ -176,17 +177,19 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
       poolInviteEmails: '',
     });
 
-    this.eventNames.getEventNames().subscribe({
-      next: ets => {
-        this.events = ets;
-        console.log(this.events);
-      },
-      error: err => this.errorMessage = err
-    });
+    // this.eventNames.getEventNames().subscribe({
+    //   next: ets => {
+    //     this.events = ets;
+    //     console.log(this.events);
+    //   },
+    //   error: err => this.errorMessage = err
+    // });
 
     this.eventNamesAndId.getEvents().subscribe({
       next: eventsId => {
-        this.eventsAndId = eventsId;
+        console.log('events: ', eventsId);
+        //this.eventsAndId = eventsId;
+        this.onlyAddFutureEvents(eventsId);
       },
       error: err => this.errorMessage = err
     });
@@ -220,6 +223,27 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
       // console.log(this.displayMessage);
     });
   }
+
+
+
+
+// Past events cannot be bet upon so push only future events
+onlyAddFutureEvents(allEvents){
+let currentDate = new Date();
+currentDate.getTime();
+
+for(let eachEvent of allEvents){
+  let combinedDate = eachEvent.eventStartDate + ' ' + eachEvent. eventStartTime;
+  // let fakeDate = 'June 3, 2020 1:30:00 PM GMT-5';
+  // console.log('combTime:', combinedDate);
+  let compDate = new Date(combinedDate);
+  // let compDate = new Date(fakeDate);
+  // console.log('EE:', compDate, 'CD: ', currentDate);
+  if (compDate > currentDate){
+    this.eventsAndId.push(eachEvent);
+  }
+}
+};
 
   getPool(id: number): void {
     this.poolService.getPool(id).subscribe({
@@ -299,9 +323,11 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+
+
+// ToDo: Submitted emails need an invitation link sent to their email to join the pool.
+
   saveFirePool(): void {
-
-
     if (this.poolForm.valid) {
       if (this.poolForm.dirty) {
         const p = { ...this.pool, ...this.poolForm.value };

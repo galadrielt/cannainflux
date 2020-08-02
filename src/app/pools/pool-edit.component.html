@@ -8,7 +8,7 @@
           (ngSubmit)="saveFirePool()"
           [formGroup]="poolForm">
 
-          <div class="form-group row mb-2" *ngIf="events">
+          <div class="form-group row mb-2" *ngIf="eventsAndId">
             <label class="col-md-2 col-form-label"
                   for="eventLinkIdId">Available Event Links:</label>
             <div class="col-md-8 largest-option">
@@ -141,7 +141,7 @@
                 [ngClass]="{'is-invalid': displayMessage.poolPaymentBreakdown}" /> -->
             <mat-form-field class="mat-field" appearance="outline">
               <mat-label>Should add up to 100%</mat-label>
-              <input matInput type="string" placeholder="Ex. 80, 15, 5" formControlName="poolPaymentBreakdown" min="3">
+              <input matInput type="string" placeholder='Ex. "80, 15, 5" or "75,25,x"' formControlName="poolPaymentBreakdown" min="3">
               <mat-error *ngIf="pool.poolPaymentBreakdown">Min size: 3 character</mat-error>
             </mat-form-field>
             &nbsp;

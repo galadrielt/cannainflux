@@ -59,7 +59,8 @@
           <tbody>
             <tr *ngFor="let pool of filteredPools">
               <td>
-                <img *ngIf="showImage && pool.poolImageUrlMain"
+                <!--<img *ngIf="showImage && pool.poolImageUrlMain"-->
+                <img
                     [src]="pool.poolImageUrlMain"
                     [title]="pool.poolName"
                     [style.height.px]="imageHeight"

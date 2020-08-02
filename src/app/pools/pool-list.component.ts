@@ -31,7 +31,7 @@ export class PoolComponent implements OnInit {
 
   filteredPools: Pool[] = [];
   pools: any[] = [];
-  
+
   constructor(
     private poolService: PoolService,
     ) { }
