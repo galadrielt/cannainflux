@@ -3,40 +3,34 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'pm-root',
   template: `
-    
+
     <nav class='navbar navbar-expand navbar-light bg-light'>
       <a class='navbar-brand' routerLinkActive='active'
-      [routerLink]="['/welcome']"><img [src]='pageLogo' alt="matMadness" style="width:150px;height:30px;"></a>
+      [routerLink]="['/welcome']">CannaInflux</a>
       <ul class='navbar-nav'>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/sports']">Sports</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/teams']">Teams</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/wrestlers']">Wrestlers</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/events']">Events</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/brackets']">Brackets</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/matches']">Matches</a>
-        </li>
-        <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/pools']">Pools</a>
-        </li>
-        <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/teams']">Place New Order</a>
+      </li>
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/wrestlers']">Orders</a>
+      </li>
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/events']">Products</a>
+      </li>
+      <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/brackets']">Brackets</a>
+      </li>
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/brackets']">Matches</a>
+      </li>
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
+      [routerLink]="['/pools']">Pools</a>
+      </li>
+      <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
         [routerLink]="['/entries']">Entries</a>
-        </li>-->
-        <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-        [routerLink]="['/data']">Data</a>
-        </li>-->
-      </ul>
-      
+      </li>-->
+    </ul>
+
       <ul class='navbar-nav ml-auto'>
       <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
       [routerLink]="['/signup']">Users</a>

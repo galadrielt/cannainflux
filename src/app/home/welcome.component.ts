@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-  public pageTitle = 'Welcome to Fantasy Wrestling (sounds stupid right!!)';
+  public pageTitle = 'Welcome to your one stop shop for all things Cannabis!';
 }
