@@ -8,20 +8,20 @@
           (ngSubmit)="saveFirePool()"
           [formGroup]="poolForm">
 
-          <div class="form-group row mb-2" *ngIf="eventsAndId">
+          <div class="form-group row mb-2" *ngIf="ordersAndId">
             <label class="col-md-2 col-form-label"
-                  for="eventLinkIdId">Available Event Links:</label>
+                  for="orderLinkIdId">Available Event Links:</label>
             <div class="col-md-8 largest-option">
             <mat-form-field appearance="outline" class="mat-dropdown">
-              <mat-label>Which event?</mat-label>
+              <mat-label>Which order?</mat-label>
               <mat-select formControlName="eventLinkId">
-                <mat-option *ngFor="let event of eventsAndId" [value]="event.id">{{event.eventName}}
+                <mat-option *ngFor="let order of ordersAndId" [value]="order.id">{{order.orderName}}
                 </mat-option>
               </mat-select>
-                <div *ngIf="poolForm.value.eventLinkId"><!-- Put in the image of selected --></div>
+                <div *ngIf="poolForm.value.orderLinkId"><!-- Put in the image of selected --></div>
             </mat-form-field>
               <span class="invalid-feedback">
-                {{displayMessage.eventLinkId}}
+                {{displayMessage.orderLinkId}}
               </span>
             </div>
           </div>

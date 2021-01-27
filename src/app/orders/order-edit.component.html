@@ -1,0 +1,355 @@
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body">
+    <form novalidate
+          (ngSubmit)="saveOrder()"
+          [formGroup]="orderForm" autofocus>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="orderSportId">Dispensary:</label>
+        <div class="col-md-8">
+          <select id="orderSportId"  formControlName="orderSport">
+                <option *ngFor="let stc of sts" [attr.selected]="orderSport==stc ? true :  null" [value]="stc">{{stc}}</option>
+              </select>
+          <span class="invalid-feedback">
+            {{displayMessage.orderSport}}
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="orderStartDateId">Invoice Date:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="orderStartDateId"
+                 type="text"
+                 placeholder="Invoice Date"
+                 formControlName="orderStartDate"
+                 [ngClass]="{'is-invalid': displayMessage.orderStartDate }" />
+          <span class="invalid-feedback">
+            {{displayMessage.orderStartDate}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="orderEndDateId">Due Date:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="orderEndDateId"
+                 type="text"
+                 placeholder="Due Date"
+                 formControlName="orderEndDate"
+                 [ngClass]="{'is-invalid': displayMessage.orderEndDate }" />
+          <span class="invalid-feedback">
+            {{displayMessage.orderEndDate}}
+          </span>
+        </div>
+      </div>
+
+
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="orderImageUrlId">PO#:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="orderImageUrlId"
+                 type="text"
+                 placeholder="PO#"
+                 formControlName="orderImageUrl"
+                 [ngClass]="{'is-invalid': displayMessage.orderImageUrl }" />
+          <span class="invalid-feedback">
+            {{displayMessage.orderImageUrl}}
+          </span>
+        </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="orderOrganizerFullNameId">Organizer:</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="orderOrganizerFullNameId"
+               type="text"
+               placeholder="Organizer Full Name (required)"
+               formControlName="orderOrganizerFullName"
+               [ngClass]="{'is-invalid': displayMessage.orderOrganizerFullName }" />
+        <span class="invalid-feedback">
+          {{displayMessage.orderOrganizerFullName}}
+        </span>
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="orderOrganizerPhoneId">Organizer Phone#:</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="orderOrganizerPhoneId"
+               type="text"
+               placeholder="Organizer Phone (required)"
+               formControlName="orderOrganizerPhone"
+               [ngClass]="{'is-invalid': displayMessage.orderOrganizerPhone }" />
+        <span class="invalid-feedback">
+          {{displayMessage.orderOrganizerPhone}}
+        </span>
+      </div>
+    </div>
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="orderExtraInstructionsId">Extra Instructions:</label>
+
+      <div class="col-md-8">
+        <textarea class="form-control"
+                  id="orderExtraInstructionsId"
+                  placeholder="Any additional information here"
+                  rows=3
+                  formControlName="orderExtraInstructions"
+                  [ngClass]="{'is-invalid': displayMessage.orderExtraInstructions}"></textarea>
+        <span class="invalid-feedback">
+          {{ displayMessage.orderExtraInstructions}}
+        </span>
+      </div>
+    </div>
+<!-- Divide out the Information (static creation) from the setup (dynamic - user generated) -->
+<div><HR WIDTH="100%" COLOR="#6699FF"><br>Build Order Details<br><br></div>
+
+
+  <div class="form-group row mb-2">
+    <label class="col-md-2 col-form-label"
+           for="orderBracketTypeId">Bracket Type:</label>
+    <div class="col-md-8">
+      <input class="form-control"
+             id="orderBracketTypeId"
+             type="text"
+             placeholder="BracketType (required)"
+             formControlName="orderBracketType"
+             [ngClass]="{'is-invalid': displayMessage.orderBracketType }" />
+      <span class="invalid-feedback">
+        {{displayMessage.orderBracketType}}
+      </span>
+    </div>
+  </div>
+
+    <div class="form-group row mb-2">
+      <label class="col-md-2 col-form-label"
+             for="orderPlaceWinnersId">Number of Placers:</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="orderPlaceWinnersId"
+               type="text"
+               placeholder="PlaceWinners (required)"
+               formControlName="orderPlaceWinners"
+               [ngClass]="{'is-invalid': displayMessage.orderPlaceWinners }" />
+        <span class="invalid-feedback">
+          {{displayMessage.orderPlaceWinners}}
+        </span>
+      </div>
+    </div>
+
+
+    <div class="form-group row mb-2" *ngFor="let divis of divisions; let m=index" >
+      <label class="col-md-2 col-form-label"
+             for="orderBreakdownsId">{{m+1}}. {{divis.name}}:</label>
+      <div class="col-md-8">
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weights">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let weight of order.orderBreakdowns[m]; let y=index;" [formGroupName]="y">
+          <mat-form-field>
+            {{weight}}
+            <!-- <input class="form-control"
+            id="orderBreakdowns"
+            type="text"
+            placeholder="Number of Weights"
+            formControlName="weights"
+            [ngClass]="{'is-invalid': displayMessage.orderBracketNumOfParticipantsPerClass }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.orderBracketNumOfParticipantsPerClass}}
+            </span>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Participants Column -->
+      <ng-container matColumnDef="participants">
+        <th mat-header-cell *matHeaderCellDef> # of Participants </th>
+        <td mat-cell *matCellDef="let participant of order.orderBracketNumOfParticipantsPerClass[m]; let y = index">
+          <mat-form-field>
+            {{participant}}
+            <!-- <input class="form-control"
+            id="orderBracketNumOfParticipantsPerClassId"
+            type="text"
+            placeholder="Number of Participants"
+            formControlName="participants"
+            [ngClass]="{'is-invalid': displayMessage.orderBracketNumOfParticipantsPerClass }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.orderBracketNumOfParticipantsPerClass}}
+            </span>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Seeding Column -->
+      <ng-container matColumnDef="seeds">
+        <th mat-header-cell *matHeaderCellDef> # of Seeds </th>
+        <td mat-cell *matCellDef="let seed of order.orderNumOfSeeding[m]; let z = index">
+          <mat-form-field>
+            {{seed}}
+            <!-- <input class="form-control"
+            id="orderNumOfSeedingId"
+            type="text"
+            placeholder="Number of seeds"
+            formControlName="seeds"
+            [ngClass]="{'is-invalid': displayMessage.orderNumOfSeeding }" /> -->
+            <span class="invalid-feedback">
+              {{displayMessage.orderNumOfSeeding}}
+            </span>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="deleting">
+        <th mat-header-cell *matHeaderCellDef> # of Seeds </th>
+        <td mat-cell *matCellDef="let level; let z = index">
+          <mat-form-field>
+            <button class="col-md-1 btn btn-outline-warning btn-sm"
+            type="button"
+            title="Delete this weight class"
+            (click)="deleteOrderBreakdown(z)">Delete
+            </button>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Delete Button -->
+      <ng-container matColumnDef="delete">
+
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+<!--
+    <div formArrayName="orderBreakdowns">
+        <div class="form-group row mb-4">
+          <label class="col-md-4 col-form-label">
+            Weight Classes: <b *ngIf="order">{{order.orderBreakdowns.length}} Total</b>
+          </label>
+        </div>
+
+        <div class="form-group row mb-2"
+             *ngFor="let breakdown of orderBreakdowns.controls; let i=index">
+          <label class="col-md-2 col-form-label"
+                 [attr.for]="i">{{i+1}}:
+          </label>
+
+          <div class="col-md-8">
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="Weight Class #{{i+1}}"
+                   [formControlName]="i" />
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="# of Participants #{{i+1}}"
+                   [formControlName]="i" />
+            <input class="form-group"
+                   [id]="i"
+                   type="text"
+                   placeholder="# of Seeds #{{i+1}}"
+                   [formControlName]="i" />
+          </div>
+
+          <button class="col-md-1 btn btn-outline-warning btn-sm"
+                  type="button"
+                  title="Delete this weight class"
+                  (click)="deleteOrderBreakdown(i)">Delete
+          </button>
+        </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-2 mb-2">
+          <button class="btn btn-outline-secondary btn-sm"
+                  type="button"
+                  title="Add a weight class"
+                  (click)="addOrderBreakdown()">Add
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group row mb-2" *ngIf="order">
+        <label class="col-md-2 col-form-label"
+               for="orderBracketNumOfParticipantsPerClassId">Number of Participants:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="orderBracketNumOfParticipantsPerClassId"
+                 type="text"
+                 placeholder="Num of Participants (required)"
+                 value="{{order.orderBracketNumOfParticipantsPerClass}}"
+                 formArrayName="orderBracketNumOfParticipantsPerClass"
+                 [ngClass]="{'is-invalid': displayMessage.orderBracketNumOfParticipantsPerClass }" />
+          <span class="invalid-feedback">
+            {{displayMessage.orderBracketNumOfParticipantsPerClass}}
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="orderNumOfSeedingId">Number of Seeds:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="orderNumOfSeedingId"
+                 type="text"
+                 placeholder="NumOfSeeding (required)"
+                 formControlName="orderNumOfSeeding"
+                 [ngClass]="{'is-invalid': displayMessage.orderNumOfSeeding }" />
+          <span class="invalid-feedback">
+            {{displayMessage.orderNumOfSeeding}}
+          </span>
+        </div>
+      </div>
+    -->
+      <div class="form-group row mb-2">
+        <div class="offset-md-2 col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px;"
+                  type="submit"
+                  [title]="orderForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                  [disabled]="!orderForm.valid">
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px;"
+                  type="button"
+                  title="Cancel your edits"
+                  [routerLink]="['/orders']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  title="Delete this order"
+                  (click)="deleteOrder()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="alert alert-danger"
+       *ngIf="errorMessage">{{errorMessage}}
+  </div>
+</div>

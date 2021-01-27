@@ -29,7 +29,7 @@ import { WelcomeComponent } from './home/welcome.component';
 import { BracketsModule } from './brackets/brackets.module';
 import { DataModule } from './data/data.module';
 import { EntryModule } from './entries/entry.module';
-import { EventModule } from './events/event.module';
+import { OrderModule } from './orders/order.module';
 import { MatchesModule } from './matches/matches.module';
 import { PoolModule } from './pools/pool.module';
 import { SportModule } from './sports/sport.module';
@@ -171,7 +171,7 @@ import { MatTreeModule } from '@angular/material/tree';
     UserModule,
     DataModule,
     EntryModule,
-    EventModule,
+    OrderModule,
     MatchesModule,
     BrowserAnimationsModule,
 

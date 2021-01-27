@@ -12,12 +12,12 @@ import { GenericValidator } from '../shared/generic-validator';
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import 'firebase/firestore';
-import { EventService } from '../events/event.service';
+import { OrderService } from '../orders/order.service';
 import {MatCalendarCellCssClasses} from '@angular/material/datepicker';
 import moment from 'moment';
 import { ThemePalette } from '@angular/material/core';
 import { TooltipPosition } from '@angular/material/tooltip';
-import { Event } from '../events/event';
+import { Order } from '../orders/order';
 
 
 export interface TotalsStore {
@@ -78,9 +78,9 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
   poolForm: FormGroup;
   poolsId: number;
   pTypes: Array<string> = ['Pick Top 16 Seeds', 'Pick Top 10 Seeds'];
-  events: any[];
-  eventsAndId: Event[] = [];
-  eventLinkId: any;
+  orders: any[];
+  ordersAndId: Order[] = [];
+  orderLinkId: any;
   indexRef: AngularFirestoreCollection<TotalsStore>;
   totals$: Observable<TotalsStore[]>;
   index$: Observable<any[]>;
@@ -106,7 +106,7 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
   pool: Pool;
   private subPool: Subscription;
-  private eventInfo$: Subscription;
+  private orderInfo$: Subscription;
 
   // Use with the generic validation message class
   displayMessage: { [key: string]: string } = {};
@@ -123,8 +123,8 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
               private router: Router,
               private poolService: PoolService,
               private afs: AngularFirestore,
-              private eventNames: EventService,
-              private eventNamesAndId: EventService,) {
+              private orderNames: OrderService,
+              private orderNamesAndId: OrderService,) {
 
 
     // Defines all of the validation messages for the form.
@@ -160,7 +160,7 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log('Moment: ', moment());
 
     this.poolForm = this.fb.group({
-      eventLinkId: '',
+      orderLinkId: '',
       poolName: ['', [Validators.required,
                       Validators.minLength(3),
                       Validators.maxLength(50)]],
@@ -177,19 +177,19 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
       poolInviteEmails: '',
     });
 
-    // this.eventNames.getEventNames().subscribe({
+    // this.orderNames.getOrderNames().subscribe({
     //   next: ets => {
-    //     this.events = ets;
-    //     console.log(this.events);
+    //     this.orders = ets;
+    //     console.log(this.orders);
     //   },
     //   error: err => this.errorMessage = err
     // });
 
-    this.eventNamesAndId.getEvents().subscribe({
-      next: eventsId => {
-        console.log('events: ', eventsId);
-        //this.eventsAndId = eventsId;
-        this.onlyAddFutureEvents(eventsId);
+    this.orderNamesAndId.getOrders().subscribe({
+      next: ordersId => {
+        console.log('orders: ', ordersId);
+        //this.ordersAndId = ordersId;
+        this.onlyAddFutureOrders(ordersId);
       },
       error: err => this.errorMessage = err
     });
@@ -205,7 +205,7 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subPool.unsubscribe();
-    // this.eventInfo$.unsubscribe(); // comment out for now
+    // this.orderInfo$.unsubscribe(); // comment out for now
   }
 
   ngAfterViewInit(): void {
@@ -227,20 +227,20 @@ export class PoolEditComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 
-// Past events cannot be bet upon so push only future events
-onlyAddFutureEvents(allEvents){
+// Past orders cannot be bet upon so push only future orders
+onlyAddFutureOrders(allOrders){
 let currentDate = new Date();
 currentDate.getTime();
 
-for(let eachEvent of allEvents){
-  let combinedDate = eachEvent.eventStartDate + ' ' + eachEvent. eventStartTime;
+for(let eachOrder of allOrders){
+  let combinedDate = eachOrder.orderStartDate + ' ' + eachOrder. orderStartTime;
   // let fakeDate = 'June 3, 2020 1:30:00 PM GMT-5';
   // console.log('combTime:', combinedDate);
   let compDate = new Date(combinedDate);
   // let compDate = new Date(fakeDate);
   // console.log('EE:', compDate, 'CD: ', currentDate);
   if (compDate > currentDate){
-    this.eventsAndId.push(eachEvent);
+    this.ordersAndId.push(eachOrder);
   }
 }
 };
@@ -352,7 +352,7 @@ for(let eachEvent of allEvents){
           // });
 
           let uniqueId = this.poolService.updateFireTotalCount('totalPools');
-          
+
           setTimeout(() => {this.totals$.subscribe({
           next: totals => {
             console.log('Tots:', totals);
@@ -360,9 +360,9 @@ for(let eachEvent of allEvents){
             // This should fire SECOND!!!  #2 ... This needs this.poolsId to be updated by totals$.
             console.log('poolsId:',this.poolsId);
             this.poolService.createFirePool(p, this.poolsId);
-            
+
             //this.poolService.createFirePool(p, uniqueId);
-            
+
             // This should fire LAST!!!  #4
             this.onSaveComplete();          },
           error(msg) {
@@ -391,7 +391,7 @@ for(let eachEvent of allEvents){
 dateClass = (d: Date): MatCalendarCellCssClasses => {
   const date = d.getDate();
   // Highlight the 1st and 20th day of each month.
-  // ToDo: change return dates to be the date of the event.
+  // ToDo: change return dates to be the date of the order.
   return (date === 1 || date === 20) ? 'example-custom-date-class' : '';
 }
 

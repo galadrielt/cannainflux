@@ -1,0 +1,120 @@
+<div class="card">
+    <div class="card-header"
+         *ngIf="order">
+      {{pageTitle + ": " + order.orderSport + " > " + order.orderName}}
+    </div>
+
+    <div class="card-body"
+         *ngIf="order">
+
+      <div class="row">
+
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-3">Sport:</div>
+            <div class="col-md-9">{{order.orderSport}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-9">{{order.orderName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Location Name:</div>
+            <div class="col-md-9">{{order.orderLocationName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Address:</div>
+            <div class="col-md-9">{{order.orderLocationAddress}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">City:</div>
+            <div class="col-md-9">{{order.orderLocationCity}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">State:</div>
+              <div class="col-md-9">{{order.orderLocationState}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Dates:</div>
+              <div class="col-md-9">{{order.orderStartDate}} - {{order.orderEndDate}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Time:</div>
+              <div class="col-md-9">{{order.orderStartTime}} - {{order.orderEndTime}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Website:</div>
+              <div class="col-md-9"><a href="{{order.orderUrl}}">Click Here</a></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Level:</div>
+              <div class="col-md-9">{{order.orderLevels}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Type:</div>
+              <div class="col-md-9">{{order.orderType}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Number of Weights:</div>
+              <div class="col-md-9">{{order.orderBreakdowns.length}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Weight Classes:</div>
+              <div class="col-md-6">{{order.orderBreakdowns}}</div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Number of Seeds:</div>
+              <div class="col-md-9">{{order.orderNumOfSeeding}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Organizer:</div>
+            <div class="col-md-9">{{order.orderOrganizerFullName}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Organizer Phone#:</div>
+            <div class="col-md-9">{{order.orderOrganizerPhone}}</div>
+          </div>
+            <div class="row">
+            <div class="col-md-3">Bracket Type:</div>
+            <div class="col-md-9">{{order.orderBracketType}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Number of Participants:</div>
+            <div class="col-md-9">{{order.orderBracketNumOfParticipantsPerClass}}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Number of Placers:</div>
+            <div class="col-md-9">{{order.orderPlaceWinners}}</div>
+          </div>
+        </div>
+        <div class="col-md-3"
+             *ngIf="order.orderImageUrl">
+          <img class="center-block img-responsive"
+               [style.height.px]="150"
+               [style.margin.px]="2"
+               [src]="order.orderImageUrl"
+               [title]="order.orderName">
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px"
+                  (click)="onBack()">
+            <i class="fa fa-chevron-left"></i> Back
+          </button>
+          <button class="btn btn-outline-primary"
+                  style="width:80px"
+                  [routerLink]="['/orders', order.id, 'edit']">
+            Edit
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

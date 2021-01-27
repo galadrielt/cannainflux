@@ -6,16 +6,16 @@ import { Component } from '@angular/core';
 
     <nav class='navbar navbar-expand navbar-light bg-light'>
       <a class='navbar-brand' routerLinkActive='active'
-      [routerLink]="['/welcome']">CannaInflux</a>
+      [routerLink]="['/welcome']">Canna<span style="color:green;">Influx</span></a>
       <ul class='navbar-nav'>
       <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-      [routerLink]="['/teams']">Place New Order</a>
+      [routerLink]="['/orders']">Orders</a>
       </li>
       <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-      [routerLink]="['/wrestlers']">Orders</a>
+      [routerLink]="['/wrestlers']">Products</a>
       </li>
       <li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
-      [routerLink]="['/events']">Products</a>
+      [routerLink]="['/teams']">Dispensaries</a>
       </li>
       <!--<li class='nav-item topnav-right'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
       [routerLink]="['/brackets']">Brackets</a>
